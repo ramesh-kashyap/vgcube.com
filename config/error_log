@@ -1,0 +1,4 @@
+[14-Nov-2024 10:45:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/vgcube/h5.vgcube.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/vgcube/h5.vgcube.com/config/database.php on line 18
