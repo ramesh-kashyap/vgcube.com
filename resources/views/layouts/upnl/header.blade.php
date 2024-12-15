@@ -89,7 +89,61 @@
             src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
             unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
         }
-
+        .card {
+            background: linear-gradient(to right, #fff);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-content {
+            color: #2c3e50;
+            text-align: left;
+        }
+        .card-content h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #4b0082;
+        }
+        .card-content p {
+            margin: 2px 0;
+            font-size: 16px;
+        }
+        .card-content .price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-content .yield {
+            color: #4b0082;
+        }
+        .card-content .details {
+            font-size: 12px;
+            font-family: bold;
+        }
+        .card-icon {
+            text-align: center;
+        }
+        .card-icon img {
+            width: 80px;
+            height: 80px;
+        }
+        .unlock {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+}
+        .unlock i {
+            margin-right: 5px;
+        }
         @font-face {
             font-family: 'Poppins';
             font-style: normal;
