@@ -9,7 +9,7 @@
                                 <div class=" flex items-center justify-center" >
                                     <div
                                         class="bg-white px-8 py-10 rounded-lg shadow-[32px] max-w-[500px] w-full text-center">
-                                        <div class="card" style="position: relative; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        <div class="card" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                                             <div class="card-content">
                                              <h1>
                                               ServerCore
@@ -27,7 +27,7 @@
                                              </p>
                                             </div>
                                             <div class="card-icon">
-                                                <button style="margin-top: 10px; padding: 8px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
                                                     Subscribe
                                                 </button>
                                              <!-- <p class="details">
@@ -42,7 +42,7 @@
                                              Unlock
                                             </div>
                                            </div>
-                                           <div class="card" style="position: relative; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                           <div class="card" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                                             <div class="card-content">
                                              <h1>
                                               ServerCore
@@ -60,7 +60,7 @@
                                              </p>
                                             </div>
                                             <div class="card-icon">
-                                                <button style="margin-top: 10px; padding: 8px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
                                                     Subscribe
                                                 <!-- </button>                                             <p class="details">
                                               1 Hour

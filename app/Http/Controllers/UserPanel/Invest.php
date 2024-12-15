@@ -616,64 +616,64 @@ class Invest extends Controller
 
      public function nodepower()
     {
-      $user = Auth::user();
-      date_default_timezone_set("Asia/Kolkata"); // Set timezone to India time (GMT+5:30)
+      // $user = Auth::user();
+      // date_default_timezone_set("Asia/Kolkata"); // Set timezone to India time (GMT+5:30)
     
-      // Get the user's last trade
-      $last_trade = $user->last_trade; 
+      // // Get the user's last trade
+      // $last_trade = $user->last_trade; 
     
-      // Initialize $button to default value
-      $button = 1; 
+      // // Initialize $button to default value
+      // $button = 1; 
     
-      // Get the current time
-      $current_time = new \DateTime();
+      // // Get the current time
+      // $current_time = new \DateTime();
     
-      // Check if last_trade is not null
-      if ($last_trade) {
-          // Convert $last_trade to a DateTime object
-          $last_trade_time = new \DateTime($last_trade);
-    
-    
-    
-          // Calculate the time difference in hours
-          $time_diff = $current_time->diff($last_trade_time);
-          $hours_diff = $time_diff->h + ($time_diff->days * 24); // Total hours difference
+      // // Check if last_trade is not null
+      // if ($last_trade) {
+      //     // Convert $last_trade to a DateTime object
+      //     $last_trade_time = new \DateTime($last_trade);
     
     
-          if ($hours_diff < 1) {
-              // If last trade is within the last hour
-              $button = 2;
-          } elseif ($hours_diff >= 24) {
-              // If last trade is more than or equal to 24 hours ago
-              $button = 1;
-          } else {
-              // If last trade is more than 1 hour but less than 24 hours
-              $button = 3;
-          }
-      }
+    
+      //     // Calculate the time difference in hours
+      //     $time_diff = $current_time->diff($last_trade_time);
+      //     $hours_diff = $time_diff->h + ($time_diff->days * 24); // Total hours difference
+    
+    
+      //     if ($hours_diff < 1) {
+      //         // If last trade is within the last hour
+      //         $button = 2;
+      //     } elseif ($hours_diff >= 24) {
+      //         // If last trade is more than or equal to 24 hours ago
+      //         $button = 1;
+      //     } else {
+      //         // If last trade is more than 1 hour but less than 24 hours
+      //         $button = 3;
+      //     }
+      // }
       
-        // Retrieve active investments with roiCondition of 0
-        $investments = Investment::where('user_id', $user->id)
-            ->where('status', 'Active')
-            ->where('roiCandition', 0)
-            ->get();
+      //   // Retrieve active investments with roiCondition of 0
+      //   $investments = Investment::where('user_id', $user->id)
+      //       ->where('status', 'Active')
+      //       ->where('roiCandition', 0)
+      //       ->get();
     
-        // Filter active investments for 'plan' details if needed
-        $plan = Investment::where('user_id', $user->id)
-            ->where('status', 'Active')->get();
+      //   // Filter active investments for 'plan' details if needed
+      //   $plan = Investment::where('user_id', $user->id)
+      //       ->where('status', 'Active')->get();
          
            
            
-        // Retrieve all available plans
-        $notes = DB::table('plans')->get();
+      //   // Retrieve all available plans
+      //   $notes = DB::table('plans')->get();
     
-        // Pass data to the view
-        $this->data['recharges'] = $investments;
-        // $this->data['button'] = $button;
-        // $this->data['last_trade'] = $last_trade;
+      //   // Pass data to the view
+      //   $this->data['recharges'] = $investments;
+      //   // $this->data['button'] = $button;
+      //   // $this->data['last_trade'] = $last_trade;
         
-        $this->data['data'] = $notes;
-        $this->data['plan'] = $plan;
+      //   $this->data['data'] = $notes;
+      //   $this->data['plan'] = $plan;
         $this->data['page'] = 'user.team.market';
         
     return $this->dashboard_layout();

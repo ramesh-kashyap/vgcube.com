@@ -86,8 +86,15 @@ return $this->dashboard_layout();
 
 public function fund(Request $request)
 {
+  $user=Auth::user();
 
-   
+  
+
+    $buyfunds = BuyFund::select('amount as comm','created_at','status','txn_no','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
+        $item->remarks = 'Deposits'; // Add your custom remark value here
+        return $item;
+    })->toArray();
+    $this->data['level_income'] = $buyfunds;
 $this->data['page'] = 'user.fund.addFund';
 return $this->dashboard_layout();
 

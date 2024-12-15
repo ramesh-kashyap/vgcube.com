@@ -144,6 +144,17 @@
         .unlock i {
             margin-right: 5px;
         }
+        .unlock {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 14px;
+    color: #555;
+    display: flex
+;
+    align-items: center;
+    gap: 5px;
+}
         @font-face {
             font-family: 'Poppins';
             font-style: normal;
@@ -161,7 +172,19 @@
             src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
             unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
         }
-
+        .card-content h1 {
+    font-size: 18px;
+    margin: 0;
+    color: #4b0082;
+}
+.card-content .price {
+    font-size: 18px;
+    font-weight: bold;
+}
+.card-content p {
+    margin: 2px 0;
+    font-size: 14px;
+}
         @font-face {
             font-family: 'Poppins';
             font-style: normal;
@@ -202,10 +225,10 @@
                         <nav class="my-5 px-5 text-sm font-medium text-[#555]">
                             <div class="text-gray-400 text-xs mb-2">MENU</div><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white"
-                                href="/"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
+                                href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-overview_active.svg"
                                     style="color: transparent;"><span class="ml-4">Overview</span></a><a
-                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="/nodes"><img
+                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="{{route('user.Market')}}"><img
                                     alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
                                     class="ml-4">Nodes</span></a><a
@@ -218,11 +241,11 @@
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
                                     style="color: transparent;"><span class="ml-4">Referrals</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/wallet"><img alt="wallet Icon" loading="lazy" width="16" height="16"
+                                href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg"
                                     style="color: transparent;"><span class="ml-4">Wallet</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/profile"><img alt="profile Icon" loading="lazy" width="16" height="16"
+                                href="{{route('user.account')}}"><img alt="profile Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-profile.svg"
                                     style="color: transparent;"><span class="ml-4">Profile</span></a>
                         </nav>

@@ -150,7 +150,7 @@
                         width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
                         src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-green-500">Overview</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
+                    class="flex w-1/5 p-[12px] flex-col items-center" href=""><img alt="my_nodes Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
                         src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Nodes</span></a><a
