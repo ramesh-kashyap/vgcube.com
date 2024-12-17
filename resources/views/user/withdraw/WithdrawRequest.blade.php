@@ -25,7 +25,7 @@
                                       <!-- Replace /submit-wallet with your form submission URL -->
                                       <div class="mb-4">
                                         <label for="amount" class="block text-gray-700 font-medium mb-2">Enter Amount</label>
-                                        <input type="number" id="amount" name="amount" placeholder="Enter amount"
+                                        <input type="number"  id="withdrawalAmount" name="amount" placeholder="Enter amount"
                                           class="w-full px-3 py-2 border border-gray-300 rounded-[12px]" required>
                                       </div>
                                       <div class="mb-4">
@@ -78,7 +78,39 @@
                                           Submit
                                         </button>
                                       </div>
-                                    </form>
+                                   
+                                    <div class="flex flex-col mt-6 space-y-4">
+    <!-- Each Row -->
+    <div class="flex justify-between items-center">
+        <!-- Question -->
+        <p class="text-sm text-gray-700">Available Balance</p>
+        <!-- Answer -->
+        <p class="text-sm text-gray-700">
+            {{ number_format(Auth::user()->available_balance(), 2) }} USDT
+        </p>
+    </div>
+
+    <div class="flex justify-between items-center">
+        <p class="text-sm text-gray-700">Arrived Quantity</p>
+        <p class="text-sm text-gray-700" id="arrivedQuantity">0 USDT</p>
+    </div>
+
+    <div class="flex justify-between items-center">
+        <p class="text-sm text-gray-700">Withdraw Fee</p>
+        <p class="text-sm text-gray-700" id="withdrawalFee">0 USDT</p>
+    </div>
+
+    <div class="flex justify-between items-center">
+        <p class="text-sm text-gray-700">Minimum Withdraw Amount</p>
+        <p class="text-sm text-gray-700">10 USDT</p>
+    </div>
+
+    <div class="flex justify-between items-center">
+        <p class="text-sm text-gray-700">Maximum Withdraw Amount</p>
+        <p class="text-sm text-gray-700">No Limit</p>
+    </div>
+</div> </form>
+
                                   </div>
                                   
                                 
@@ -112,38 +144,8 @@
 <?php }?>
 
 
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 POINT</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 BNB</span></p>
-                                        </div>
-                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -280,6 +282,38 @@
 });
 
 </script>
+<script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#withdrawalAmount').on('input', function() {
+                let amount = parseFloat($(this).val());
+                if (isNaN(amount)) {
+                    amount = 0;
+                }
+                let withdrawalFees = 0;
+                if(amount>=10 && amount<50)
+                {
+                  withdrawalFees = 8;
+                }
+                 if(amount>=50 && amount<500)
+                {
+                  withdrawalFees = 5;
+                }
+                
+                let withdrawalFee = (amount * withdrawalFees / 100)+1;
+                let arrivedQuantity = (amount - withdrawalFee);
+
+                if (arrivedQuantity < 0) {
+                    arrivedQuantity = 0;
+                }
+
+                $('#withdrawalFees').text(withdrawalFees+ '%');
+                $('#arrivedQuantity').text(arrivedQuantity.toFixed(2) + ' USDT');
+                $('#withdrawalFee').text(withdrawalFee.toFixed(2) + ' USDT');
+            });
+        });
+    </script>
 <script>
     const passwordField = document.getElementById('transaction-password');
     const togglePasswordButton = document.getElementById('toggle-password');

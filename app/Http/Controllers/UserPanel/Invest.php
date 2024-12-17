@@ -876,7 +876,7 @@ public function viewdetail($txnId)
 
      ]);
      
-
+   
     //  dd($request->all());
     if($validation->fails()) {
         Log::info($validation->getMessageBag()->first());
@@ -892,10 +892,10 @@ public function viewdetail($txnId)
     $amount = $request->Sum;
     $amount=$amount/2;
     $plan = $request->plan;
+    
 
-
-    $balance=$balance = round($user->available_balance(),2);
-
+    $balance = round($user->available_balance(),2);
+    
     if($amount>$balance){
       return  Redirect::back()->withErrors(array(' Insufficient Balance '));
 
@@ -903,7 +903,7 @@ public function viewdetail($txnId)
    
     
      $invest_check=Investment::where('user_id',$user->id)->where('amount', $amount)->first();
-
+     
     if ($invest_check && $amount>=300) 
     {
       return  Redirect::back()->withErrors(array('Note: Subscription Activated! Your ServerCore subscription is already active! Keep earning daily rewards with VG CUB'));

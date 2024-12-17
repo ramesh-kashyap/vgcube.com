@@ -9,7 +9,7 @@
                                 <div class=" flex items-center justify-center" >
                                     <div
                                         class="bg-white px-8 py-10 rounded-lg shadow-[32px] max-w-[500px] w-full text-center">
-                                        <div class="card" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        <div class="card serverCoreItem" data-id="1" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                                             <div class="card-content">
                                              <h1>
                                               ServerCore
@@ -36,22 +36,184 @@
                                               Running Time
                                              </p> -->
                                             </div>
-                                            <div class="unlock">
-                                             <i class="fas fa-lock">
-                                             </i>
+                                            @if($vip >= 0)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
                                              Unlock
                                             </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
                                            </div>
-                                           <div class="card" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                           <div class="card serverCoreItem"data-id="2" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                                             <div class="card-content">
                                              <h1>
-                                              ServerCore
+                                             ServerCore Prime
                                              </h1>
                                              <p class="price">
-                                              $30
+                                             $120
                                              </p>
                                              <p class="yield">
-                                              $1 Daily Yield
+                                              $4 Daily Yield
+                                             </p>
+                                             <p class="details">
+                                              1 Time
+                                              <br/>
+                                              Daily Run Times
+                                             </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                    Subscribe
+                                                    </button>
+                                                <!--                                              <p class="details">
+                                              1 Hour
+                                              <br/>
+                                              Running Time
+                                             </p> -->
+                                            </div>
+                                            @if($vip >= 0)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
+                                             Unlock
+                                            </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                           </div>
+                                           <div class="card serverCoreItem" data-id="3" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                            <div class="card-content">
+                                             <h1>
+                                             ServerCore Plus
+                                             </h1>
+                                             <p class="price">
+                                             $300
+                                             </p>
+                                             <p class="yield">
+                                             $10 Daily Yield
+                                             </p>
+                                             <p class="details">
+                                              1 Time
+                                              <br/>
+                                              Daily Run Times
+                                             </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                    Subscribe
+                                                    </button> 
+                                                <!--                                            <p class="details">
+                                              1 Hour
+                                              <br/>
+                                              Running Time
+                                             </p> -->
+                                            </div>
+                                            @if($vip >= 3)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
+                                             Unlock
+                                            </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                           </div>
+                                           <div class="card serverCoreItem" data-id="4" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                            <div class="card-content">
+                                             <h1>
+                                             ServerCore Max
+                                             </h1>
+                                             <p class="price">
+                                             $1200
+                                             </p>
+                                             <p class="yield">
+                                             $40 Daily Yield
+                                             </p>
+                                             <p class="details">
+                                              1 Time
+                                              <br/>
+                                              Daily Run Times
+                                             </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                    Subscribe
+                                                    </button>
+                                                <!--                                              <p class="details">
+                                              1 Hour
+                                              <br/>
+                                              Running Time
+                                             </p> -->
+                                            </div>
+                                            @if($vip >= 4)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
+                                             Unlock
+                                            </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                           </div>
+                                           <div class="card serverCoreItem" data-id="5" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                            <div class="card-content">
+                                             <h1>
+                                             ServerCore Pro
+                                             </h1>
+                                             <p class="price">
+                                             $3600
+                                             </p>
+                                             <p class="yield">
+                                             $120 Daily Yield
+                                             </p>
+                                             <p class="details">
+                                              1 Time
+                                              <br/>
+                                              Daily Run Times
+                                             </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                    Subscribe
+                                                    </button> 
+                                                <!--                                            <p class="details">
+                                              1 Hour
+                                              <br/>
+                                              Running Time
+                                             </p> -->
+                                            </div>
+                                            @if($vip >= 5)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
+                                             Unlock
+                                            </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                           </div>
+                                           <div class="card serverCoreItem" data-id="6" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                            <div class="card-content">
+                                             <h1>
+                                             ServerCore Edge
+                                             </h1>
+                                             <p class="price">
+                                             $6000
+                                             </p>
+                                             <p class="yield">
+                                             $200 Daily Yield
                                              </p>
                                              <p class="details">
                                               1 Time
@@ -68,12 +230,58 @@
                                               Running Time
                                              </p> -->
                                             </div>
-                                            <div class="unlock">
-                                             <i class="fas fa-lock">
-                                             </i>
+                                            @if($vip >= 6)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
                                              Unlock
                                             </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                          </h1>
                                            </div>
+                                           <div class="card serverCoreItem" data-id="7" style="position: relative; width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                            <div class="card-content">
+                                             <h1>
+                                             ServerCore Hub
+                                             </h1>
+                                             <p class="price">
+                                             $15000
+                                             </p>
+                                             <p class="yield">
+                                             $500 Daily Yield
+                                             </p>
+                                             <p class="details">
+                                              1 Time
+                                              <br/>
+                                              Daily Run Times
+                                             </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <button style="margin-top: 10px; padding: 5px 16px; background-color: #22c55e; color: white; border: none; border-radius: 20px; cursor: pointer;">
+                                                    Subscribe
+                                                <!-- </button>                                             <p class="details">
+                                              1 Hour
+                                              <br/>
+                                              Running Time
+                                             </p> -->
+                                            </div>
+                                            @if($vip >= 7)
+                                            <div class="unlock lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/unlock.png">
+                                             Unlock
+                                            </div>
+                                            @else
+                                            <div class="Unlock  lv">
+                                            <img data-v-167ffb9b="" src="{{ asset('') }}assets/static/img/lock.png">
+                                             Lock
+                                            </div>
+                                            @endif
+                                           </div>
+                                           
                                            <!-- <button
                                             class="mt-4 px-6 py-2 bg-[#171717] text-white rounded-full" id="hide">Close</button> -->
                                     </div>
@@ -185,6 +393,62 @@
             style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
             Nodes - Meshchain</p>
     </next-route-announcer>
+    <script>
+                // Get the elements
+                const tab1 = document.getElementById('tab1');
+                const tab2 = document.getElementById('tab2');
+                const orderList = document.getElementById('orderList');
+                const popBox = document.getElementById('popBox');
+              
+                // Function to handle the click event for My Computing Power tab
+                tab2.addEventListener('click', () => {
+                  // Change the colors of the tabs
+                  tab2.style.color = 'white'; // Set clicked tab to black
+                  tab1.style.color = 'grey';  // Set other tab to grey
+              
+                  // Show the orderList and hide the popBox
+                  orderList.style.display = 'block'; // Show orderList
+                  popBox.style.display = 'none';     // Hide popBox
+                });
+              
+                // Function to handle the click event for Computing Power Rental tab
+                tab1.addEventListener('click', () => {
+                  // Change the colors of the tabs
+                  tab1.style.color = 'white'; // Set clicked tab to black
+                  tab2.style.color = 'grey';  // Set other tab to grey
+              
+                  // Show the popBox and hide the orderList
+                  popBox.style.display = 'block'; // Show popBox
+                  orderList.style.display = 'none'; // Hide orderList
+                });
+
+              
+
+
+
+              </script>
+              <script>
+                  document.querySelectorAll('.serverCoreItem').forEach(function (item) {
+    item.addEventListener('click', function () {
+        console.log("Card clicked:", item); // Debug: Check if event listener is attached
+
+        // Check if the card contains an unlocked image
+        var isUnlocked = item.querySelector('.lv img[src*="unlock.png"]');
+        console.log("Unlock status:", isUnlocked); // Debug: Check if the selector works
+
+        if (isUnlocked) {
+            // Get the data-id value for dynamic redirection
+            var dataId = item.getAttribute('data-id');
+            console.log("Redirecting to ID:", dataId); // Debug: Log data-id before redirecting
+            window.location.href = `/user/confirm-node/${dataId}`;
+        } else {
+            // Show a message for locked cards
+            alert('Requirements to Unlock the next Subscription Level.');
+        }
+    });
+});
+              </script>
+              @include('partials.notify')
     <script src="./_next/static/chunks/pages/index-ee3997ecd6058818.js"></script>
     <script src="./_next/static/chunks/180-23154d61c0670ef4.js"></script>
     <script src="./_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>

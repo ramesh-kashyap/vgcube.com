@@ -23,7 +23,7 @@ class AddFund extends Controller
   {
 
   $user=Auth::user();
-
+  $limit =  paginationLimit();
   
 
     $buyfunds = BuyFund::select('amount as comm','created_at','status','txn_no','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
@@ -47,7 +47,10 @@ class AddFund extends Controller
     $combinedRecords = array_merge($investments,$buyfunds,$withdraws);
     // echo "<pre>";
     // print_r($combinedRecords);
-    
+    // $combinedRecords = $combinedRecords->paginate($limit)
+    // ->appends([
+    //     'limit' => $limit
+    // ]);
     //  dd($combinedRecords);
      $notes = Income::where('user_id',$user->id)->orderBy('id', 'DESC')->limit(10)->get();
       

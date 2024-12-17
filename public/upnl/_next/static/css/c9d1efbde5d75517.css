@@ -343,7 +343,8 @@ video {
 img,
 video {
   max-width: 100%;
-  height: auto
+  height: auto;
+  width: 16px;
 }
 
 [hidden]:where(:not([hidden=until-found])) {

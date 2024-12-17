@@ -8,7 +8,7 @@
                                         style="background: rgb(51, 255, 87); font-family: ClashDisplay-Semibold;">S
                                     </div><button class="absolute right-10 top-10" fdprocessedid="3cbwdh"
                                         id="profileShow"><img alt="Edit Icon" loading="lazy" width="28" height="28"
-                                            decoding="async" data-nimg="1" src="./assets/icons/pencil.svg"
+                                            decoding="async" data-nimg="1" src="{{ asset('') }}upnl/_next/static/assets/icons/pencil.svg"
                                             style="color: transparent;"></button>
                                     <div class="mx-auto w-full text-primary text-[28px] font-semibold "
                                         style="font-family: ClashDisplay-Semibold;">sahil dewan</div>
@@ -22,7 +22,7 @@
                                             fdprocessedid="sf3iu" id="show1">Change Transaction Password</button></div>
                                 </div>
                             </div>
-                            
+                            <form action="" >
                             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
                                 style="display: none;" id="popup">
                                 <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
@@ -46,6 +46,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </form>
                             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
                                 style="display: none;" id="popupt">
                                 <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
@@ -96,23 +97,23 @@
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
                         width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-overview.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/_next/static/assets/icons/icon-overview.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Overview</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/_next/static/assets/icons/icon-nodes.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Nodes</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-rewards.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/_next/static/assets/icons/icon-rewards.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Rewards</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-referrals.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/_next/static/assets/icons/icon-referrals.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Referrals</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-wallet.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/_next/static/assets/icons/icon-wallet.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Wallet</span></a><button
                     class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1"

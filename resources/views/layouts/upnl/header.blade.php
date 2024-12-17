@@ -203,6 +203,8 @@
     <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js">
     <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js">
     <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>

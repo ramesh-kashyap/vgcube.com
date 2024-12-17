@@ -1,472 +1,418 @@
-<html lang="en" class="pc" style="font-size: 50px;">
+<div
+                        class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
+                        <div class="w-full mt-10 flex justify-center text-primary">
+                            <div class="w-full max-w-[1440px] rounded-lg">
+                            <div class="max-w-[1920px] w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="bg-white p-5 rounded-[16px] flex flex-col items-left">
+                                        <div class="flex mb-[14px]">
+                                            <div class="bg-green-100 rounded-full p-2"><img alt="Total Rewards Icon"
+                                                    loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                                                    src="./assets/icons/stats_reward.svg" style="color: transparent;"></div>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium mb-1">Total Rewards</h3>
+                                            <div class="flex items-baseline">
+                                                <p class="text-[32px] font-semibold mr-2"
+                                                    style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
+                                                <p class="text-secondary">Points</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-5 rounded-[16px] max-h-[226px] h-full flex flex-col">
+                                        <div class="flex items-center justify-between w-full mb-[14px]">
+                                            <div class="bg-blue-100 rounded-full p-2"><img alt="Today's Rewards Icon"
+                                                    loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                                                    src="./assets/icons/icon_total_rewards.svg" style="color: transparent;">
+                                            </div><button disabled=""
+                                                class="bg-[#171717] rounded-[30px] px-[20px] py-2 text-white"
+                                                style="opacity: 0.5;">Claim</button>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium mb-1">Claimable Rewards</h3>
+                                            <div class="flex items-baseline">
+                                                <p class="text-[32px] font-semibold mr-2"
+                                                    style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
+                                                <p class="text-secondary">Points</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-5 h-full rounded-[16px] flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex justify-between items-center mb-[14px]">
+                                                <h3 class="text-[20px] font-medium text-primary">Referrals</h3><button
+                                                    class="text-sm flex items-center h-[32px] px-4 py-1 rounded-[22px] bg-[#F1F1F1]"><img
+                                                        alt="Filter Icon" loading="lazy" width="20" height="20"
+                                                        decoding="async" data-nimg="1" src="./assets/icons/users.svg"
+                                                        style="color: transparent;">
+                                                    <p class="pl-3 font-semibold text-[16px]">0</p>
+                                                </button>
+                                            </div>
+                                        </div><button
+                                            class="flex rounded-[24px] justify-center items-center align-center border border-[#F1F1F1] text-[#373737] bg-[#F9F9F9] h-[36px] py-2 px-3"
+                                            style="font-family: ClashDisplay-Semibold;">
+                                            <p class="mr-3">3CUODQTCSIG2</p><img alt="Filter Icon" loading="lazy" width="16"
+                                                height="16" decoding="async" data-nimg="1"
+                                                src="./assets/icons/copy_clipboard.svg" style="color: transparent;">
+                                        </button><button class="mt-1 text-[#00C076] font-medium">Copy referral link</button>
+                                    </div>
+                                </div>
 
-<head>
-    <meta charset="utf-8">
-    <title>@lang('Team')</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
-    <link rel="icon" href="/logo1.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="renderer" content="webkit">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="google" content="notranslate">
-    <script>
-        window.addEventListener("error", function (event) {
-            if (event.message.indexOf("Unexpected token '<'") > -1) {
-                location.reload();
-            }
-        });
-        window.onload = function () {
-            document.addEventListener("touchstart", function (event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            });
-            var lastTouchEnd = 0;
-            document.addEventListener(
-                "touchend",
-                function (event) {
-                    var now = new Date().getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                },
-                false
-            );
-            document.addEventListener("gesturestart", function (event) {
-                event.preventDefault();
-            });
-        };
+                                <div class="flex justify-between mb-4 items-center">
+                                    <div class="relative"><button class="px-3 h-[34px] bg-white rounded-full shadow"
+                                            fdprocessedid="pwt0f"><img alt="Filter Icon" loading="lazy" width="16"
+                                                height="16" decoding="async" data-nimg="1"
+                                                src="./assets/icons/bars-filter.svg"
+                                                style="color: transparent;"></button></div>
+                                </div>
+                                <div class="bg-white mb-3 p-4 rounded-[16px] font-semibold text-gray-600 text-center">
+                                    <div class="hidden md:grid grid-cols-5 lg:grid-cols-5">
+                                        <div class="text-left">Genration Data</div>
+                                        <div class="hidden lg:inline-block">Numbers Users</div>
+                                        <div>Cumlative Income</div>
+                                        <div>Cumlative Withdrawl</div>
+                                        <div>Cumlative Yield</div>
+                                        
+                                    </div>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden">
+                                        <div class="text-left">Team Genration</div>
+                                        <div class="text-right">Total Members</div>
+                                        <div class="text-right hidden sm:block">Today Rewards</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div
+                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">First generation data</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team1total}}/{{$gen_team1total}}</p>
+                                            <div class="flex justify-center"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team1Recharge,1)}}</span></div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team1Withdraw,2)}}</p>
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">{{number_format($gen_team1Earning,2)}}</p>
+                                            </div>
+                                           
+                                        </div>
+                                        
 
-        if ("standalone" in window.navigator && window.navigator.standalone) {
-            var noddy,
-                remotes = false;
-            document.addEventListener(
-                "click",
-                function (event) {
-                    noddy = event.target;
-                    while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-                        noddy = noddy.parentNode;
-                    }
-                    if (
-                        "href" in noddy &&
-                        noddy.href.indexOf("http") !== -1 &&
-                        (noddy.href.indexOf(document.location.host) !== -1 || remotes)
-                    ) {
-                        event.preventDefault();
-                        document.location.href = noddy.href;
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('First generation data')</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team1total}}/{{$gen_team1total}}</span></div>
+                                            <!-- <div class="text-right hidden sm:block">
+                                                <p class="text-lg font-semibold"><span>0pt</span></p>
+                                                <p class="text-xs">Total: <span>0pt</span></p>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Second generation data')</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team2total}}/{{$gen_team2total}}</p>
+                                            <div class="flex justify-center"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team2Recharge,1)}}</span></div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team2Withdraw,2)}}</p>
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0
+                                                {{number_format($gen_team2Earning,2)}}</p>
+                                            </div>
+                                           
+                                        </div>
+                                        
+
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Second generation data')</p>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team2total}}/{{$gen_team2total}}</span></div>
+                                            <div class="text-right hidden sm:block">
+                                                <p class="text-lg font-semibold"><span>0pt</span></p>
+                                                <p class="text-xs">Total: <span>0pt</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Third generation data')</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team3total}}/{{$gen_team3total}}</p>
+                                            <div class="flex justify-center"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team3Recharge,1)}}</span></div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team3Withdraw,2)}} </p>
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0
+                                                {{number_format($gen_team3Earning,2)}}</p>
+                                            </div>
+                                           
+                                        </div>
+                                        
+
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Third generation data')</p>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team3total}}/{{$gen_team3total}}</span></div>
+                                            <div class="text-right hidden sm:block">
+                                                <p class="text-lg font-semibold"><span>0pt</span></p>
+                                                <p class="text-xs">Total: <span>0pt</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Fourth generation data')</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team4total}}/{{$gen_team4total}}</p>
+                                            <div class="flex justify-center"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team4Recharge,1)}}</span></div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team4Withdraw,2)}} </p>
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0
+                                                {{number_format($gen_team4Earning,2)}}</p>
+                                            </div>
+                                           
+                                        </div>
+                                        
+
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Fourth generation data')</p>
+                                                    <!-- <p class="text-xs  text-[#999999] ">Telegram Node</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team4total}}/{{$gen_team4total}}</span></div>
+                                            <div class="text-right hidden sm:block">
+                                                <p class="text-lg font-semibold"><span>0pt</span></p>
+                                                <p class="text-xs">Total: <span>0pt</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
+                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Fifth generation data')</p>
+                                                   
+                                                </div>
+                                            </div>
+                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team5total}}/{{$gen_team5total}}</p>
+                                            <div class="flex justify-center"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team5Recharge,1)}}</span></div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team5Withdraw,2)}}</p>
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0
+                                                {{number_format($gen_team5Earning,2)}}</p>
+                                            </div>
+                                           
+                                        </div>
+                                        
+
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+                                            <div class="flex items-center space-x-3">
+                                                <div
+                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                                    <i class="fas fa-arrow-right"></i></div>
+                                                <div>
+                                                    <p class="text-sm font-medium">@lang('Fifth generation data')</p>
+                                                    <!-- <p class="text-xs  text-[#999999] ">Telegram Node</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end"><span
+                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team5total}}/{{$gen_team5total}}</span></div>
+                                            <div class="text-right hidden sm:block">
+                                                <p class="text-lg font-semibold"><span>0pt</span></p>
+                                                <p class="text-xs">Total: <span>0pt</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
+                        width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="./assets/icons/icon-overview.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+                        src="./assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-green-500">Nodes</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="./assets/icons/icon-rewards.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="./assets/icons/icon-referrals.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="./assets/icons/icon-wallet.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Wallet</span></a><button
+                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+                        srcset="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
+                        src="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
+                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
+        </div>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">
+        {
+            "props": {
+                "pageProps": {
+                    "__lang": "en",
+                    "__namespaces": {
+                        "common": {
+                            "logout": "Logout",
+                            "menu": "Menu",
+                            "overview": "Overview",
+                            "my_nodes": "Nodes",
+                            "rewards": "Rewards",
+                            "wallet": "Wallet",
+                            "referrals": "Referrals",
+                            "tasks": "Tasks",
+                            "profile": "Profile",
+                            "follow_us": "Follow Us",
+                            "hello": "Hello",
+                            "referred": "Referred",
+                            "total_rewards": "Total Rewards",
+                            "points": "Points",
+                            "today_rewards": "Today Rewards",
+                            "network_summary_title": "Network",
+                            "manage": "Manage",
+                            "network_differently": "Network Difficulty",
+                            "node_online": "Node online",
+                            "reward_stats": "Reward Stats",
+                            "mining": "Mining",
+                            "daily": "Daily",
+                            "monthly": "Monthly",
+                            "please_enter_friend_email": "Please enter the email of your friend",
+                            "invalid_friend_email": "Invalid the email of your friend"
+                        }
                     }
                 },
-                false
-            );
+                "__N_SSG": true
+            },
+            "page": "/connect",
+            "query": {},
+            "buildId": "nocaBKNJml-nPe7WJbWSK",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": ["en", "ru"],
+            "defaultLocale": "en",
+            "scriptLoader": []
         }
-
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <script id="_next-ga-init" data-nscript="afterInteractive">
+        window['dataLayer'] = window['dataLayer'] || [];
+
+        function gtag() {
+            window['dataLayer'].push(arguments);
         }
+        gtag('js', new Date());
 
-        html,
-        body {
-            width: 100%;
-            background-color: #000;
-        }
+        gtag('config', 'G-5PPR32GMM8');
+    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-5PPR32GMM8" id="_next-ga"
+        data-nscript="afterInteractive"></script>
+    <next-route-announcer>
+        <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+            style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+            Nodes - Meshchain</p>
+    </next-route-announcer>
+    <script src="./_next/static/chunks/pages/index-ee3997ecd6058818.js"></script>
+    <script src="./_next/static/chunks/180-23154d61c0670ef4.js"></script>
+    <script src="./_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>
+    <script src="./_next/static/chunks/pages/rewards-68123406f92ce1f1.js"></script>
+    <script src="./_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js"></script>
+    <script src="./_next/static/chunks/pages/wallet-65f0dabf677342f6.js"></script>
+    <script src="./_next/static/chunks/pages/profile-6284106fb2e47cd9.js"></script>
+    <script src="./_next/static/chunks/pages/contact-74f7108b54563e66.js"></script>
+    <script src="./_next/static/chunks/568-b59724e58497c3b9.js"></script>
+    <script src="./_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js"></script><span
+        id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+    <script src="./_next/static/chunks/pages/login-be43bc61ed9c8e2b.js"></script>
+    <script src="./_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
+    <script src="./_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script><span id="PING_CONTENT_APS_BALLOON"
+        style="display: none;"></span>
+</body>
 
-    </style>
-    <style>
-blockquote, body, dd, del, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, menu, ol, p, pre, td, textarea, th, ul {
-    margin: 0;
-    padding: 0;
-}
-* {
-    border: none;
-    background: none;
-    box-sizing: border-box;
-    vertical-align: top;
-}
-#app {
-    max-width: 8.5rem;
-    width: 100%;
-    min-height: 100%;
-    word-wrap: break-word;
-    word-break: normal;
-    font-family: Poppins, PingFang SC, Microsoft Yahei, sans-serif;
-}
-.tame .tab[data-v-273cf854] {
-    padding: 0 0 .24rem 0;
-    font-size: .32rem;
-    font-weight: 600;
-}
-.tame .it[data-v-273cf854] {
-    margin-bottom: 1.24rem;
-}
-.tame .name[data-v-273cf854] {
-    border-bottom: .02rem solid hsla(0, 0%, 100%, .1);
-    margin-bottom: .24rem;
-    padding-bottom: .24rem;
-}
-.tame .name img[data-v-273cf854] {
-    height: .32rem;
-    vertical-align: middle;
-    margin-left: .14rem;
-}
-.tame .it .db[data-v-273cf854] {
-    text-align: center;
-}
-.tame .it .db li[data-v-273cf854] {
-    padding: 0 .1rem;
-}
-.tame .it .db .s[data-v-273cf854] {
-    font-size: .28rem;
-    margin-bottom: .16rem;
-    font-weight: 600;
-}
-.tame .it .db li[data-v-273cf854] {
-    padding: 0 .1rem;
-}
-.tame .it .db .s[data-v-273cf854] {
-    font-size: .28rem;
-    margin-bottom: .16rem;
-    font-weight: 600;
-}
-.tame .it .db .n[data-v-273cf854] {
-    color: #929292;
-    font-size: .22rem;
-}
-.tame .it .db li[data-v-273cf854] {
-    padding: 0 .1rem;
-}
-.tame .it[data-v-273cf854] {
-    margin-bottom: 1.24rem;
-}
-
-    </style>
-    <link href="{{asset('')}}assets/static/js/app.83a7756d.1717187934571.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-55f99183.7fd6d71d.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-55f99183.e36ebbe6.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-2a0b1332.9f52f39a.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-2a0b1332.0436ba68.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-f8e2ce82.4965c1ba.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-f8e2ce82.8a913baf.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-273ce16e.debfb5de.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-273ce16e.6f3f099a.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-aef56f2a.f587d975.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-aef56f2a.b3c068cc.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-21a2b91c.0ed7b871.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-21a2b91c.12695023.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-73ab94aa.2e0ec155.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-73ab94aa.70e0e268.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-65aadf8b.a4cef8a6.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-65aadf8b.59fb6a2e.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-67098c77.8b942857.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-67098c77.b8c94109.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-3cbe2e96.30f94eac.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-3cbe2e96.e797acf7.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-17b291de.e7b989c3.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-17b291de.8772eeeb.1717187934571.chunk.js"></script>
-</head>
-
-<body class="mein_cn">
-    <div id="app" class="applang">
-        <div data-v-757d6f7f="" class="home">
-            <div data-v-cfc9a7fc="" data-v-757d6f7f="" class="page">
-                <div data-v-cfc9a7fc="" class="headers">
-                    <div data-v-397da544="" data-v-757d6f7f="" class="head" data-v-cfc9a7fc="">
-                        <div data-v-397da544="" class="container flex">
-                            <div data-v-397da544="" class="back"><a href="{{route('user.account')}}" style="color:#fff;"><i data-v-397da544=""
-                                    class="van-icon van-icon-arrow-left">
-                                    <!----></i></a></div>
-                            <!---->
-                            <div data-v-397da544="" class="name tac">@lang('My team') </div>
-                            <div data-v-397da544="" class="flex1"></div>
-                            <!---->
-                            <!---->
-                            <!---->
-                            <div data-v-397da544="" class="head_right"></div>
-                        </div>
-                    </div>
-                </div>
-                <div data-v-cfc9a7fc="" id="scroll" class="content-container">
-                    <div data-v-cfc9a7fc="" id="content" class="content-scroll">
-                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="container">
-                            <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="totalBox">
-                                <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">@lang('Total Yield')</div>
-                                <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> {{number_format($totalLevelIncome,2)}} USDT </div>
-                            </div>
-                            <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="sjfxBox">
-                                <!-- <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="cname">
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">Data Analysis</div>
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> Daily Earning: <span
-                                            data-v-757d6f7f="" data-v-cfc9a7fc="">0</span></div>
-                                </div> -->
-                                <!-- <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="com-1">
-                                    <ul data-v-757d6f7f="" data-v-cfc9a7fc="" class="col-1">
-                                        <li data-v-757d6f7f="" data-v-cfc9a7fc=""><img data-v-757d6f7f=""
-                                                data-v-cfc9a7fc=""
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEUAAAAAw8cAxMkAw8cAxMkAxMoAxMYAxMgAxMgAw88AxMkAxMkAxcgAxMkAwskAxMlKOZAbAAAAD3RSTlMAgO8g4MBwv3AQ97ifoKDWAa9OAAAAk0lEQVQoz2OgGuAU9/9UZoDgM9f/B4I/CJGk/2CgBuMz/ocCAahAPkzgG9QEfZjAJ4gpfP/hIAAsYI8Q+AnkCgruRwh8FxQECvgjBL6ABdYjBD6BBf4jAewC+gj+L+yGxiMEfgMFGBjmIwQ+g13KihA4gN1zDP0wgR+4AoihCcLXQATyfRD/K3Kwp+p/CZxAtVgFAJoc3L76oBkgAAAAAElFTkSuQmCC">New
-                                            member </li>
-                                    </ul>
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="days"> Today <img
-                                            data-v-757d6f7f="" data-v-cfc9a7fc=""
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkAgMAAACcbnALAAAADFBMVEUAAAD///////////84wDuoAAAABHRSTlMAzGZMZ+vIJAAAAEdJREFUGNNjGDhgA8YgcA2Ip4NZVxsYmMLBLNUEBs4IEANIgTggwBTGMLUBonlqUxjUGNXMCCiLMzQBymIKbYDZMg3JvgEEAG9+C4cqfDR2AAAAAElFTkSuQmCC">
-                                    </div>
-                                </div> -->
-                                <!-- <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="tuBiao">
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" _echarts_instance_="ec_1718094184764"
-                                        style="width: 100%; height: 5rem; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;">
-                                        <div
-                                            style="position: relative; width: 385px; height: 250px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-                                            <canvas data-zr-dom-id="zr_0" width="770" height="500"
-                                                style="position: absolute; left: 0px; top: 0px; width: 385px; height: 250px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
-                                            <div
-                                                style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px auto auto 0px !important;">
-                                            </div>
-                                            <div
-                                                style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px 0px auto auto !important;">
-                                            </div>
-                                            <div
-                                                style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto auto 0px 0px !important;">
-                                            </div>
-                                            <div
-                                                style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto 0px 0px auto !important;">
-                                            </div>
-                                        </div>
-                                        <div class=""
-                                            style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(0, 0, 0); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px sans-serif; padding: 10px; top: 0px; left: 0px; transform: translate3d(196px, 139px, 0px); border-color: rgb(0, 0, 0); pointer-events: none; visibility: hidden; opacity: 0;">
-                                            <span style="color:#fff;">
-                                                New member</span>
-                                            <p style="color:#fff">0 People</p>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <ul data-v-757d6f7f="" data-v-cfc9a7fc="" class="com-2">
-                                    <li data-v-757d6f7f="" data-v-cfc9a7fc="">
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">New revenue </div>
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s">0 U</div>
-                                    </li>
-                                    <li data-v-757d6f7f="" data-v-cfc9a7fc="">
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">New member</div>
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> 0<a href="{{route('user.list')}}"><img data-v-757d6f7f=""
-                                                data-v-cfc9a7fc=""
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAMAAACP+FljAAAAM1BMVEWl/30AAACn/32k/32m/36m/36d/3al/3+n/4Cn/3ym/32m/36n/4CZ/4Cl/32q/46m/325gAPAAAAAEHRSTlMzAJks5U0GMCAc8lkTCrMJhzE5swAAALVJREFUOMuNk1EOhCAMBR8LtEVx1/ufdvtBUlsNOL8zShMK0oJr0CUzwFn6U0CNYQjFoCHQXEAZNzJZcAwfimME9n0saATmY6ESYb76qX5SJMKVcm47DNJAQuCKpgEc1Rec0DEtOgTTQpAxLTLGFe0f43tawTZ9YIPxGBTA/aOGI0od+nFI86pl6lX34Pft6lUnnnkkhG0s3sv9up0HrRZmtXLLpV2s/W/9cN4/PYUEBjd6/fz/ZucIv4aUi7oAAAAASUVORK5CYII="></a>
-                                        </div>
-                                    </li>
-                                    <li data-v-757d6f7f="" data-v-cfc9a7fc="">
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">Vaild</div>
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> 0 </div>
-                                    </li>
-                                </ul> -->
-                            </div>
-                            <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="teamData">
-                                <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="cname">
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">@lang('Team data')</div>
-                                    <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"><span data-v-757d6f7f=""
-                                            data-v-cfc9a7fc=""><a href="{{route('user.list')}}" style="color:#fff;">@lang('Team List')</a></span></div>
-                                </div>
-                                <ul data-v-757d6f7f="" data-v-cfc9a7fc="" class="com-2" style="background: linear-gradient(92deg, #55B2C2 1.36%, #fff 103.37%);">
-                                    <li data-v-757d6f7f="" data-v-cfc9a7fc="">
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">@lang('Total member')</div>
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> {{$totalTeam}}<a href="{{route('user.list')}}" style="color:#fff;"><img data-v-757d6f7f=""
-                                                data-v-cfc9a7fc=""
-                                                src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}"></a>
-                                        </div>
-                                    </li>
-                                    <li data-v-757d6f7f="" data-v-cfc9a7fc="">
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="n">@lang('Total vaild')</div>
-                                        <div data-v-757d6f7f="" data-v-cfc9a7fc="" class="s"> {{$ActivetotalTeam}}<a href="{{route('user.list')}}?search=Active" style="color:#fff;"><img data-v-757d6f7f=""
-                                                data-v-cfc9a7fc=""
-                                                src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}"></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="tame">
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="tab"> @lang('Five generations data') </div>
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="it">
-                                    
-                                    <a href="{{route('user.list')}}?selected_level=1" style="color:#fff;">
-                                    <div data-v-273cf854="" data-v-cfc9a7fc="" class="name">@lang('First generation data')<img
-                                            data-v-273cf854="" data-v-cfc9a7fc=""
-                                            src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}">
-                                    </div>
-                                    </a>
-                                    <!---->
-                                    <!---->
-                                    <ul data-v-273cf854="" data-v-cfc9a7fc="" class="db">
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{$active_gen_team1total}}/{{$gen_team1total}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Number of users')</div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team1Recharge,1)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative recharge')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s"> {{number_format($gen_team1Withdraw,2)}} </div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative withdrawal')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s"> {{number_format($gen_team1Earning,2)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative Yield')
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="it">
-                                    <!---->
-                                       <a href="{{route('user.list')}}?selected_level=2" style="color:#fff;">
-                                    <div data-v-273cf854="" data-v-cfc9a7fc="" class="name"> @lang('Second generation data')<img
-                                            data-v-273cf854="" data-v-cfc9a7fc=""
-                                            src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}">
-                                    </div>
-                                    </a>
-                                    <!---->
-                                    <ul data-v-273cf854="" data-v-cfc9a7fc="" class="db">
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{$active_gen_team2total}}/{{$gen_team2total}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Number of users')</div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team2Recharge,1)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative recharge')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">  {{number_format($gen_team2Withdraw,2)}}  </div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative withdrawal')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team2Earning,2)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative Yield')
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="it">
-                                    <!---->
-                                    <!---->
-                                       <a href="{{route('user.list')}}?selected_level=3" style="color:#fff;">
-                                    <div data-v-273cf854="" data-v-cfc9a7fc="" class="name">@lang('Third generation data')<img
-                                            data-v-273cf854="" data-v-cfc9a7fc=""
-                                            src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}">
-                                    </div>
-                                    </a>
-                                    <ul data-v-273cf854="" data-v-cfc9a7fc="" class="db">
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{$active_gen_team3total}}/{{$gen_team3total}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Number of users')</div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team3Recharge,1)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative recharge')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s"> {{number_format($gen_team3Withdraw,2)}}  </div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative withdrawal')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team3Earning,2)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative Yield')
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="it">
-                                    <!---->
-                                    <!---->
-                                       <a href="{{route('user.list')}}?selected_level=4" style="color:#fff;">
-                                    <div data-v-273cf854="" data-v-cfc9a7fc="" class="name">@lang('Fourth generation data')<img
-                                            data-v-273cf854="" data-v-cfc9a7fc=""
-                                            src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}">
-                                    </div>
-                                    </a>
-                                    <ul data-v-273cf854="" data-v-cfc9a7fc="" class="db">
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{$active_gen_team4total}}/{{$gen_team4total}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Number of users')</div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team4Recharge,1)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative recharge')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s"> {{number_format($gen_team4Withdraw,2)}}  </div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative withdrawal')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team4Earning,2)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative Yield')
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                  
-                                <div data-v-273cf854="" data-v-cfc9a7fc="" class="it">
-                                    <!---->
-                                    <!---->
-                                    <a href="{{route('user.list')}}?selected_level=4" style="color:#fff;">
-                                    <div data-v-273cf854="" data-v-cfc9a7fc="" class="name">@lang('Fifth generation data')<img
-                                            data-v-273cf854="" data-v-cfc9a7fc=""
-                                            src="{{asset('assets/static/img/icons8-back-arrow-50.png')}}">
-                                    </div>
-                                    </a>
-                                    <ul data-v-273cf854="" data-v-cfc9a7fc="" class="db">
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{$active_gen_team5total}}/{{$gen_team5total}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Number of users')</div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team5Recharge,1)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative recharge')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s"> {{number_format($gen_team5Withdraw,2)}}  </div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative withdrawal')
-                                            </div>
-                                        </li>
-                                        <li data-v-273cf854="" data-v-cfc9a7fc="">
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="s">{{number_format($gen_team5Earning,2)}}</div>
-                                            <div data-v-273cf854="" data-v-cfc9a7fc="" class="n">@lang('Cumulative Yield')
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-
-
-                            </div>
-                        </div>
-                        <div data-v-4c14e1cc="" data-v-757d6f7f="" data-v-cfc9a7fc="">
-                            <!---->
-                        </div>
-                    </div>
-                </div>
-            @include('layouts.upnl.footer')
+</html>
