@@ -164,11 +164,11 @@
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
                                     style="color: transparent;"><span class="ml-4">Referrals</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/wallet"><img alt="wallet Icon" loading="lazy" width="16" height="16"
+                                href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg"
                                     style="color: transparent;"><span class="ml-4">Wallet</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/profile"><img alt="profile Icon" loading="lazy" width="16" height="16"
+                                href="{{route('user.profile-setting')}}"><img alt="profile Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-profile.svg"
                                     style="color: transparent;"><span class="ml-4">Profile</span></a>
                         </nav>
@@ -204,21 +204,18 @@
                                     <div class="flex items-center rounded-full pl-3 text-sm"><img alt="User Avatar"
                                             loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
                                             class="mr-3" src="{{ asset('') }}upnl/assets/icons/icon_user_add.svg"
-                                            style="color: transparent;"><span>Referred</span></div>
-                                    <div
-                                        class="flex ml-3 items-center justify-center rounded-full bg-gray-200 min-w-8 h-8 text-xs px-2">
-                                        0</div>
-                                </a><a class="flex h-[38px] bg-white p-1 rounded-full md:mr-3" title="BNB Balance"
-                                    href="/wallet">
-                                    <div class="flex mx-2 items-center justify-center font-bold">0</div><img alt="BNB"
-                                        loading="lazy" width="30" height="30" decoding="async" data-nimg="1"
-                                        src="{{ asset('') }}upnl/assets/icons/icon_bnb_3.svg" style="color: transparent;">
+                                            style="color: transparent;"><span>  {{Auth::user()->username}}
+                                            </span></div>
+                                  
+                                    <div class="flex mx-2 items-center justify-center font-bold"></div>
+                                  
                                 </a></div>
                             <div class="relative flex items-center space-x-2 font-semibold"><span
-                                    class="hidden lg:inline text-xl">Hello, sahil dewan!</span><button
+                                    class="hidden lg:inline text-xl">Hello, {{Auth::user()->name}}!
+                                    </span><button
                                     fdprocessedid="vcru83">
-                                    <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
-                                        style="background: rgb(51, 255, 87);">S</div>
+                                    <!-- <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
+                                        style="background: rgb(51, 255, 87);">S</div> -->
                                 </button>
                                 <div class="hidden md:inline-block">
                                     <div class="relative inline-block text-[16px] font-bold"><button

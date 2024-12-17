@@ -12,11 +12,13 @@
                                         </div>
                                     </div>
                                     <div class="text-left">
-                                        <h3 class="font-medium mb-1">Today Rewards</h3>
+                                        <h3 class="font-medium mb-1">My Balance</h3>
                                         <div class="flex flex-row md:flex-col xl:flex-row items-baseline">
                                             <p class="text-[40px] md:text-[36px] lg:text-[40px] mr-2 font-semibold"
-                                                style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
-                                            <p class="text-secondary">Points</p>
+                                                style="font-family: ClashDisplay-Semibold;"><span style="
+    font-size: 25px;
+"> {{ number_format(Auth::user()->available_balance(), 2) }} USDT</span></p>
+                                            <p class="text-secondary"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -28,11 +30,14 @@
                                         </div>
                                     </div>
                                     <div class="text-left">
-                                        <h3 class="font-medium mb-1">Total Rewards</h3>
+                                        <h3 class="font-medium mb-1"> Total invested </h3>
                                         <div class="flex flex-row md:flex-col xl:flex-row items-baseline">
                                             <p class="text-[40px] md:text-[36px] lg:text-[40px] font-semibold mr-2"
-                                                style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
-                                            <p class="text-secondary">Points</p>
+                                                style="font-family: ClashDisplay-Semibold;">
+                                                <span style="
+    font-size: 25px;
+">{{ number_format(Auth::user()->investment->sum('amount'), 2) }}</span></p>
+                                            <p class="text-secondary"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -40,19 +45,23 @@
                                     class="bg-white p-6 max-h-[226px] h-full col-span-full lg:col-span-1 rounded-[16px] flex flex-col justify-between">
                                     <div>
                                         <div class="flex justify-between items-center mb-4">
-                                            <h3 class="text-[20px] font-medium text-black">Network</h3><a
+                                            <h3 class="text-[20px] font-medium text-black">  Total withdrawn</h3><a
                                                 href="/nodes"><button
                                                     class="text-sm flex items-center px-3 py-1 rounded-[22px] bg-[#F1F1F1]"
                                                     fdprocessedid="bjee6h">Manage <span
                                                         class="ml-1">→</span></button></a>
                                         </div>
                                     </div>
-                                    <p class="h-full text-[12px] flex items-center text-center text-secondary">No nodes
-                                        connected. See the guide below to start as a resource provider!</p>
+                                    <p class="text-[40px] md:text-[36px] lg:text-[40px] font-semibold mr-2"
+                                                style="font-family: ClashDisplay-Semibold;">
+                                                <span style="
+    font-size: 25px;
+">{{ number_format(Auth::user()->withdraw(), 2) }}USDT</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                            
                             <div class="bg-white p-5 rounded-[16px] mt-6 col-span-1 lg:col-span-8">
                                 <div class="flex justify-between items-center mb-4">
                                     <h3 class="text-md font-semibold text-black">Reward Stats</h3>
@@ -81,6 +90,9 @@
                                             class="text-gray-600">Tasks</span></div>
                                 </div>
                             </div>
+
+
+
                             <div class="col-span-1 lg:col-span-4 bg-white rounded-[16px] mt-6 p-5" style="height:55px">
                                 <h2 class="text-[20px] font-medium text-primary text-center mb-3">Become Resource
                                     Provider</h2>

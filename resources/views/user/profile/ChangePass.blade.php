@@ -1,316 +1,239 @@
-<html lang="en" class="pc" style="font-size: 50px;">
+<style>
+  .input-container {
+    display: flex; /* Arrange input and span horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between input and span */
+  }
 
-<head>
-    <meta charset="utf-8">
-    <title>@lang('Change password')</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
-    <link rel="icon" href="/logo1.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="renderer" content="webkit">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="google" content="notranslate">
-    <script>
-        window.addEventListener("error", function(event) {
-            if (event.message.indexOf("Unexpected token '<'") > -1) {
-                location.reload();
-            }
-        });
-        window.onload = function() {
-            document.addEventListener("touchstart", function(event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            });
-            var lastTouchEnd = 0;
-            document.addEventListener(
-                "touchend",
-                function(event) {
-                    var now = new Date().getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                },
-                false
-            );
-            document.addEventListener("gesturestart", function(event) {
-                event.preventDefault();
-            });
-        };
+  .input-field {
+    flex: 1; /* Input takes up remaining space */
+    padding: 10px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 14px; /* Adjust font size */
+  }
 
-        if ("standalone" in window.navigator && window.navigator.standalone) {
-            var noddy,
-                remotes = false;
-            document.addEventListener(
-                "click",
-                function(event) {
-                    noddy = event.target;
-                    while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-                        noddy = noddy.parentNode;
-                    }
-                    if (
-                        "href" in noddy &&
-                        noddy.href.indexOf("http") !== -1 &&
-                        (noddy.href.indexOf(document.location.host) !== -1 || remotes)
-                    ) {
-                        event.preventDefault();
-                        document.location.href = noddy.href;
-                    }
-                },
-                false
-            );
-        }
-    </script>
-    <style>
-        .item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
+  .code-btn {
+    padding: 8px 16px;
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 14px; /* Match input font size */
+    cursor: pointer; /* Pointer on hover */
+    text-align: center;
+  }
 
-        .cname {
-            margin-bottom: 5px;
-        }
+ 
 
-        .val {
-            position: relative;
-        }
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .input-container {
+      flex-direction: column; /* Stack input and button vertically */
+      align-items: stretch; /* Stretch to container width */
+    }
 
-        .input-container {
-            display: flex;
-            width: 100%;
-        }
+    .code-btn {
+      width: 100%; /* Full-width button */
+      text-align: center;
+    }
+  }
+</style>    
 
-        input[type="password"] {
-            width: 100%;
-            padding-right: 70px;
-            /* Adjust the padding to fit the button */
-            box-sizing: border-box;
-        }
 
-        .verify-button {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            border: none;
-            background-color: #4CAF50;
-            /* Adjust color as needed */
-            color: white;
-            padding: 0 15px;
-            cursor: pointer;
-        }
-    </style>
 
-    <style>
-        .item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
 
-        .cname {
-            margin-bottom: 5px;
-        }
 
-        .input-container {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
 
-        input[type="password"] {
-            flex: 1;
-            padding-right: 100px;
-            /* Adjust the padding to fit the button */
-        }
 
-        .verify-button {
-            position: absolute;
-            right: 0;
-            height: 100%;
-            padding: 0 10px;
-        }
-    </style>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            background-color: #000;
-        }
-    </style>
-    <link href="{{ asset('') }}assets/static/js/app.83a7756d.1717187934571.js" rel="preload" as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/css/app.23ae5dc0.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vant.d14f5539.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vendors.794edbf9.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vant.d14f5539.css" rel="stylesheet">
-    <link href="{{ asset('') }}assets/static/css/chunk-vendors.794edbf9.css" rel="stylesheet">
-    <link href="{{ asset('') }}assets/static/css/app.23ae5dc0.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-aef56f2a.f587d975.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-aef56f2a.b3c068cc.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-2a0b1332.9f52f39a.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-2a0b1332.0436ba68.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-f8e2ce82.4965c1ba.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-f8e2ce82.8a913baf.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-21a2b91c.0ed7b871.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-21a2b91c.12695023.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-4d56d011.d2239d8d.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-4d56d011.55574f9a.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-273ce16e.debfb5de.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-273ce16e.6f3f099a.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-a46085d6.d2823003.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-a46085d6.6a4896cb.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-97c0768a.2ab4315e.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-97c0768a.b8196644.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-f31ad6d4.2882463c.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-f31ad6d4.836d485b.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-0830ec22.59462d6e.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-0830ec22.94ec9a30.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-73ab94aa.2e0ec155.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-73ab94aa.70e0e268.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-65aadf8b.a4cef8a6.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-65aadf8b.59fb6a2e.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-67098c77.8b942857.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-67098c77.b8c94109.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-529a9802.d4a866bb.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-529a9802.18a0309a.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-2a326f81.d6e1e630.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-2a326f81.29676938.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-04a90ad1.aa2f317d.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-04a90ad1.28c21b1a.1717187934571.chunk.js">
-    </script>
-</head>
-
-<body class="main_en">
-    <div id="app" class="applang">
-        <div data-v-cfc9a7fc="" data-v-9d2ee7be="" class="page">
-            <div data-v-cfc9a7fc="" class="headers">
-                <div data-v-397da544="" data-v-9d2ee7be="" class="head" data-v-cfc9a7fc="">
-                    <div data-v-397da544="" class="container flex">
-                        <div data-v-397da544="" class="back"><a href="{{ route('user.profile') }}"
-                                style="color:#fff;"><i data-v-397da544="" class="van-icon van-icon-arrow-left">
-                                    <!----></i></a></div>
-                        <!---->
-                        <div data-v-397da544="" class="name tac">@lang('Change password') </div>
-                        <div data-v-397da544="" class="flex1"></div>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <div data-v-397da544="" class="head_right"></div>
-                    </div>
-                </div>
-            </div>
-            <div data-v-cfc9a7fc="" id="scroll" class="content-container">
-                <div data-v-cfc9a7fc="" id="content" class="content-scroll">
-                    <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="container">
-                        <!-- <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">Email</div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val"><input data-v-9d2ee7be=""
-                                    data-v-cfc9a7fc="" type="text" placeholder="Email" ></div>
-                        </div> -->
-                        <!-- <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">Verification code</div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val flex"><input data-v-9d2ee7be=""
-                                    data-v-cfc9a7fc="" type="text" placeholder="Please enter the verification code"
-                                    class="flex1">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="str"> Send </div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="str" style="display: none;">
-                                    <div data-v-9d2ee7be="" class="van-count-down" data-v-cfc9a7fc=""><span
-                                            data-v-9d2ee7be="" class="c-fff">0 <var data-v-9d2ee7be="">s</var></span>
-                                    </div>
+                    <div
+                        class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
+                        <div class="w-full mt-10 flex justify-center text-primary">
+                            <div class="max-w-[1920px] w-full">
+                                <div
+                                    class="w-full relative max-w-[669px] pb-[46px] text-center pt-[36px] bg-[#FFF] rounded-[16px] mx-auto mt-[100px]">
+                                    <div class="w-[100px] h-[100px] rounded-full mx-auto text-[72px] font-semibold"
+                                        style="background: rgb(51, 255, 87); font-family: ClashDisplay-Semibold;">S
+                                    </div><button class="absolute right-10 top-10" fdprocessedid="3cbwdh"
+                                        id="profileShow"><img alt="Edit Icon" loading="lazy" width="28" height="28"
+                                            decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/pencil.svg"
+                                            style="color: transparent;"></button>
+                                    <div class="mx-auto w-full text-primary text-[28px] font-semibold "
+                                        style="font-family: ClashDisplay-Semibold;">sahil dewan</div>
+                                    <div class="mx-auto w-full text-secondary text-sm mb-[60px]">
+                                        sahildewan2323@gmail.com</div>
+                                        <div class="flex flex-wrap md:flex-nowrap mx-auto w-full justify-center">
+    <button
+        class="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 mb-2"
+        id="show">Change Password</button>
+        <a
+    class="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 flex items-center justify-center"
+    href="{{route('user.tpassword')}}">Change Password</a>
+</div>
                                 </div>
+                                
+
+                          
+
+
+
+
                             </div>
-                        </div> -->
-                        <form method="post" action="{{ route('user.edit-password') }}">
-                            {{ csrf_field() }}
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Email')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val"><input data-v-9d2ee7be=""
+                            <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                                style="display: none;" id="popup">
+
+                                <form method="post" action="{{ route('user.edit-password') }}">
+                                {{ csrf_field() }}
+                                <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
+                                    <h2 class="text-lg font-semibold">Change Password</h2>
+                                    <div class="mb-4 mt-8 text-left">
+                                        <label class="block text-gray-600 mb-1">Email
+                                            </label>
+                                            <input data-v-9d2ee7be=""
                                         data-v-cfc9a7fc="" type="" placeholder="Please enter the new password"
-                                        value="{{ Auth::user()->email }}" id="emailId" name="emailId"></div>
-                            </div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Verification Code')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val">
-                                    <div class="input-container">
-                                        <input data-v-9d2ee7be="" data-v-cfc9a7fc="" type="text" style="width: 81%;" name="code"
-                                            id="code" placeholder="Enter verification code" maxlength="">
-                                      
-                                            <span class="code-btn">@lang('Get Code')</span>
-                                    </div>
-                                </div>
-                            </div>
+                                        value="{{ Auth::user()->email }}" id="emailId" name="emailId" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]">
+                                        </div>
+                                    <div class="mb-4 mt-8 text-left">
+                                        <label class="block text-gray-600 mb-1">Verification Code
+                                            </label>
+                                            <div class="input-container" style="position: relative; width: 100%;">
+  <input 
+    data-v-9d2ee7be="" 
+    data-v-cfc9a7fc="" 
+    type="text"  
+    name="code"
+    placeholder="Enter verification code" 
+    maxlength="" 
+    class="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20 "
+    style="width: 100%;"
+  >
+  <span 
+    class="code-btn" 
+    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;">
+    @lang('Get Code')
+  </span>
+</div>
 
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('New password')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val"><input data-v-9d2ee7be=""
+                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">New 
+                                            Password</label><input data-v-9d2ee7be=""
                                         data-v-cfc9a7fc="" type="password"
-                                        placeholder="Please enter the new password" name="password"></div>
-                            </div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Confirm password')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val inp"><input data-v-9d2ee7be=""
+                                        placeholder="Please enter the new password" name="password"  class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>
+
+                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">Confirm 
+                                            Password</label><input data-v-9d2ee7be=""
                                         data-v-cfc9a7fc="" type="password"
                                         placeholder="Enter the password again to confirm"
-                                        name="password_confirmation"></div>
+                                        name="password_confirmation" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>
+
+
+                                    <div class="mt-10"><button
+                                            class="w-full h-[46px] mb-2 px-4 py-2 rounded-[30px] bg-black text-white">Confirm</button>
+                                    </div>
+
+
+                                </div>
+    </form>
                             </div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="err" style="color:red;">
+                            <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                                id="popup2" style="display: none;">
+                                <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
+                                    <h2 class="text-lg font-semibold">Edit Profile</h2>
+                                    <div class="w-[100px] my-10 h-[100px] mx-auto cursor-pointer">
+                                        <div class="w-full h-full rounded-full mx-auto text-[72px] font-semibold"
+                                            style="background: rgb(51, 87, 255); font-family: ClashDisplay-Semibold;">R
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 text-left"><label
+                                            class="block text-gray-600 mb-1">Name</label><input type="text"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"
+                                            placeholder="Enter Full Name" value="Rajnesh Kumar"></div>
+                                    <div class="mt-10"><button
+                                            class="w-full h-[46px] mb-2 px-4 py-2 rounded-[30px] bg-black text-white">Save</button><button
+                                            class="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300"
+                                            id="profileHide">Cancel</button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div data-v-cfc9a7fc="" class="footer">
-                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="container">
-                    <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="go"><button data-v-9d2ee7be=""
-                            type="submit" data-v-cfc9a7fc="" class="btn2">@lang('Confirm')</button></div>
-                </div>
-            </div>
+            <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
+                        width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Nodes</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Wallet</span></a><button
+                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+                        srcset="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
+                        src="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
+                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
         </div>
-        </form>
-        <div data-v-a7d12cfc="" class="global-loading default" style="display: none;">
-            <div data-v-a7d12cfc="" class="global-spinner"><img data-v-a7d12cfc=""
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAMAAAA0X5qLAAAAh1BMVEUAAAAAv44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av46sPT54AAAALHRSTlMA+wXZ+J87JB7ux4lDNRQPCvLq39PNp5BpWRmxgnAvvrnlw5RhT0sqwHRxeP/zXbkAAAGcSURBVDjLjZTXcqtAEAVnyUGIJBAKKFqS7dv//30XsHFJxrD0C0XRxc45TCEDvFsdrvfhxnGWMk1S7c70nI+bZFxdXFC8YG5GVNemxTdte7+3yxUdq4MMMaocsMza6CeSqLRo2A3dffvguPh1WEiDcuWFeN24mSNDdjS85Exs4OLJX7wpyOWJT8A25G+iFMyn2za1jOIAV+kxIU9knDUQ9d8C/EimyH9OXgawNiblrepfXSn8WKax+4wnCEWDC6ptNk5RC9GxgqqNZ1EstXL1tSP/oBQtS1DN5Qp7vbz1sdwu30b0pNAkPIOrd4131E2kAEf0rDqtaJvTY3YDvM+aOS5IH91KrWdUl2LGIhsI9PIDLm2DFmmslT++FyiDu7a5ANV1FoKpkw/gfwUFddDIO7Cl4wqBMf1iRRZJxxb86d5OYCf9fyS/TaYrFcqVeYQK6nmqEQLFPNc7AuZ2lrtYAcEs936kdZdjE97rSAxDEvG8j8wC/E8Zo1Yo/CAv0oyOYKKzN55QWTm9B9WpyGiwyMvFnLbih+M5xjDWf6S2MlzIf04ZAAAAAElFTkSuQmCC"
-                    alt=""></div>
-        </div>
-        <div data-v-e73e51fc="" class="start-page" style="display: none;"><img data-v-e73e51fc=""
-                src="{{ asset('') }}assets/static/img/start.0aabcda5.gif"></div>
     </div>
+    <script id="__NEXT_DATA__" type="application/json">
+        {
+            "props": {
+                "pageProps": {
+                    "__lang": "en",
+                    "__namespaces": {
+                        "common": {
+                            "logout": "Logout",
+                            "menu": "Menu",
+                            "overview": "Overview",
+                            "my_nodes": "Nodes",
+                            "rewards": "Rewards",
+                            "wallet": "Wallet",
+                            "referrals": "Referrals",
+                            "tasks": "Tasks",
+                            "profile": "Profile",
+                            "follow_us": "Follow Us",
+                            "hello": "Hello",
+                            "referred": "Referred",
+                            "total_rewards": "Total Rewards",
+                            "points": "Points",
+                            "today_rewards": "Today Rewards",
+                            "network_summary_title": "Network",
+                            "manage": "Manage",
+                            "network_differently": "Network Difficulty",
+                            "node_online": "Node online",
+                            "reward_stats": "Reward Stats",
+                            "mining": "Mining",
+                            "daily": "Daily",
+                            "monthly": "Monthly",
+                            "please_enter_friend_email": "Please enter the email of your friend",
+                            "invalid_friend_email": "Invalid the email of your friend"
+                        }
+                    }
+                },
+                "__N_SSG": true
+            },
+            "page": "/connect",
+            "query": {},
+            "buildId": "nocaBKNJml-nPe7WJbWSK",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": ["en", "ru"],
+            "defaultLocale": "en",
+            "scriptLoader": []
+        }
+    </script>
 
     <script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
-    @include('partials.notify')
 
     <script>
         $('.code-btn').click(function(e) {
@@ -354,18 +277,58 @@
             });
         });
     </script>
+
+    <script id="_next-ga-init" data-nscript="afterInteractive">
+        window['dataLayer'] = window['dataLayer'] || [];
+
+        function gtag() {
+            window['dataLayer'].push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5PPR32GMM8');
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@4.6.0/dist/echarts.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/app.83a7756d.1717187934571.js"></script>
-    <div class="van-toast van-toast--middle van-toast--success" style="z-index: 2004; display: none;"><i
-            class="van-icon van-icon-success van-toast__icon">
-            <!----></i>
-        <div class="van-toast__text">@lang('Login successful')</div>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#hide").click(function () {
+            $("#popup").hide();
+        });
+
+        $("#show").click(function () {
+            $("#popup").show();
+        });
+        $("#profileHide").click(function () {
+            $("#popup2").hide();
+        });
+
+        $("#profileShow").click(function () {
+            $("#popup2").show();
+        });
+    </script>
+       @include('partials.notify')
+
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-5PPR32GMM8" id="_next-ga"
+        data-nscript="afterInteractive"></script>
+    <next-route-announcer>
+        <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+            style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+            Profile - MeshChain</p>
+    </next-route-announcer>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/index-ee3997ecd6058818.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js"></script><span
+        id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/login-be43bc61ed9c8e2b.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script><span id="PING_CONTENT_APS_BALLOON"
+        style="display: none;"></span>
 </body>
 
 </html>
