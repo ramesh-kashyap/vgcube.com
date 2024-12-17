@@ -6,7 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BuyFund;
 use App\Models\Income;
+use App\Models\User;
+
 use App\Models\Withdraw;
+use App\Models\Fundtransfer;
+
 use App\Models\Investment;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +19,7 @@ use App\Models\CoinpaymentTransaction;
 use Illuminate\Support\Facades\Http;
 
 use Log;
+use Hash;
 use Redirect;
 class AddFund extends Controller
 {
@@ -78,6 +83,18 @@ class AddFund extends Controller
   }
 
 
+
+
+  public function fund_transfer(Request $request)
+  {
+  
+  $user=Auth::user();
+  $this->data['page'] = 'user.fund.transfer-fund';
+  return $this->dashboard_layout();
+  
+  }
+
+
 public function fundHistory(Request $request)
 {
 
@@ -102,6 +119,95 @@ $this->data['page'] = 'user.fund.addFund';
 return $this->dashboard_layout();
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+public function SubmitTransferFund(Request $request)
+{
+
+try{
+        $validation =  Validator::make($request->all(), [
+            // 'code' => 'required',
+            'amount' => 'required|numeric|min:0',
+            'username' => 'required|exists:users,username',
+            'transaction_password' => 'required',
+             
+        ]);
+
+        if($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+
+            return redirect()->route('user.fund_transfer')->withErrors($validation->getMessageBag()->first())->withInput();
+        }
+         
+           $user=Auth::user();
+
+        //   $code = $request->code;
+        
+        //   if (PasswordReset::where('token', $code)->where('email',$user->email)->count() != 1) {
+        //          $notify[] = ['error', 'Invalid token'];
+        //          return redirect()->back()->withNotify($notify);
+        //      }
+
+
+            $available_balance=0;
+            $user_detail=User::where('username',$request->username)->orderBy('id','desc')->limit(1)->first();
+            $available_balance=Auth::user()->FundBalance();
+         
+          $password= $request->transaction_password;
+         if (Hash::check($password, $user->tpassword))
+           {
+         if ($available_balance>=$request->amount) 
+         {
+             $data = [
+                    'transfer_id' =>$user->id,
+                    'transfered_id' => $user_detail->id,
+                    'user_id_from' => $user->username,
+                    'user_id_to' => $user_detail->username,
+                    'amount' => $request->amount,
+                    'transfer_date' => Date("Y-m-d"),         
+                ];
+               $payment =  Fundtransfer::insert($data);
+          
+           $notify[] = ['success','Fund Transfer successfully to  ID '.$user_detail->username];
+              return redirect()->back()->withNotify($notify);
+
+          }   
+          else
+          {
+             return Redirect::back()->withErrors(array('Insufficient Balance in Wallet'));
+          }
+           }
+        else
+        {
+        return Redirect::back()->withErrors(array('Invalid Transaction Password'));
+        }     
+
+       
+              
+
+      }
+       catch(\Exception $e){
+        Log::info('error here');
+        Log::info($e->getMessage());
+        print_r($e->getMessage());
+        die("hi");
+        return  redirect()->route('user.fund_transfer')->withErrors('error', $e->getMessage())->withInput();
+    }
+
+}
+
+
+
 
 
 public function confirmDeposit(Request $request) 

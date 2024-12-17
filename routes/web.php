@@ -129,7 +129,7 @@ Route::post('/wallet_change', [App\Http\Controllers\UserPanel\Profile::class, 'w
 Route::post('/sendCode', [App\Http\Controllers\UserPanel\Profile::class, 'sendCode'])->name('user.send_code');
 
 Route::get('/change-trx-password', [App\Http\Controllers\UserPanel\Profile::class, 'change_trx_password'])->name('user.change-trx-password');
-Route::get('/ChangePass', [App\Http\Controllers\UserPanel\Profile::class, 'change_password'])->name('user.ChangePass');
+Route::get('/profile-setting', [App\Http\Controllers\UserPanel\Profile::class, 'change_password'])->name('user.profile-setting');
 Route::get('/tpassword', [App\Http\Controllers\UserPanel\Profile::class, 'tpassword'])->name('user.tpassword');
 Route::get('/security-password', [App\Http\Controllers\UserPanel\Profile::class, 'ChangeSecurityPass'])->name('user.security-password');
 Route::get('/share', [App\Http\Controllers\UserPanel\Profile::class, 'share'])->name('user.share');
@@ -154,10 +154,13 @@ Route::get('/quality/records', [App\Http\Controllers\UserPanel\Invest::class, 'r
 // add fund
 
 Route::get('/wallet', [App\Http\Controllers\UserPanel\AddFund::class, 'index'])->name('user.wallet');
+Route::get('/fund_transfer', [App\Http\Controllers\UserPanel\AddFund::class, 'fund_transfer'])->name('user.fund_transfer');
+Route::post('/SubmitTransferFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitTransferFund'])->name('user.SubmitTransferFund');
+
 Route::get('/fundpass', [App\Http\Controllers\UserPanel\AddFund::class, 'fundpass'])->name('user.fundpass');
 Route::get('/recharge1', [App\Http\Controllers\UserPanel\AddFund::class, 'fundHistory'])->name('user.recharge1');
 Route::any('/SubmitBuyFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitBuyFund'])->name('user.SubmitBuyFund');
-Route::get('/rechargeFunds', [App\Http\Controllers\UserPanel\AddFund::class, 'fund'])->name('user.fund');
+Route::get('/rechargeFunds', [App\Http\Controllers\UserPanel\AddFund::class, 'fund'])->name('user.rechargeFunds');
 
 // end add fund
 
