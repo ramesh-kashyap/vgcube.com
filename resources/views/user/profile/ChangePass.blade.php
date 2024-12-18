@@ -49,17 +49,24 @@
                         <div class="w-full mt-10 flex justify-center text-primary">
                             <div class="max-w-[1920px] w-full">
                                 <div
-                                    class="w-full relative max-w-[669px] pb-[46px] text-center pt-[36px] bg-[#FFF] rounded-[16px] mx-auto mt-[100px]">
+                                    class="w-full relative max-w-[669px] pb-[46px] text-center pt-[36px] bg-[#FFF]
+                                     rounded-[16px] mx-auto mt-[100px]">
                                     <div class="w-[100px] h-[100px] rounded-full mx-auto text-[72px] font-semibold"
-                                        style="background: rgb(51, 255, 87); font-family: ClashDisplay-Semibold;">S
-                                    </div><button class="absolute right-10 top-10" fdprocessedid="3cbwdh"
-                                        id="profileShow"><img alt="Edit Icon" loading="lazy" width="28" height="28"
-                                            decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/pencil.svg"
-                                            style="color: transparent;"></button>
+                                        style="background: rgb(51, 255, 87); font-family: ClashDisplay-Semibold;">{{substr(Auth::user()->name, 0, 1)}}
+                                    </div>
+                                    
+                                    
+                                    <a href="{{route('user.ChangeMail')}}" class="absolute right-10 top-10" fdprocessedid="3cbwdh"
+   id="profileShow"><img alt="Edit Icon" loading="lazy" width="28" height="28"
+   decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+   style="color: transparent;"></a>
+
+
+                                            
                                     <div class="mx-auto w-full text-primary text-[28px] font-semibold "
-                                        style="font-family: ClashDisplay-Semibold;">sahil dewan</div>
+                                        style="font-family: ClashDisplay-Semibold;">{{Auth::user()->name}}!</div>
                                     <div class="mx-auto w-full text-secondary text-sm mb-[60px]">
-                                        sahildewan2323@gmail.com</div>
+                                    {{Auth::user()->email}}!</div>
                                         <div class="flex flex-wrap md:flex-nowrap mx-auto w-full justify-center">
     <button
         class="rounded-[30px] h-[48px] py-3 px-6 bg-[#F1F1F1] md:mr-2 mb-2"

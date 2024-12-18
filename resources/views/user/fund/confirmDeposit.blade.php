@@ -17,7 +17,7 @@
                                             result in a loss of funds.</p>
                                             <div data-v-b3422e30="" data-v-cfc9a7fc="" id="qrcode" title="{{$walletAddress}}">
         <canvas width="185" height="185" style="display: none;"></canvas>
-        <img alt="Scan me!" src="{{$qr_code}}" style="display: block;">
+        <img alt="Scan me!" src="{{$qr_code}}" style="display: block; width: 178px">
     </div>
                                     </div>
                                     <div class="flex items-center justify-center w-full">

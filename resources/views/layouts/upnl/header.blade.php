@@ -219,7 +219,7 @@
                                 class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
                                     loading="lazy" width="163" height="40" decoding="async" data-nimg="1"
                                     src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg"
-                                    style="color: transparent;"></a><button
+                                    style="color: transparent; width:150px;"></a><button
                                 class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"
                                 fdprocessedid="cgvemq"><img alt="close" loading="lazy" width="40" height="40"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_left.svg"
@@ -237,11 +237,21 @@
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                                 href="/rewards"><img alt="rewards Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg"
-                                    style="color: transparent;"><span class="ml-4">Rewards</span></a><a
+                                    style="color: transparent;"><span class="ml-4">Rewards</span></a>
+                                    
+                                    
+                                    <a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="16" height="16"
+                                href="/referrals">
+                                
+                                <img alt="referrals Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
-                                    style="color: transparent;"><span class="ml-4">Referrals</span></a><a
+                                    style="color: transparent;">
+                                    
+                                    <span class="ml-4">Referrals</span></a>
+                                    
+                                    
+                                    <a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                                 href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg"
@@ -254,14 +264,14 @@
                     </div>
                     <footer class="my-5 px-5 text-sm font-medium text-[#555] hidden md:block">
                         <div class="text-gray-400 text-xs mb-2">FOLLOW US</div><a
-                            class="flex items-center py-2 px-3 mb-4 rounded" href="https://x.com/meshchainai"><img
+                            class="flex items-center py-2 px-3 mb-4 rounded" href="#"><img
                                 alt="X.com Icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
                                 src="{{ asset('') }}upnl/assets/icons/icon_twitter.svg" style="color: transparent;"><span
                                 class="ml-4">X.com</span></a><a class="flex items-center py-2 px-3 mb-4 rounded"
-                            href="https://t.me/MeshchainAi"><img alt="Telegram Icon" loading="lazy" width="16"
+                            href="#"><img alt="Telegram Icon" loading="lazy" width="16"
                                 height="16" decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_telegram_2.svg"
                                 style="color: transparent;"><span class="ml-4">Telegram</span></a><a
-                            class="flex items-center py-2 px-3 mb-4 rounded" href="https://discord.gg/JQ3PYHcdgZ"><img
+                            class="flex items-center py-2 px-3 mb-4 rounded" href="#"><img
                                 alt="Discord Icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
                                 src="{{ asset('') }}upnl/assets/icons/icon_discord.svg" style="color: transparent;"><span
                                 class="ml-4">Discord</span></a>
@@ -276,7 +286,7 @@
                     <div class="flex items-center justify-between py-2 mt-5 px-4 md:px-10 lg:px-10 xl:px-20"><a
                             class="md:hidden" href="/"><img alt="Logo" loading="lazy" width="163" height="40"
                                 decoding="async" data-nimg="1" class="max-w-[156px]"
-                                src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent;"></a>
+                                src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent; width:150px;"></a>
                         <div class="w-full flex flex-row justify-end md:justify-between">
                             <div class="flex items-center h-[38px] text-gray-800 font-medium"><a
                                     class="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="/referrals">

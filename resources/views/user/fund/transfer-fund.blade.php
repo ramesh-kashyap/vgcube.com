@@ -72,7 +72,7 @@
                                             <div
                                                 class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
                                                 <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
+                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
                                                 <p class="font-medium">Connect Accounts</p>
@@ -88,7 +88,7 @@
                                             <div
                                                 class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
                                                 <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
+                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
                                                 <p class="font-medium">Connect Accounts</p>
@@ -104,7 +104,7 @@
                                             <div
                                                 class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
                                                 <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
+                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
                                                 <p class="font-medium">Connect Accounts</p>
@@ -124,23 +124,23 @@
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
                         width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-overview.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Overview</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Nodes</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-rewards.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Rewards</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-referrals.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-gray-400">Referrals</span></a><a
                     class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-                        src="./assets/icons/icon-wallet.svg" style="color: transparent;"><span
+                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
                         class="text-xs mt-1 text-green-500">Wallet</span></a><button
                     class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
                         loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
