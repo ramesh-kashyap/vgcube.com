@@ -1,297 +1,197 @@
-<html lang="en" class="pc" style="font-size: 50px;">
-
-<head>
-    <meta charset="utf-8">
-    <title>Change Email</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
-    <link rel="icon" href="/logo1.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="renderer" content="webkit">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="google" content="notranslate">
-    <script>
-        window.addEventListener("error", function (event) {
-            if (event.message.indexOf("Unexpected token '<'") > -1) {
-                location.reload();
-            }
-        });
-        window.onload = function () {
-            document.addEventListener("touchstart", function (event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            });
-            var lastTouchEnd = 0;
-            document.addEventListener(
-                "touchend",
-                function (event) {
-                    var now = new Date().getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                },
-                false
-            );
-            document.addEventListener("gesturestart", function (event) {
-                event.preventDefault();
-            });
-        };
-
-        if ("standalone" in window.navigator && window.navigator.standalone) {
-            var noddy,
-                remotes = false;
-            document.addEventListener(
-                "click",
-                function (event) {
-                    noddy = event.target;
-                    while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-                        noddy = noddy.parentNode;
-                    }
-                    if (
-                        "href" in noddy &&
-                        noddy.href.indexOf("http") !== -1 &&
-                        (noddy.href.indexOf(document.location.host) !== -1 || remotes)
-                    ) {
-                        event.preventDefault();
-                        document.location.href = noddy.href;
-                    }
-                },
-                false
-            );
-        }
-
-    </script>
-    <style>
-        .item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-
-        .cname {
-            margin-bottom: 5px;
-        }
-
-        .val {
-            position: relative;
-        }
-
-        .input-container {
-            display: flex;
-            width: 100%;
-        }
-
-        input[type="password"] {
-            width: 100%;
-            padding-right: 70px;
-            /* Adjust the padding to fit the button */
-            box-sizing: border-box;
-        }
-
-        .verify-button {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            border: none;
-            background-color: #4CAF50;
-            /* Adjust color as needed */
-            color: white;
-            padding: 0 15px;
-            cursor: pointer;
-        }
-
-    </style>
-
-    <style>
-        .item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-
-        .cname {
-            margin-bottom: 5px;
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        input[type="password"] {
-            flex: 1;
-            padding-right: 100px;
-            /* Adjust the padding to fit the button */
-        }
-
-        .verify-button {
-            position: absolute;
-            right: 0;
-            height: 100%;
-            padding: 0 10px;
-        }
-
-    </style>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            background-color: #000;
-        }
-
-    </style>
-    <link href="{{asset('')}}assets/static/js/app.83a7756d.1717187934571.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-aef56f2a.f587d975.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-aef56f2a.b3c068cc.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-2a0b1332.9f52f39a.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-2a0b1332.0436ba68.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-f8e2ce82.4965c1ba.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-f8e2ce82.8a913baf.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-21a2b91c.0ed7b871.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-21a2b91c.12695023.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-4d56d011.d2239d8d.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-4d56d011.55574f9a.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-273ce16e.debfb5de.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-273ce16e.6f3f099a.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-a46085d6.d2823003.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-a46085d6.6a4896cb.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-97c0768a.2ab4315e.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-97c0768a.b8196644.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-f31ad6d4.2882463c.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-f31ad6d4.836d485b.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-0830ec22.59462d6e.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-0830ec22.94ec9a30.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-73ab94aa.2e0ec155.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-73ab94aa.70e0e268.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-65aadf8b.a4cef8a6.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-65aadf8b.59fb6a2e.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-67098c77.8b942857.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-67098c77.b8c94109.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-529a9802.d4a866bb.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-529a9802.18a0309a.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-2a326f81.d6e1e630.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-2a326f81.29676938.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-04a90ad1.aa2f317d.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-04a90ad1.28c21b1a.1717187934571.chunk.js"></script>
-</head>
-<style>
-   input {
-    text-transform: none;
-    width: 82% !important;
-}
-</style>
-<body class="main_en">
-    <div id="app" class="applang">
-        <div data-v-cfc9a7fc="" data-v-9d2ee7be="" class="page">
 
 
 
-            <div data-v-cfc9a7fc="" class="headers">
-                <div data-v-397da544="" data-v-9d2ee7be="" class="head" data-v-cfc9a7fc="">
-                    <div data-v-397da544="" class="container flex">
-                        <div data-v-397da544="" class="back"><a href="{{route('user.dashboard')}}" style="color:#fff;"><i
-                                    data-v-397da544="" class="van-icon van-icon-arrow-left">
-                                    <!----></i></a></div>
-                        <!---->
-                        <div data-v-397da544="" class="name tac"> @lang('Change Email') </div>
-                        <div data-v-397da544="" class="flex1"></div>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <div data-v-397da544="" class="head_right"></div>
-                    </div>
-                </div>
-            </div>
-            <div data-v-cfc9a7fc="" id="scroll" class="content-container">
-                <div data-v-cfc9a7fc="" id="content" class="content-scroll">
-                    <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="container">
-                        
-                        
-                        <form method="post" action="{{ route('user.changeEmailAction') }}   ">
-                            {{ csrf_field() }}
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Email')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val">            
-                                    <input data-v-f8e71db0="" class="inp" type="email" name="email" readonly=""  value="{{Auth::user()->email}}">
-                                </div>
-                            </div>
 
 
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Verification Code')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val">
-                                    <div class="input-container">
-                                        <input data-v-9d2ee7be="" data-v-cfc9a7fc="" type="" name="first_code"
-                                            placeholder="Enter verification code" maxlength="">
-                                        <span class="code-btn first-code-send">@lang('Get Code')</span>
+
+
+<div
+                        class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
+                        <div class="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 gap-6">
+                            <div class="lg:col-span-3 xl:col-span-2 flex flex-col">
+                                <!-- <div class="bg-white rounded-[16px] p-6 lg:p-8">
+                                    <h2 class="text-[24px] font-semibold text-primary mb-8">Wallet</h2>
+                                    <div class="flex flex-col md:flex-row gap-3 justify-between">
+                                        <div>
+                                            <p class="text-primary font-medium mb-2">Total Assets</p>
+                                            <p class="text-[30px] font-bold"><span>0 BNB</span></p>
+                                            <p class="text-secondary"><span>$0</span></p>
+                                        </div>
+                                        <div class="flex flex-row gap-2 items-end"><a
+                                                class="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
+                                                href="./deposit.html">Deposit</a><button
+                                                class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
+                                                fdprocessedid="scd5lj">Withdraw</button></div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname"> @lang('New Email')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val">            
-                                    <input data-v-f8e71db0="" class="inp" type="email" name="newEmail" value="" id="emailId" placeholder="Enter your email">
-                                </div>
-                            </div>
-
-
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="item">
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="cname">@lang('Verification Code')</div>
-                                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="val">
-                                    <div class="input-container">
-                                        <input data-v-9d2ee7be="" data-v-cfc9a7fc="" type="" name="second_code"
-                                            placeholder="Enter verification code" maxlength="">
+                                </div> -->
+                                <div class="bg-white rounded-[16px] mt-6 p-6 lg:p-8 flex-1">
+                               <center>     <h3 class="font-semibold mb-3">@lang('Change Email')</h3></center>
                                    
-                                            <span class="code-btn sencond-code-send">@lang('Get Code')</span>
-                                    </div>
-                                </div>
+                               <form method="post" action="{{ route('user.changeEmailAction') }}   ">
+                               {{ csrf_field() }}                                  <!-- Replace /submit-wallet with your form submission URL -->
+                                      <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-medium mb-2">@lang('Email')</label>
+                                      
+                                        <input data-v-f8e71db0=""  type="email" name="email" readonly="" 
+                                        style="width: 100%;"  value="{{Auth::user()->email}}" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]">
+                                      </div>
+                                      
+
+
+                                                   <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-medium mb-2">@lang('Verification Code')</label>
+                                      
+                                        <div class="input-container" style="position: relative; width: 100%;">
+  <input 
+    data-v-9d2ee7be="" 
+    data-v-cfc9a7fc="" 
+    type="text"  
+    name="first_code"
+    placeholder="Enter verification code" 
+    maxlength="" 
+    class="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20"
+    style="width: 100%;"
+  >
+  <span 
+    class="code-btn" 
+    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;">
+    @lang('Get Code')
+  </span>
+</div>
+
+
+
+                                      <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-medium mb-2">@lang('New Email')</label>
+                                      
+                                        <input data-v-9d2ee7be=""
+                                        data-v-cfc9a7fc="" type="email" id="passwordInput" placeholder="Please enter the new email"
+                                        name="newEmail" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]">
+                              
+
+
+                                      </div>
+                                      <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-medium mb-2">@lang('Verification Code')</label>
+                                        <div class="input-container" style="position: relative; width: 100%;">
+  <input 
+    data-v-9d2ee7be="" 
+    data-v-cfc9a7fc="" 
+    type="text"  
+    name="second_code"
+    placeholder="Enter verification code" 
+    maxlength="" 
+    class="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20"
+    style="width: 100%;"
+  >
+  <span 
+    class="code-btn" 
+    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;">
+    @lang('Get Code')
+  </span>
+</div>
+
+
+
+                                      <!-- <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-medium mb-2">Wallet Address</label>
+                                        <input type="number" id="amount" name="amount" placeholder="Enter Wallet Address"
+                                          class="w-full px-3 py-2 border border-gray-300 rounded-[12px]" required>
+                                      </div> -->
+</br></br>
+                                      <div class="text-right">
+                                        <button type="submit" style="background-color: rgb(34 197 94);"class="px-6 py-2 bg-blue-500 text-white rounded-[12px] hover:bg-blue-600" styel>
+                                        Confirm
+                                        </button>
+                                        
+                                      </div>
+                                    </form>
+                                  </div>
+                                  
+                                
                             </div>
-                            <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="err" style="color:red;">
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div data-v-cfc9a7fc="" class="footer">
-                <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="container">
-                    <div data-v-9d2ee7be="" data-v-cfc9a7fc="" class="go"><button data-v-9d2ee7be="" type="submit"
-                            data-v-cfc9a7fc="" class="btn2">@lang('Confirm')</button></div>
-                </div>
-            </div>
+            <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
+                        width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Nodes</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
+                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
+                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+                        class="text-xs mt-1 text-green-500">Wallet</span></a><button
+                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
+                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+                        srcset="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
+                        src="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
+                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
         </div>
-        </form>
-        <div data-v-a7d12cfc="" class="global-loading default" style="display: none;">
-            <div data-v-a7d12cfc="" class="global-spinner"><img data-v-a7d12cfc=""
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAMAAAA0X5qLAAAAh1BMVEUAAAAAv44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av46sPT54AAAALHRSTlMA+wXZ+J87JB7ux4lDNRQPCvLq39PNp5BpWRmxgnAvvrnlw5RhT0sqwHRxeP/zXbkAAAGcSURBVDjLjZTXcqtAEAVnyUGIJBAKKFqS7dv//30XsHFJxrD0C0XRxc45TCEDvFsdrvfhxnGWMk1S7c70nI+bZFxdXFC8YG5GVNemxTdte7+3yxUdq4MMMaocsMza6CeSqLRo2A3dffvguPh1WEiDcuWFeN24mSNDdjS85Exs4OLJX7wpyOWJT8A25G+iFMyn2za1jOIAV+kxIU9knDUQ9d8C/EimyH9OXgawNiblrepfXSn8WKax+4wnCEWDC6ptNk5RC9GxgqqNZ1EstXL1tSP/oBQtS1DN5Qp7vbz1sdwu30b0pNAkPIOrd4131E2kAEf0rDqtaJvTY3YDvM+aOS5IH91KrWdUl2LGIhsI9PIDLm2DFmmslT++FyiDu7a5ANV1FoKpkw/gfwUFddDIO7Cl4wqBMf1iRRZJxxb86d5OYCf9fyS/TaYrFcqVeYQK6nmqEQLFPNc7AuZ2lrtYAcEs936kdZdjE97rSAxDEvG8j8wC/E8Zo1Yo/CAv0oyOYKKzN55QWTm9B9WpyGiwyMvFnLbih+M5xjDWf6S2MlzIf04ZAAAAAElFTkSuQmCC"
-                    alt=""></div>
-        </div>
-        <div data-v-e73e51fc="" class="start-page" style="display: none;"><img data-v-e73e51fc=""
-                src="{{asset('')}}assets/static/img/start.0aabcda5.gif"></div>
     </div>
-   @include('partials.notify')
+    <script id="__NEXT_DATA__" type="application/json">
+        {
+            "props": {
+                "pageProps": {
+                    "__lang": "en",
+                    "__namespaces": {
+                        "common": {
+                            "logout": "Logout",
+                            "menu": "Menu",
+                            "overview": "Overview",
+                            "my_nodes": "Nodes",
+                            "rewards": "Rewards",
+                            "wallet": "Wallet",
+                            "referrals": "Referrals",
+                            "tasks": "Tasks",
+                            "profile": "Profile",
+                            "follow_us": "Follow Us",
+                            "hello": "Hello",
+                            "referred": "Referred",
+                            "total_rewards": "Total Rewards",
+                            "points": "Points",
+                            "today_rewards": "Today Rewards",
+                            "network_summary_title": "Network",
+                            "manage": "Manage",
+                            "network_differently": "Network Difficulty",
+                            "node_online": "Node online",
+                            "reward_stats": "Reward Stats",
+                            "mining": "Mining",
+                            "daily": "Daily",
+                            "monthly": "Monthly",
+                            "please_enter_friend_email": "Please enter the email of your friend",
+                            "invalid_friend_email": "Invalid the email of your friend"
+                        }
+                    }
+                },
+                "__N_SSG": true
+            },
+            "page": "/connect",
+            "query": {},
+            "buildId": "nocaBKNJml-nPe7WJbWSK",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": ["en", "ru"],
+            "defaultLocale": "en",
+            "scriptLoader": []
+        }
+    </script>
+
+
     <script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
 
 
@@ -371,7 +271,139 @@
         });
 
             </script>
-   
+
+@include('partials.notify')
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#check').click(function () {
+
+                if ($(this).hasClass('fa-eye-slash')) {
+
+                    $(this).removeClass('fa-eye-slash');
+
+                    $(this).addClass('fa-eye');
+
+                    $('#test-input').attr('type', 'text');
+
+                } else {
+
+                    $(this).removeClass('fa-eye');
+
+                    $(this).addClass('fa-eye-slash');
+
+                    $('#test-input').attr('type', 'password');
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        function togglePasswordVisibility() {
+            // alert(0);
+            var passwordInput = document.getElementById('passwordInput');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+ function togglePasswordVisibility2() {
+            // alert(0);
+            var passwordInput = document.getElementById('passwordInput2');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+
+
+    </script>
+
+    <script>
+    
+        $('.code-btn').click(function(e) {
+            var ths = $(this);
+            var emailId = $('#emailId').val();
+            $(ths).text("waiting");
+          
+            // alert(sponsor); 
+            $.ajax({
+                type: "POST"
+                , url: "{{ route('user.send_code') }}"
+                , data: {
+                    "emailId": ""
+                    , "_token": "{{ csrf_token() }}"
+                , }
+                , success: function(response) {
+                    $(ths).text("Get Code");    
+                    if (response) {
+                        // alert("hh");
+                        iziToast.success({
+                        message: 'Email send Successfully',
+                        position: "center"
+                    });
+                    } else {
+                        // alert("hi");
+                        iziToast.error({
+                        message: 'Error!',
+                        position: "center"
+                    });
+                    }
+                }
+            });
+        });
+            </script>
+
+</body>
+
+
+
+    <script id="_next-ga-init" data-nscript="afterInteractive">
+        window['dataLayer'] = window['dataLayer'] || [];
+
+        function gtag() {
+            window['dataLayer'].push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5PPR32GMM8');
+    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-5PPR32GMM8" id="_next-ga"
+        data-nscript="afterInteractive"></script>
+    <next-route-announcer>
+        <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+            style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+            Wallet - Meshchain</p>
+    </next-route-announcer>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/index-ee3997ecd6058818.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js"></script><span
+        id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/login-be43bc61ed9c8e2b.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script><span id="PING_CONTENT_APS_BALLOON"
+        style="display: none;"></span>
 </body>
 
 </html>
