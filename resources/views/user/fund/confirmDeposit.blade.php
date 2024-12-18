@@ -83,7 +83,35 @@
                                 <div class="bg-white rounded-[16px] p-6 lg:col-span-2 xl:col-span-1">
                                     <h3 class="font-semibold mb-3">History</h3>
                                     <div class="space-y-4 h-full">
-                                        <div class="flex h-full justify-center items-center w-full text-secondary">
+                                    <?php if(is_array($buyfunds) || is_object($buyfunds)){ ?>
+                                    <?php
+                                        date_default_timezone_set('UTC');
+                                        $cnt = 0; ?>
+                                        @foreach ($buyfunds as $value)
+                                    <div class="flex justify-between items-center text-sm mb-4">
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
+                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
+                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
+                                                    style="color: transparent;"></div>
+                                            <div class="ml-3">
+                                                <p class="font-medium"> {{$value['remarks']}} 
+                                                        </p>
+                                                <p class="text-secondary font-light text-sm">{{ date('D, d M Y H:i:s', strtotime($value['created_at'])) }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                        
+                                            <p class="text-green-500"><span> +{{ $value['comm'] }}</span></p>
+                                           
+                                        </div>
+                                    </div>
+                                    @endforeach
+
+<?php }?>
+
+                                        <div class="flex h-full justify-center hidden items-center w-full text-secondary">
                                             <div class="w-full text-center"><img alt="Icon Empty" loading="lazy"
                                                     width="64" height="40" decoding="async" data-nimg="1"
                                                     class="mx-auto mb-2" src="{{ asset('') }}upnl/assets/images/empty_state.svg"

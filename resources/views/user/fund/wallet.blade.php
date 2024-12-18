@@ -23,9 +23,10 @@
                                         </div>
                                         <div class="flex flex-row gap-2 items-end"><a
                                                 class="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
-                                                href="{{route('user.rechargeFunds')}}">Deposit</a><button
+                                                href="{{route('user.rechargeFunds')}}">Deposit</a>
+                                                <a href="{{route('user.Withdraw')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
-                                                fdprocessedid="scd5lj">Withdraw</button><a href="{{route('user.fund_transfer')}}"><button
+                                                fdprocessedid="scd5lj">Withdraw</button></a><a href="{{route('user.fund_transfer')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center "  onmouseover="this.style.backgroundColor='#000000'; this.style.color='white';" 
                                                 onmouseout="this.style.backgroundColor='white'; this.style.color='black';"
                                                 fdprocessedid="scd5lj" >Tranfer</button></a></div>
@@ -129,54 +130,52 @@
                             <div class="bg-white rounded-[16px] p-6 lg:col-span-2 xl:col-span-1">
                                 <h3 class="font-semibold mb-3">History</h3>
                                 <div class="space-y-4 h-full">
+                                <?php if(is_array($level_income) || is_object($level_income)){ ?>
+                                    <?php
+                                        date_default_timezone_set('UTC');
+                                        $cnt = 0; ?>
+                                        @foreach ($level_income as $value)
                                     <div class="flex justify-between items-center text-sm mb-4">
                                         <div class="flex">
                                             <div
                                                 class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
                                                 <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
+                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
+                                                <p class="font-medium"> @if($value['remarks'] == "Buy Package")
+                                                                {{
+                                                                    $value['comm'] == 30 ? "Subscription Core" : 
+                                                                    ($value['comm'] == 120 ? "Subscription Prime" : 
+                                                                    ($value['comm'] == 300 ? "Subscription Plus" :
+                                                                    ($value['comm'] == 1200 ? "Subscription Max" :
+                                                                    ($value['comm'] == 3600 ? "Subscription Pro" :
+                                                                    ($value['comm'] == 6000 ? "Subscription Edge" :
+                                                                    ($value['comm'] == 15000 ? "Subscription Hub" : ""))))))
+                                                                }}
+                                                            @elseif($value['remarks'] == "Deposits")
+                                                                @lang('Deposit')    <a target="_blank" href="{{route('user.viewdetail',['txnId'=>$value['txn_no']])}}" style="margin-left:10px;color: #ffffff;    text-transform: lowercase;"> <i class="fa fa-share-alt" aria-hidden="true"></i> </a>
+                                                            @else
+                                                                {{ $value['remarks'] }}
+                                                            @endif
+                                                        </p>
+                                                <p class="text-secondary font-light text-sm">{{ date('D, d M Y H:i:s', strtotime($value['created_at'])) }}</p>
                                             </div>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-green-500">+<span>0 MCC</span></p>
+                                        @if($value['remarks']=="Deposits")
+                                            <p class="text-green-500"><span> +{{ $value['comm'] }}</span></p>
+                                            @else
+                                            <p class="text-green-500"><span> -{{ $value['comm'] }}</span></p>
+                                            @endif
                                         </div>
                                     </div>
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 POINT</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 BNB</span></p>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
+<?php }?>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

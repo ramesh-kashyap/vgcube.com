@@ -239,7 +239,7 @@
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg"
                                     style="color: transparent;"><span class="ml-4">Rewards</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/referrals"><img alt="referrals Icon" loading="lazy" width="16" height="16"
+                                href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
                                     style="color: transparent;"><span class="ml-4">Referrals</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"

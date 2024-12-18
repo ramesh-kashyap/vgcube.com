@@ -1,383 +1,779 @@
-<html lang="en" class="pc" style="font-size: 50px;">
+<html lang="en" style="">
 
 <head>
-    <meta charset="utf-8">
-    <title>{{ siteName() }}</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
-    <link rel="icon" href="/logo1.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="renderer" content="webkit">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="google" content="notranslate">
-
-    <meta itemprop="name" content="{{siteName()}}">
-    <meta itemprop="description"
-        content="Welcome to {{siteName()}} - Your Path to Smart Crypto Investments!">
-    <meta itemprop="image" content="{{asset('assets/static/image/fav.png')}}">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title"
-        content="{{siteName()}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <title>MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</title>
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
     <meta property="og:description"
-        content="Welcome to {{siteName()}} - Your Path to Smart Crypto Investments!">
-    <meta property="og:image" content="{{asset('assets/static/image/fav.png')}}" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:url" content="{{asset('')}}">
-    
-    <script>
-        window.addEventListener("error", function(event) {
-            if (event.message.indexOf("Unexpected token '<'") > -1) {
-                location.reload();
-            }
-        });
-        window.onload = function() {
-            document.addEventListener("touchstart", function(event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            });
-            var lastTouchEnd = 0;
-            document.addEventListener(
-                "touchend",
-                function(event) {
-                    var now = new Date().getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                },
-                false
-            );
-            document.addEventListener("gesturestart", function(event) {
-                event.preventDefault();
-            });
-        };
-
-        if ("standalone" in window.navigator && window.navigator.standalone) {
-            var noddy,
-                remotes = false;
-            document.addEventListener(
-                "click",
-                function(event) {
-                    noddy = event.target;
-                    while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-                        noddy = noddy.parentNode;
-                    }
-                    if (
-                        "href" in noddy &&
-                        noddy.href.indexOf("http") !== -1 &&
-                        (noddy.href.indexOf(document.location.host) !== -1 || remotes)
-                    ) {
-                        event.preventDefault();
-                        document.location.href = noddy.href;
-                    }
-                },
-                false
-            );
-        }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="Meshchain">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title"
+        content="MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering">
+    <meta name="next-head-count" content="14">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preload" href="{{ asset('') }}upnl/_next/static/css/c9d1efbde5d75517.css" as="style">
+    <link rel="stylesheet" href="{{ asset('') }}upnl/_next/static/css/c9d1efbde5d75517.css" data-n-g=""><noscript data-n-css=""></noscript>
+    <script defer="" nomodule="" src="{{ asset('') }}upnl/_next/static/chunks/polyfills-42372ed130431b0a.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/webpack-44d210f48ce8d2be.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/framework-8b7ae4d017121d95.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/main-0a946498e7d0ffea.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/_app-62dd2c8cc7122f96.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/454-fba73d6f40db324c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/962-67fd7c164fc63638.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/730-b6071344bc542f9c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/106-bc4204a49eec54a7.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/878-7babfedf6e5bb43c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/600-43bf72feb6de8eef.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/953-27df0f11cb6d622f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/337-c68deaa555ceac7f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/index-ee3997ecd6058818.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_buildManifest.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_ssgManifest.js" defer=""></script>
+    <style data-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap">
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8V1g.woff) format('woff')
         }
 
-        html,
-        body {
-            width: 100%;
-           
-            background-color: #000;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrFJM.woff) format('woff')
         }
-       
 
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6V1g.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
     </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js">
+    <link type="text/css" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&amp;display=swap">
+   
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js">
+    <style id="googleidentityservice_button_styles" nonce="undefined">
+        .qJTHM {
+            -webkit-user-select: none;
+            color: #202124;
+            direction: ltr;
+            -webkit-touch-callout: none;
+            font-family: "Roboto-Regular", arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            margin: 0;
+            overflow: hidden;
+            -webkit-text-size-adjust: 100%
+        }
 
-    <link href="{{ asset('') }}assets/static/js/app.83a7756d.1717187934571.js" rel="preload" as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js" rel="preload"
-        as="script">
-    <link href="{{ asset('') }}assets/static/css/app.23ae5dc0.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vant.d14f5539.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vendors.794edbf9.css" rel="preload" as="style">
-    <link href="{{ asset('') }}assets/static/css/chunk-vant.d14f5539.css" rel="stylesheet">
-    <link href="{{ asset('') }}assets/static/css/chunk-vendors.794edbf9.css" rel="stylesheet">
-    <link href="{{ asset('') }}assets/static/css/app.23ae5dc0.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-4db5803f.b52e0b88.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-4db5803f.7cdcd357.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-2a0b1332.9f52f39a.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-2a0b1332.0436ba68.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-f8e2ce82.4965c1ba.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-f8e2ce82.8a913baf.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-273ce16e.debfb5de.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-273ce16e.6f3f099a.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-73ab94aa.2e0ec155.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-73ab94aa.70e0e268.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/static/css/chunk-443d6c51.69a31eff.css">
-    <script charset="utf-8" src="{{ asset('') }}assets/static/js/chunk-443d6c51.4a84b438.1717187934571.chunk.js">
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
-    <style>
-        .doc[data-v-607a0cfb] {
-    color: #a6a0bb;
-    padding: 0 .2rem 0rem .2rem;
-}
+        .ynRLnc {
+            left: -9999px;
+            position: absolute;
+            top: -9999px
+        }
+
+        .L6cTce {
+            display: none
+        }
+
+        .bltWBb {
+            word-break: break-all
+        }
+
+        .hSRGPd {
+            color: #1a73e8;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none
+        }
+
+        .Bz112c-W3lGp {
+            height: 16px;
+            width: 16px
+        }
+
+        .Bz112c-E3DyYd {
+            height: 20px;
+            width: 20px
+        }
+
+        .Bz112c-r9oPif {
+            height: 24px;
+            width: 24px
+        }
+
+        .Bz112c-uaxL4e {
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+
+        .LgbsSe-Bz112c {
+            display: block
+        }
+
+        .S9gUrf-YoZ4jf,
+        .S9gUrf-YoZ4jf * {
+            border: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .fFW7wc-ibnC6b>.aZ2wEe>div {
+            border-color: #4285f4
+        }
+
+        .P1ekSe-ZMv3u>div:nth-child(1) {
+            background-color: #1a73e8 !important
+        }
+
+        .P1ekSe-ZMv3u>div:nth-child(2),
+        .P1ekSe-ZMv3u>div:nth-child(3) {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #1a73e8, #1a73e8) !important
+        }
+
+        .haAclf {
+            display: inline-block
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe {
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: background-color .218s, border-color .218s;
+            transition: background-color .218s, border-color .218s;
+            -webkit-user-select: none;
+            -webkit-appearance: none;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #dadce0;
+            color: #3c4043;
+            cursor: pointer;
+            font-family: "Google Sans", arial, sans-serif;
+            font-size: 14px;
+            height: 40px;
+            letter-spacing: 0.25px;
+            outline: none;
+            overflow: hidden;
+            padding: 0 12px;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: auto
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .nsm7Bb-HzV7m-LgbsSe {
+                border: 2px solid windowText;
+                color: windowText
+            }
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe {
+            font-size: 14px;
+            height: 32px;
+            letter-spacing: 0.25px;
+            padding: 0 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe {
+            font-size: 11px;
+            height: 20px;
+            letter-spacing: 0.3px;
+            padding: 0 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe {
+            padding: 0;
+            width: 40px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe {
+            width: 32px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe {
+            width: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK {
+            -webkit-border-radius: 20px;
+            border-radius: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe {
+            -webkit-border-radius: 16px;
+            border-radius: 16px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe {
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc {
+            border: none;
+            color: #fff
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc {
+            background-color: #1a73e8
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc {
+            background-color: #202124;
+            color: #e8eaed
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 18px;
+            margin-right: 8px;
+            min-width: 18px;
+            width: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 14px;
+            min-width: 14px;
+            width: 14px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 10px;
+            min-width: 10px;
+            width: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin-left: 8px;
+            margin-right: -4px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin: 0;
+            padding: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            padding: 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            padding: 4px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #fff;
+            height: 36px;
+            margin-left: -10px;
+            margin-right: 12px;
+            min-width: 36px;
+            width: 36px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin: 0;
+            padding: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            height: 28px;
+            margin-left: -8px;
+            margin-right: 10px;
+            min-width: 28px;
+            width: 28px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            height: 16px;
+            margin-left: -6px;
+            margin-right: 8px;
+            min-width: 16px;
+            width: 16px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            margin-left: 2px;
+            margin-right: 0;
+            padding: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 18px;
+            border-radius: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 14px;
+            border-radius: 14px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 8px;
+            border-radius: 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            justify-content: space-between;
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            height: 100%;
+            position: relative;
+            width: 100%
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX {
+            justify-content: center
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+            font-family: "Google Sans", arial, sans-serif;
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: top
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            font-weight: 300
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            -webkit-flex-grow: 0;
+            flex-grow: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            -webkit-transition: background-color .218s;
+            transition: background-color .218s;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:hover,
+        .nsm7Bb-HzV7m-LgbsSe:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-color: #d2e3fc;
+            outline: none
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
+        .nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(66, 133, 244, .04)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(66, 133, 244, .1)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(255, 255, 255, .24)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(255, 255, 255, .32)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY {
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            height: 20px;
+            margin-left: -4px;
+            margin-right: 8px;
+            min-width: 20px;
+            width: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            font-family: "Roboto";
+            font-size: 12px;
+            text-align: left
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf,
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS {
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            color: #5f6368;
+            fill: #5f6368;
+            font-size: 11px;
+            font-weight: 400
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
+            color: #e8eaed;
+            fill: #e8eaed
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c {
+            height: 18px;
+            margin: -3px -3px -3px 2px;
+            min-width: 18px;
+            width: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-top-left-radius: 0;
+            border-top-left-radius: 0;
+            -webkit-border-bottom-left-radius: 0;
+            border-bottom-left-radius: 0;
+            -webkit-border-top-right-radius: 3px;
+            border-top-right-radius: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            margin-left: 12px;
+            margin-right: -10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 18px;
+            border-radius: 18px
+        }
+
+        .L5Fo6c-sM5MNb {
+            border: 0;
+            display: block;
+            left: 0;
+            position: relative;
+            top: 0
+        }
+
+        .L5Fo6c-bF1uUb {
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .L5Fo6c-bF1uUb:focus {
+            border: none;
+            outline: none
+        }
+
+        sentinel {}
     </style>
 </head>
 
-<style>
-    .iti__country-list {
-        position: absolute;
-        z-index: 2;
-        list-style: none;
-        text-align: left;
-        padding: 0;
-        margin: 0 0 0 -1px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-        background-color: #131118;
-        border: 1px solid #CCC;
-        white-space: nowrap;
-        max-height: 200px;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-    }
-   
-body {
-    background: none;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 50%;
-    bottom: 0;
-    background: #000;
-    margin: 0 auto;
-    transform: translateX(-50%);
-    font-family: Poppins,PingFang SC,Microsoft Yahei,sans-serif
-}
-.agreement{
+<body>
+    <div id="__next">
+        <div class="Toastify"></div>
+        <div class="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
+            <div class="absolute top-6 flex justify-between w-full px-6"><img alt="MeshNode Logo" loading="lazy"
+                    width="163" height="40" decoding="async" data-nimg="1" class="hidden sm:flex"
+                    src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent;"><img alt="Logo"
+                    loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="flex sm:hidden"
+                    src="{{ asset('') }}upnl/assets/icons/logo_meshchain.svg" style="color: transparent;">
+                <div class="flex"><button type="submit"
+                        class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        fdprocessedid="pb7o">Log In</button><button type="button"
+                        class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        fdprocessedid="3lirdb">Sign Up</button></div>
+            </div>
+            <div class="bg-[#FFF] max-w-[385px] rounded-[20px] py-6 px-6 md:px-8 w-full"
+                style="box-shadow: rgba(23, 23, 23, 0.25) 0px 4px 88.3px 0px;">
+                <div class="fixed inset-0 flex items-center justify-center "
+                                 id="popup">
 
-}
-.set{
-
-}
-.go p[data-v-607a0cfb] {
-    margin-top: .4rem;
-    color: var(--COcolor3);
-    font-size: .26rem;
-    text-align: left;
-    margin-bottom: .4em;
-}
-.van-checkbox__icon--checked {
-    border-color: rgb(113, 219, 129);
-    background-color: rgb(113, 219, 129);
-}
-.van-checkbox__icon--unchecked {
-    border-color: #ddd; /* Set an alternative color for the unchecked state */
-    background-color: transparent;
-}
-</style>
-
-<body class="main_en">
-    <div id="app" class="applang">
-        <div data-v-cfc9a7fc="" data-v-607a0cfb="" class="page">
-            <!-- <div data-v-cfc9a7fc="" class="headers">
-                <div data-v-397da544="" data-v-607a0cfb="" class="head head_isModule" is-left="true" data-v-cfc9a7fc="">
-                    <div data-v-397da544="" class="container flex">
-                      
-                        <div data-v-397da544="" class="left_title"> @lang('Registration') </div>
-                      
-                        <div data-v-397da544="" class="flex1"></div>
-                        <div data-v-397da544="" class="lang"> <a href="{{route('user.lang')}}"> <img data-v-397da544=""
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAAZlBMVEUAAAAVFRUWFhYQEBAVFRUWFhYVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUYGBgQEBAWFhbOzs5ycnK3t7ctLS1bW1tmZmYhISHDw8N+fn6goKBERESsrKyJiYmUlJQ4ODhQUFA5OTlkLOJfAAAAEHRSTlMA7+AQz7CggHBAkI/AYCAgGfxI1gAAAitJREFUWMPll9miqiAUhhE1tREC1Jyq93/JI4tD6LZdTHf7u8jVhV+sXxlCa6oyxwn5SpLlRYV+JS0S4gDeXd5rDsSZd6oyIR7g00/PgXhyWLd1JN5kKTJkJIDjpq/g7k4kkBIBFxwqSlRMOwIEN3chEUhhQBEoZhGOIUoQqkgUKlTEEZUojyPKURZHhFESR5Qg8gFxl5/PlsG1F+QDH0Q9Y/LCGaUtl1XLhIeouVF6lcVIZ26yus7XxlXEh/l2LgsqaRvpngvGnUTQD+0gJwrUsu7A5CJq2OvmSYkmWdeyGhoH0Q1u7iFhJWohfihvliLTjizv9D/cWHtrETSmInpokVAhSZitCAZkHrniCi1rqZ1oWDyoUYtGlTbQ2Yk4VTx0M8C0bJRbiWqq6PXoALaMvrYSTcufZSsR131aicRV0UDYGhhEY75sRV78dVG9DLt+G7awEo3fH//k9ELeV6IB1hGnF5Jv5rukc58ipPs2aQe3ZWQMW0ZMMIOWAg/Xhc1k2urATPStGlDw4n93XfxJM+hYttsRa/w2yFrn675BGhPs07I3s3sP3PsQcXu9CsL9EAEIpp5bq/thrPdcRgTc+GTtE66CfCDe0Q/HEWXxjsdlHFER7y9EnLQxQnH+jOxmURpDdEYz+xgDkqTBKeEzAspQ0Qk04c3t0Ytj2OwwpJm/55iiJfvAvgwn7KNJSrThvPMYjmprq8JOoymMZkNV5Fli4cB5WaEV/wDnFTWJG/z43wAAAABJRU5ErkJggg==">
-                            </a>
-                        </div>
-                        
-                        <div data-v-397da544="" class="head_right"></div>
-                    </div>
-                </div>
-            </div> -->
-            <form action="{{route('forgot_submit')}}" method="POST" name="login_frm" id="form-id" style="overflow: scroll;">
-                {{ csrf_field() }}
-
-                @php
-                    $sponsor = @$_GET['ref'];
-                    $name = \App\Models\User::where('username', $sponsor)->first();
-                @endphp
-
-                <div data-v-cfc9a7fc="" id="scroll" class="content-container">
-                    <div data-v-cfc9a7fc="" id="content" class="content-scroll">
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo"><img data-v-a34da882=""
-                                data-v-cfc9a7fc=""
-                                src="{{asset('')}}assets/static/image/loginbg.png">
-                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="s"></div>
-                        </div>
-                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="container">
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo" style="padding-top:80px">
-                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="s">@lang('Forgot password')</div>
-                        </div>
-                            <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="item" style="
-                                    margin-top: 8px;
-                                ">
-                             
-                               
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="it">
-                                   
-                                    <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex inp">
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex1"><input
-                                                data-v-607a0cfb="" data-v-cfc9a7fc="" name="email" id="emailId"
-                                                type="text" placeholder="Email"></div>
-                                    </div>
-                                </div>
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="it">
-                                    <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex inp">
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex1"><input
-                                                data-v-607a0cfb="" data-v-cfc9a7fc="" name="code" id="code"
-                                                type="text" placeholder="Please enter the verification code"></div>
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="code-btn verify-button">
-                                           @lang('Get Code')</div>
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="str"
-                                            style="display: none;">
-                                            <div data-v-607a0cfb="" class="van-count-down" data-v-cfc9a7fc=""><span
-                                                    data-v-607a0cfb="">0 <var data-v-607a0cfb="">s</var></span></div>
+                                <form method="post"  action="{{route('forgot_submit')}}">
+                                {{ csrf_field() }}
+                                <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">
+                                    <h2 class="text-lg font-semibold">Forgot Password</h2>
+                                    <div class="mb-4 mt-8 text-left">
+                                        <label class="block text-gray-600 mb-1">Email
+                                            </label>
+                                            <input data-v-9d2ee7be=""
+                                        data-v-cfc9a7fc="" type="" placeholder="Please enter the Email"
+                                        value="{{ Auth::user()->email }}" id="emailId" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]">
                                         </div>
-                                    </div>
-                                </div>
-                            
-
-                                
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="it">
-                                    
-                                    <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex inp">
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex1"><input id="passwordInput"
-                                                data-v-607a0cfb="" data-v-cfc9a7fc="" name="password"
-                                                placeholder="Password" type="password"></div>
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="yj"><i  onclick="togglePasswordVisibility()" class="fa fa-eye-slash check" style="    font-size: 20px;
-                                            margin-top: -10px;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="doc">
-                                </div>
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="it">
-                         
-                                    <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="inp flex">
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex1"><input
-                                                data-v-607a0cfb="" data-v-cfc9a7fc="" name="password_confirmation" id="passwordInput2"
-                                                placeholder="Confirm password" type="password"></div>
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="yj"><i onclick="togglePasswordVisibility()" class="fa fa-eye-slash check" style="    font-size: 20px;
-                                            margin-top: -10px;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="go">
-                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="box3">
-                                    <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="cache_account"
-                                        style="display: flex; align-items: center;">
-                                        <div data-v-607a0cfb="" role="checkbox" tabindex="0" aria-checked="true"
-                                            class="van-checkbox" data-v-cfc9a7fc="">
-                                            <div class="van-checkbox" id="checkbox">
-    <div class="van-checkbox__icon van-checkbox__icon--square" id="checkbox-icon">
-        <i class="van-icon van-icon-success"></i>
-    </div>
+                                    <div class="mb-4 mt-8 text-left">
+                                        <label class="block text-gray-600 mb-1">Verification Code
+                                            </label>
+                                            <div class="input-container" style="position: relative; width: 100%;">
+  <input 
+    data-v-9d2ee7be="" 
+    data-v-cfc9a7fc="" 
+    type="text"  
+    name="code"
+    id="code"
+    placeholder="Enter verification code" 
+    maxlength="" 
+    class="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20 "
+    style="width: 100%;"
+  >
+  <span 
+    class="code-btn" 
+    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;">
+    @lang('Get Code')
+  </span>
 </div>
-                                        </div><span data-v-607a0cfb="" data-v-cfc9a7fc="" class="agreement" style="font-size:10px; margin-left: 9px;"> @lang('By registering in, I agree to the VG CUBE') <span
-                                        data-v-607a0cfb="" data-v-cfc9a7fc=""><a href="{{ route('service-agreement') }}"
-                                            style="color:#55b2c2 ; ">@lang('Service Agreement')</a></span></>
-                                    </div>
-                                </div><button data-v-607a0cfb="" data-v-cfc9a7fc="" type="submit" class="btn2">
-                                   @lang('Submit') </button>
-                                   
-                                
 
-                                            <p data-v-607a0cfb="" data-v-cfc9a7fc="" class="set" > @lang('Already have an account') <span
-                                        data-v-607a0cfb="" data-v-cfc9a7fc=""><a href="{{ route('login') }}"
-                                            style="color:#55b2c2 ;">@lang('Log in now')</a></span></p>
-                                <!---->
-            </form>
+                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">New 
+                                            Password</label><input data-v-9d2ee7be=""
+                                        data-v-cfc9a7fc="" type="password"
+                                        placeholder="Please enter the new password"  id="passwordInput" name="password"  class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>
+
+                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">Confirm 
+                                            Password</label><input data-v-9d2ee7be=""
+                                        data-v-cfc9a7fc="" type="password" id="passwordInput2"
+                                        placeholder="Enter the password again to confirm"
+                                        name="password_confirmation" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>
+
+
+                                    <div class="mt-10"><button
+                                            class="w-full h-[46px] mb-2 px-4 py-2 rounded-[30px] bg-black text-white">Confirm</button>
+                                    </div>
+
+
+                                </div>
+    </form>
+                            </div>
+
+            </div>
+
         </div>
-        <div data-v-a7d12cfc="" class="global-loading default" style="display: none;">
-            <div data-v-a7d12cfc="" class="global-spinner"><img data-v-a7d12cfc=""
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAMAAAA0X5qLAAAAh1BMVEUAAAAAv44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av46sPT54AAAALHRSTlMA+wXZ+J87JB7ux4lDNRQPCvLq39PNp5BpWRmxgnAvvrnlw5RhT0sqwHRxeP/zXbkAAAGcSURBVDjLjZTXcqtAEAVnyUGIJBAKKFqS7dv//30XsHFJxrD0C0XRxc45TCEDvFsdrvfhxnGWMk1S7c70nI+bZFxdXFC8YG5GVNemxTdte7+3yxUdq4MMMaocsMza6CeSqLRo2A3dffvguPh1WEiDcuWFeN24mSNDdjS85Exs4OLJX7wpyOWJT8A25G+iFMyn2za1jOIAV+kxIU9knDUQ9d8C/EimyH9OXgawNiblrepfXSn8WKax+4wnCEWDC6ptNk5RC9GxgqqNZ1EstXL1tSP/oBQtS1DN5Qp7vbz1sdwu30b0pNAkPIOrd4131E2kAEf0rDqtaJvTY3YDvM+aOS5IH91KrWdUl2LGIhsI9PIDLm2DFmmslT++FyiDu7a5ANV1FoKpkw/gfwUFddDIO7Cl4wqBMf1iRRZJxxb86d5OYCf9fyS/TaYrFcqVeYQK6nmqEQLFPNc7AuZ2lrtYAcEs936kdZdjE97rSAxDEvG8j8wC/E8Zo1Yo/CAv0oyOYKKzN55QWTm9B9WpyGiwyMvFnLbih+M5xjDWf6S2MlzIf04ZAAAAAElFTkSuQmCC"
-                    alt=""></div>
-        </div>
-        <div data-v-e73e51fc="" class="start-page" style="display: none;"><img data-v-e73e51fc=""
-                src="{{asset('')}}assets/static/img/start.0aabcda5.gif"></div>
     </div>
-    <!---->
+    <script id="__NEXT_DATA__" type="application/json">
+        {
+            "props": {
+                "pageProps": {
+                    "__lang": "en",
+                    "__namespaces": {
+                        "common": {
+                            "logout": "Logout",
+                            "menu": "Menu",
+                            "overview": "Overview",
+                            "my_nodes": "Nodes",
+                            "rewards": "Rewards",
+                            "wallet": "Wallet",
+                            "referrals": "Referrals",
+                            "tasks": "Tasks",
+                            "profile": "Profile",
+                            "follow_us": "Follow Us",
+                            "hello": "Hello",
+                            "referred": "Referred",
+                            "total_rewards": "Total Rewards",
+                            "points": "Points",
+                            "today_rewards": "Today Rewards",
+                            "network_summary_title": "Network",
+                            "manage": "Manage",
+                            "network_differently": "Network Difficulty",
+                            "node_online": "Node online",
+                            "reward_stats": "Reward Stats",
+                            "mining": "Mining",
+                            "daily": "Daily",
+                            "monthly": "Monthly",
+                            "please_enter_friend_email": "Please enter the email of your friend",
+                            "invalid_friend_email": "Invalid the email of your friend"
+                        }
+                    }
+                },
+                "__N_SSG": true
+            },
+            "page": "/",
+            "query": {},
+            "buildId": "nocaBKNJml-nPe7WJbWSK",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": ["en", "ru"],
+            "defaultLocale": "en",
+            "scriptLoader": []
+        }
+    </script>
+    <script>
+        (function () {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML =
+                        "window.__CF$cv$params={r:'8ed9cbcf1ce9550d',t:'MTczMzQ2MjEwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function () {};
+                    document.onreadystatechange = function (b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script><iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <script id="_next-ga-init" data-nscript="afterInteractive">
+        window['dataLayer'] = window['dataLayer'] || [];
+
+        function gtag() {
+            window['dataLayer'].push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5PPR32GMM8');
+    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-5PPR32GMM8" id="_next-ga"
+        data-nscript="afterInteractive"></script>
+    <next-route-announcer>
+        <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+            style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+            MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</p>
+    </next-route-announcer>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js"></script><span
+        id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span><span id="PING_CONTENT_DLS_POPUP"
+        style="display: none;"></span>
+    <div
+        style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;">
     </div>
-    </div>
-    <!---->
-    </div>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/login-be43bc61ed9c8e2b.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
     @include('partials.notify')
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-      
     <script>
-        $(document).ready(function() {
-    
-    $('.check').click(function(){
-         
-          if($(this).hasClass('fa-eye-slash')){
-             
-            $(this).removeClass('fa-eye-slash');
-            
-            $(this).addClass('fa-eye');
-            
-            $('#test-input').attr('type','text');
-              
-          }else{
-           
-            $(this).removeClass('fa-eye');
-            
-            $(this).addClass('fa-eye-slash');  
-            
-            $('#test-input').attr('type','password');
-          }
-      });
-      
-  });
-      </script>
-      
-      <script>
-  function togglePasswordVisibility() {
-      var passwordInput = document.getElementById('passwordInput');
-      var passwordInput2 = document.getElementById('passwordInput2');
-      if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-      } else {
-          passwordInput.type = 'password';
-      }
-
-      if (passwordInput2.type === 'password') {
-        passwordInput2.type = 'text';
-      } else {
-          passwordInput2.type = 'password';
-      }
-  }
-  
-  
-  
-  </script>
-
-<script>
 
 $('.code-btn').click(function(e) {
     var ths = $(this);
@@ -412,81 +808,6 @@ $('.code-btn').click(function(e) {
 });
     </script>
 
-
-    <script>
-        var input = document.querySelector('#phone');
-        var info = document.querySelector('#info');
-        var status = document.getElementById('status');
-        var iti = window.intlTelInput(input, {
-            initialCountry: "us",
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Load the utilities script
-        });
-
-        input.addEventListener('blur', function() {
-            if (iti.isValidNumber()) {
-                status.textContent = 'Valid number';
-                status.className = 'valid-number';
-            } else {
-                status.textContent = 'Invalid number';
-                status.className = 'invalid-number';
-            }
-        });
-
-        input.addEventListener('countrychange', function() {
-            updateCountryInfo(); // Update the information displayed when the country changes
-        });
-
-        function updateCountryInfo() {
-            var countryData = iti.getSelectedCountryData();
-            console.log(countryData)
-
-            $('#country-name').val(countryData.name)
-            $('#dial-code').val(countryData.dialCode)
-            $('#country_iso').val(countryData.iso2)
-
-        }
-
-        // Initialize with the current selected country's info
-        document.addEventListener('DOMContentLoaded', updateCountryInfo);
-    </script>
-
-
-    <div data-v-a7d12cfc="" class="global-loading default" style="display: none;">
-        <div data-v-a7d12cfc="" class="global-spinner"><img data-v-a7d12cfc=""
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAMAAAA0X5qLAAAAh1BMVEUAAAAAv44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av46sPT54AAAALHRSTlMA+wXZ+J87JB7ux4lDNRQPCvLq39PNp5BpWRmxgnAvvrnlw5RhT0sqwHRxeP/zXbkAAAGcSURBVDjLjZTXcqtAEAVnyUGIJBAKKFqS7dv//30XsHFJxrD0C0XRxc45TCEDvFsdrvfhxnGWMk1S7c70nI+bZFxdXFC8YG5GVNemxTdte7+3yxUdq4MMMaocsMza6CeSqLRo2A3dffvguPh1WEiDcuWFeN24mSNDdjS85Exs4OLJX7wpyOWJT8A25G+iFMyn2za1jOIAV+kxIU9knDUQ9d8C/EimyH9OXgawNiblrepfXSn8WKax+4wnCEWDC6ptNk5RC9GxgqqNZ1EstXL1tSP/oBQtS1DN5Qp7vbz1sdwu30b0pNAkPIOrd4131E2kAEf0rDqtaJvTY3YDvM+aOS5IH91KrWdUl2LGIhsI9PIDLm2DFmmslT++FyiDu7a5ANV1FoKpkw/gfwUFddDIO7Cl4wqBMf1iRRZJxxb86d5OYCf9fyS/TaYrFcqVeYQK6nmqEQLFPNc7AuZ2lrtYAcEs936kdZdjE97rSAxDEvG8j8wC/E8Zo1Yo/CAv0oyOYKKzN55QWTm9B9WpyGiwyMvFnLbih+M5xjDWf6S2MlzIf04ZAAAAAElFTkSuQmCC"
-                alt=""></div>
-    </div>
-    <div data-v-e73e51fc="" class="start-page" style="display: none;"><img data-v-e73e51fc=""
-            src="{{ asset('') }}assets/static/img/start.0aabcda5.gif"></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@4.6.0/dist/echarts.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js"></script>
-    <script src="{{ asset('') }}assets/static/js/app.83a7756d.1717187934571.js"></script>
-    <script>
-     document.getElementById('form-id').addEventListener('submit', function (e) {
-    const checkboxIcon = document.getElementById('checkbox-icon');
-    
-    // Check if the checkbox is in the checked state
-    if (!checkboxIcon.classList.contains('van-checkbox__icon--checked')) {
-        e.preventDefault(); // Prevent form submission
-         iziToast.error({
-    message: 'Please check the box to continue.',
-    position: "topRight"
-});
-    }
-});
-
-// Toggle checkbox state on click
-document.getElementById('checkbox').addEventListener('click', function () {
-    const checkboxIcon = document.getElementById('checkbox-icon');
-    checkboxIcon.classList.toggle('van-checkbox__icon--checked');
-    checkboxIcon.classList.toggle('van-checkbox__icon--unchecked');
-});
-
-    </script>
 </body>
 
 </html>

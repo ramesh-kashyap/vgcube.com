@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="{{ asset('assets/iziToast.min.css') }}">
 <script src="{{ asset('assets/iziToast.min.js') }}"></script>
 <style>
-    .iziToast.iziToast-color-red {
+    .iziToast>.iziToast-body.iziToast-color-red .iziToast-message{
     background: rgb(19 17 23);
     border-color: rgb(19 17 23);
 }
 
-.iziToast.iziToast-color-green {
+.iziToast>.iziToast-body.iziToast-color-green .iziToast-message{
     background: rgb(19 17 23);
     border-color: rgb(19 17 23);
 }
-.iziToast>.iziToast-body .iziToast-message {
+/* .iziToast>.iziToast-body .iziToast-message {
     margin: 0 0 10px;
     color: #55b2c2 ;
-}
+} */
 .iziToast>.iziToast-close {
   
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(104%);
@@ -39,7 +39,7 @@
         @foreach ($errors as $error)
         iziToast.error({
             message: '{{ __($error) }}',
-            position: "center",
+            position: "topRight",
             progressBar: false
         });
         @endforeach
@@ -51,7 +51,7 @@
     function notify(status,message) {
         iziToast[status]({
             message: message,
-            position: "center",
+            position: "topRight",
             class: 'iziToast-custom',
             transitionIn: 'fadeIn',
             transitionOut: 'fadeOut',

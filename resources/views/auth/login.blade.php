@@ -1,493 +1,766 @@
-<html lang="en" class="pc" style="font-size: 50px;">
+<html lang="en" style="">
 
 <head>
-    <meta charset="utf-8">
-    <title>{{siteName()}}</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="expires" content="0">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
-    <link rel="icon" href="/logo1.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="renderer" content="webkit">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="google" content="notranslate">
-
-    <meta itemprop="name" content="{{siteName()}}">
-    <meta itemprop="description" content="Welcome to {{siteName()}} ">
-    <meta itemprop="image" content="{{asset('assets/static/image/fav.png')}}">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{siteName()}}">
-    <meta property="og:description" content="Welcome to {{siteName()}} ">
-    <meta property="og:image" content="{{asset('assets/static/image/fav.png')}}" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:url" content="{{asset('')}}">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
-    <script>
-        window.addEventListener("er7ror", function (event) {
-            if (event.message.indexOf("Unexpected token '<'") > -1) {
-                location.reload();
-            }
-        });
-        window.onload = function () {
-            document.addEventListener("touchstart", function (event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault();
-                }
-            });
-            var lastTouchEnd = 0;
-            document.addEventListener(
-                "touchend",
-                function (event) {
-                    var now = new Date().getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                },
-                false
-            );
-            document.addEventListener("gesturestart", function (event) {
-                event.preventDefault();
-            });
-        };
-
-        if ("standalone" in window.navigator && window.navigator.standalone) {
-            var noddy,
-                remotes = false;
-            document.addEventListener(
-                "click",
-                function (event) {
-                    noddy = event.target;
-                    while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-                        noddy = noddy.parentNode;
-                    }
-                    if (
-                        "href" in noddy &&
-                        noddy.href.indexOf("http") !== -1 &&
-                        (noddy.href.indexOf(document.location.host) !== -1 || remotes)
-                    ) {
-                        event.preventDefault();
-                        document.location.href = noddy.href;
-                    }
-                },
-                false
-            );
-        }
-
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            background-color: #000;
-        }
-    </style>
-    <style>
-        .iti__country-list {
-            position: absolute;
-            z-index: 2;
-            list-style: none;
-            text-align: left;
-            padding: 0;
-            margin: 0 0 0 -1px;
-            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-            background-color: #131118;
-            border: 1px solid #CCC;
-            white-space: nowrap;
-            max-height: 200px;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .go p[data-v-607a0cfb] {
-            margin-top: .4rem;
-            color: var(--COcolor3);
-            font-size: .26rem;
-            text-align: left;
-            margin-bottom: .4em;
-        }
-
-        body {
-            background: none;
-            width: 100%;
-            position: relative;
-            top: 0;
-            left: 50%;
-            bottom: 0;
-            background: #000;
-            margin: 0 auto;
-            transform: translateX(-50%);
-            font-family: Poppins, PingFang SC, Microsoft Yahei, sans-serif
-        }
-
-        .agreement {
-            color: var(--COcolor3);
-            ;
-        }
-        .van-checkbox {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    overflow: inherit;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-}
-    </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="{{asset('')}}assets/static/js/app.83a7756d.1717187934571.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js" rel="preload" as="script">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="preload" as="style">
-    <link href="{{asset('')}}assets/static/css/chunk-vant.d14f5539.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/chunk-vendors.794edbf9.css" rel="stylesheet">
-    <link href="{{asset('')}}assets/static/css/app.23ae5dc0.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-73ab94aa.2e0ec155.css">
-    <script charset="utf-8"
-        src="{{asset('')}}assets/static/js/chunk-73ab94aa.70e0e268.1717187934571.chunk.js "></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-2a0b1332.9f52f39a.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-2a0b1332.0436ba68.1717187934571.chunk.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('')}}assets/static/css/chunk-f8e2ce82.4965c1ba.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <title>MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</title>
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
+    <meta property="og:description"
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="Meshchain">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title"
+        content="MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering">
+    <meta name="next-head-count" content="14">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preload" href="{{ asset('') }}upnl/_next/static/css/c9d1efbde5d75517.css" as="style">
+    <link rel="stylesheet" href="{{ asset('') }}upnl/_next/static/css/c9d1efbde5d75517.css" data-n-g=""><noscript data-n-css=""></noscript>
+    <script defer="" nomodule="" src="{{ asset('') }}upnl/_next/static/chunks/polyfills-42372ed130431b0a.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/webpack-44d210f48ce8d2be.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/framework-8b7ae4d017121d95.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/main-0a946498e7d0ffea.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/_app-62dd2c8cc7122f96.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/454-fba73d6f40db324c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/962-67fd7c164fc63638.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/730-b6071344bc542f9c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/106-bc4204a49eec54a7.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/878-7babfedf6e5bb43c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/600-43bf72feb6de8eef.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/953-27df0f11cb6d622f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/337-c68deaa555ceac7f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/index-ee3997ecd6058818.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_buildManifest.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_ssgManifest.js" defer=""></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
-    <script charset="utf-8" src="{{asset('')}}assets/static/js/chunk-f8e2ce82.8a913baf.1717187934571.chunk.js"></script>
-    <style>
-        .go .wrap[data-v-a34da882] {
-            margin-top: .4rem;
-            color: var(--COcolor3);
-            font-size: .26rem;
-            display: flex;
-            justify-content: left;
-            margin-bottom: .4em;
+    <style data-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap">
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8V1g.woff) format('woff')
         }
 
-        .go .wrap .wr[data-v-a34da882] {
-
-            color: var(--COcolor3);
-            font-size: .26rem;
-            display: flex;
-            justify-content: left;
-            margin-bottom: .4em;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrFJM.woff) format('woff')
         }
 
-        .van-popup--bottom[data-v-a84105cc] {
-            max-width: 8.5rem;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6V1g.woff) format('woff')
         }
 
-        .van-popup--bottom.van-popup--round {
-            border-radius: 0.32rem 0.32rem 0 0;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
         }
 
-        .van-popup {
-            position: fixed;
-            max-height: 100%;
-            overflow-y: auto;
-            background-color: #0d0f13;
-            transition: transform 0.3s;
-            -webkit-overflow-scrolling: touch;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
         }
 
-        .area_pop[data-v-a84105cc] {
-            color: #fff;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
         }
 
-        .area_pop .title[data-v-a84105cc] {
-            font-size: 0.32rem;
-            text-align: center;
-            padding: 0.3rem;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
         }
 
-        .rel {
-            position: relative;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
         }
 
-        .area_pop .so[data-v-a84105cc] {
-            height: 0.8rem;
-            background: #15181f;
-            margin: 0 0.3rem;
-            border-radius: 0.12rem;
-            padding: 0 0.1rem;
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
         }
-
-        .db {
-            display: flex;
-            display: -webkit-box;
-            box-align: center;
-            -webkit-box-align: center;
-        }
-
-        .area_pop ul[data-v-a84105cc] {
-            height: 7rem;
-            overflow: auto;
-            margin: 0.2rem 0.3rem;
-        }
-
-        ol,
-        ul,
-        li {
-            list-style: none;
-        }
-
-        .area_pop .title .abs[data-v-a84105cc] {
-            right: 0.3rem;
-            top: 0.35rem;
-        }
-
-        .abs {
-            position: absolute;
-        }
-
-        .area_pop .title .abs i[data-v-a84105cc] {
-            font-size: 0.32rem;
-        }
-
-        .van-icon {
-            position: relative;
-            display: inline-block;
-            font: normal normal normal 0.28rem / 1 'vant-icon';
-            font: normal normal normal 0.28rem / 1 var(--van-icon-font-family, 'vant-icon');
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .area_pop .so .ico[data-v-a84105cc] {
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAqCAYAAAAnH9IiAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANYSURBVHgB1VmLcdswDIU0gTcoO0HdCapMkHSCphNYnqDKBLYn6HUCOxOYmSDuBFU38AR2ARlSKBKkPqdP8+50EimJfARAEgAj6InNZrPA2xKvhyiKPvDzgi/CGa+c7tfr9QXver1eaxgAEXQEkk3gRvSbQbAtaCAHHMQOB3CCnmhNmsgi0R/4mMAw0Ej+O5LPoSMaSZMZMNkUxsEWyT8h+XPbH4KkkbBCwkd8VBBGjtcJO/8LNxMgLAxbb/wf/71rK3UvaSS8ZMI+u9X4/nC5XJ6bOqPB4600L+X5jIh/bWPrUQ/COduihh7Ath8D5M8s8SDxSGjUaxI86wexbewnY/I2iPjnkPYiqyGyw1dwCZ9ZdRoGBPZHS+dPcDWaM3FxcsZmwaO2UmUaBga2SWv2HbxN3hLKo4UClaTZLP7YH7CEDzAieA84Cn2LwqokzWqyf3oamzCBiNF8set90i4kzavFq/UuT9P0I0yI7XZLmlZmnSTtUtLOioCDyGBi0FIqVD/YFQVpJHhv1eer1eoXTAyWqDbryDFjj7JCzF7bwvowg5mA0n62qkoXuAJJOrF/xK35BeaDNPFrJhKjVL9YH+R93MWhwH3nVrUyCyTpmmmgen7D/Kj5HijYT2aZSCvrhxxmBru4JuoTEdx9v7UzPiJsDg7pdwciHRzVTAhqXyKtYGZwmGYiNwtEOjhTZ8LSKtclLcxUxTHdLOC+lVnHyZ4KJOnGHWhiJEKdNguledTELzhQk0Hwoc+Oa0pxGIrf9ugSdqQmBUXq4C4EjiXEvhdSJDM2pEhFimgK0pIfi1AYSWxgIux2Oymo1lIOpNoRKR4U2kqnMBNKJWD/mV3viWTeSAeCyz3FkDASOD6VTJEWB3F3tn2PDFwvjxI4R5IGDAwjdSCRK/t1BFYjzSuJlDyhBvZsd4OA5ktDgrPs1yHeKwFJMWTfwJelS+aghNdVmtiuNxOTTanePQRSs0Se4sk2qd44ju+xYzKxxPNZqWXwCKwi/l8m1QOaLjKqrY4v8EZp2RWMAF6xMjtD6iOO36+7HBQptsUEhoHmXKEGf58OcSw/9jmSI3Wn7FR1PpJjP+fQNnVszq0yqd+ZtNVgArezFMqd0AAU1A8/6SptnfybU5dTLB/+AYy7xNVzTTGdAAAAAElFTkSuQmCC) no-repeat center center;
-            width: 0.5rem;
-            height: 0.8rem;
-            background-size: 0.3rem auto;
-        }
-
-        .area_pop .so input[data-v-a84105cc] {
-            width: 100%;
-            background: none;
-            border: 0;
-        }
-
-        input[type='text'],
-        textarea {
-            -webkit-appearance: none;
-            appearance: none;
-            outline: 0;
-        }
-
-        .area_pop ul li[data-v-a84105cc] {
-            border-bottom: 0.02rem solid rgba(255, 255, 255, 0.1);
-            padding: 0.28rem 0;
-        }
-
-        .db {
-            display: flex;
-            display: -webkit-box;
-            box-align: center;
-            -webkit-box-align: center;
-        }
-
-        .area_pop ul li .ico[data-v-a84105cc] {
-            margin-right: 0.2rem;
-        }
-
-        .area_pop ul li .ico img[data-v-a84105cc] {
-            height: 0.32rem;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            vertical-align: top;
-        }
-
-        .db>li,
-        .flexs {
-            -moz-box-flex: 1;
-            -webkit-box-flex: 1;
-            box-flex: 1;
-        }
-
-        .phone_code[data-v-fa37b51c] {
-            color: #fff;
-            font-size: 0.28rem;
-            display: flex;
-            align-items: center;
-            margin-right: 0.12rem;
-        }
-
-        .inp_content_box {
-            display: flex;
-        }
-        .custom[data-v-a34da882] {
-    position: fixed;
-    top: .24rem;
-    right: 0.3rem;
-    margin-top: constant(safe-area-inset-top);
-    margin-top: env(safe-area-inset-top);
-    width: .72rem;
-    height: .72rem;
-    background: #171717;
-    border-radius: .2rem;
-    text-align: center;
-}
-
- .van-checkbox__icon--checked {
-    border-color: rgb(113, 219, 129);
-    background-color: rgb(113, 219, 129);
-}
-.van-checkbox__icon--unchecked {
-    border-color: #ddd; /* Set an alternative color for the unchecked state */
-    background-color: transparent;
-}
-.van-checkbox {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    overflow: visible;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-}
     </style>
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js">
+    <link type="text/css" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&amp;display=swap">
+   
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style id="googleidentityservice_button_styles" nonce="undefined">
+        .qJTHM {
+            -webkit-user-select: none;
+            color: #202124;
+            direction: ltr;
+            -webkit-touch-callout: none;
+            font-family: "Roboto-Regular", arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            margin: 0;
+            overflow: hidden;
+            -webkit-text-size-adjust: 100%
+        }
+
+        .ynRLnc {
+            left: -9999px;
+            position: absolute;
+            top: -9999px
+        }
+
+        .L6cTce {
+            display: none
+        }
+
+        .bltWBb {
+            word-break: break-all
+        }
+
+        .hSRGPd {
+            color: #1a73e8;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none
+        }
+
+        .Bz112c-W3lGp {
+            height: 16px;
+            width: 16px
+        }
+
+        .Bz112c-E3DyYd {
+            height: 20px;
+            width: 20px
+        }
+
+        .Bz112c-r9oPif {
+            height: 24px;
+            width: 24px
+        }
+
+        .Bz112c-uaxL4e {
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+
+        .LgbsSe-Bz112c {
+            display: block
+        }
+
+        .S9gUrf-YoZ4jf,
+        .S9gUrf-YoZ4jf * {
+            border: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .fFW7wc-ibnC6b>.aZ2wEe>div {
+            border-color: #4285f4
+        }
+
+        .P1ekSe-ZMv3u>div:nth-child(1) {
+            background-color: #1a73e8 !important
+        }
+
+        .P1ekSe-ZMv3u>div:nth-child(2),
+        .P1ekSe-ZMv3u>div:nth-child(3) {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #1a73e8, #1a73e8) !important
+        }
+
+        .haAclf {
+            display: inline-block
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe {
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: background-color .218s, border-color .218s;
+            transition: background-color .218s, border-color .218s;
+            -webkit-user-select: none;
+            -webkit-appearance: none;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #dadce0;
+            color: #3c4043;
+            cursor: pointer;
+            font-family: "Google Sans", arial, sans-serif;
+            font-size: 14px;
+            height: 40px;
+            letter-spacing: 0.25px;
+            outline: none;
+            overflow: hidden;
+            padding: 0 12px;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: auto
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .nsm7Bb-HzV7m-LgbsSe {
+                border: 2px solid windowText;
+                color: windowText
+            }
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe {
+            font-size: 14px;
+            height: 32px;
+            letter-spacing: 0.25px;
+            padding: 0 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe {
+            font-size: 11px;
+            height: 20px;
+            letter-spacing: 0.3px;
+            padding: 0 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe {
+            padding: 0;
+            width: 40px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe {
+            width: 32px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe {
+            width: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK {
+            -webkit-border-radius: 20px;
+            border-radius: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe {
+            -webkit-border-radius: 16px;
+            border-radius: 16px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe {
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc {
+            border: none;
+            color: #fff
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc {
+            background-color: #1a73e8
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc {
+            background-color: #202124;
+            color: #e8eaed
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 18px;
+            margin-right: 8px;
+            min-width: 18px;
+            width: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 14px;
+            min-width: 14px;
+            width: 14px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            height: 10px;
+            min-width: 10px;
+            width: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin-left: 8px;
+            margin-right: -4px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin: 0;
+            padding: 10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            padding: 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            padding: 4px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #fff;
+            height: 36px;
+            margin-left: -10px;
+            margin-right: 12px;
+            min-width: 36px;
+            width: 36px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c {
+            margin: 0;
+            padding: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            height: 28px;
+            margin-left: -8px;
+            margin-right: 10px;
+            min-width: 28px;
+            width: 28px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            height: 16px;
+            margin-left: -6px;
+            margin-right: 8px;
+            min-width: 16px;
+            width: 16px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            margin-left: 2px;
+            margin-right: 0;
+            padding: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 18px;
+            border-radius: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 14px;
+            border-radius: 14px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 8px;
+            border-radius: 8px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            justify-content: space-between;
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            height: 100%;
+            position: relative;
+            width: 100%
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX {
+            justify-content: center
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+            font-family: "Google Sans", arial, sans-serif;
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: top
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            font-weight: 300
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            -webkit-flex-grow: 0;
+            flex-grow: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            -webkit-transition: background-color .218s;
+            transition: background-color .218s;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:hover,
+        .nsm7Bb-HzV7m-LgbsSe:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-color: #d2e3fc;
+            outline: none
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
+        .nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(66, 133, 244, .04)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(66, 133, 244, .1)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(255, 255, 255, .24)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+            background: rgba(255, 255, 255, .32)
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY {
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            height: 20px;
+            margin-left: -4px;
+            margin-right: 8px;
+            min-width: 20px;
+            width: 20px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+            font-family: "Roboto";
+            font-size: 12px;
+            text-align: left
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf,
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS {
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            color: #5f6368;
+            fill: #5f6368;
+            font-size: 11px;
+            font-weight: 400
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
+            color: #e8eaed;
+            fill: #e8eaed
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c {
+            height: 18px;
+            margin: -3px -3px -3px 2px;
+            min-width: 18px;
+            width: 18px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-top-left-radius: 0;
+            border-top-left-radius: 0;
+            -webkit-border-bottom-left-radius: 0;
+            border-bottom-left-radius: 0;
+            -webkit-border-top-right-radius: 3px;
+            border-top-right-radius: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            margin-left: 12px;
+            margin-right: -10px
+        }
+
+        .nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
+            -webkit-border-radius: 18px;
+            border-radius: 18px
+        }
+
+        .L5Fo6c-sM5MNb {
+            border: 0;
+            display: block;
+            left: 0;
+            position: relative;
+            top: 0
+        }
+
+        .L5Fo6c-bF1uUb {
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .L5Fo6c-bF1uUb:focus {
+            border: none;
+            outline: none
+        }
+        .phone_code {
+    display: inline-block;
+    padding: 7px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+   
+}
+/* Overlay (semi-transparent background) */
+
+
+        /* Popup Container */
+        .van-popup {
+           
+            position: fixed;
+            bottom: 0.1%;
+            left: 50%;
+            transform: translateX(-44%);
+            width: 90%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: bottom 0.3s ease;
+        }
+
+        @media (min-width: 1200px) {
+    .van-popup {
+        transform: translateX(-48%);
+    }
+}
+
+/* When screen width is smaller (small screens) */
+@media (max-width: 768px) {
+    .van-popup {
+        transform: translateX(-44%);
+    }
+}
+
+        .van-popup.active {
+            bottom: 0;
+        }
+
+        /* Popup Header */
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: rgb(34 197 94);
+            color: #fff;
+            font-size: 18px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .van-icon-cross {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Search Section */
+        .so {
+            padding: 10px 16px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #country-search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* Scrollable Country List */
+        .country-list {
+            max-height: 300px;
+            overflow-y: auto;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .country-list li {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .country-list li:hover {
+            background: #f0f8ff;
+        }
+
+        /* Button to trigger the popup */
+        .trigger-btn {
+           
+            margin: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+  
+       
+    </style>
+    
 </head>
 
-<body class="mein_cn">
-    <div id="app" class="applang">
-        <div data-v-cfc9a7fc="" data-v-a34da882="" class="page">
-            <div data-v-cfc9a7fc="" class="headers">
-                <div data-v-a34da882="" data-v-cfc9a7fc="" class="custom"><a href="https://t.me/Adam_Vgcube"
-                        target="_blank"><img data-v-a34da882="" data-v-cfc9a7fc=""
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAASFBMVEUAAACUmp+Tm5+Vmp+TmZ6Ul5+UmZ+Pn5+UmZ+Tl52Ump+UmZ2Tmp+Ump+SmZ6UlZ+VmJ6Tmp6Ump+UmZ+Vmp+fn5+Vmp+Ump+ZwjL7AAAAF3RSTlMAv0DfgCCgEI9A73DvsGAwYFDPcDAQz3vS0vQAAAE5SURBVEjH7VVbbsQgDAxvCIXddHfL/W/aOKkKjjFIlfpTdb4S22PDYMPyNxFiUm+lFCX85qbRTkNshQ3jcF8IhOHjI2Sn0Fz8V/rV5udr/31uVp0W1S3ixOmMr8YoBc84XOvjar4rhuG5TCYdnqvAGawffUE0+Pwljar5KSwwAjWxgrt3SIcKILkpbuDPqADO0JVENP+wg/uwZ/AuApwACSKnpJFudkzIaE2JrIjAoEWAardljLXVff3u/dyRVJxN3yYd9f7WzIikBNAOwUD8kCAwIRaOUKUg+j/OD0qoH5gg/wm/QdgIQcE8aK07k3qYdpdHJ61LhcWE0G0NByWYe1cQAsAo9jFwlhIAUu+IsjudEXwKEeYwBY3xHB4JOEVIZXrViYIwLZBpvBkSIvP6snAJZU9y+Sk+AbtVNBMW8XUdAAAAAElFTkSuQmCC"></a>
-                </div>
-              
+<body>
+    <div id="__next">
+        <div class="Toastify"></div>
+        <div class="min-h-screen flex flex-col items-center justify-center pt-[100px] bg-gray-50 p-6">
+            <div class="absolute top-6 flex justify-between w-full px-6"><img alt="MeshNode Logo" loading="lazy"
+                    width="163" height="40" decoding="async" data-nimg="1" class="hidden sm:flex"
+                    src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent;"><img alt="Logo"
+                    loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="flex sm:hidden"
+                    src="{{ asset('') }}upnl/assets/icons/logo_meshchain.svg" style="color: transparent;">
+                <div class="flex"><button type="submit"
+                        class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        fdprocessedid="pb7o">Log In</button><button type="button"
+                        class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        fdprocessedid="3lirdb">Sign Up</button></div>
             </div>
-
-            <div data-v-cfc9a7fc="" id="scroll" class="content-container">
-                <div data-v-cfc9a7fc="" id="content" class="content-scroll">
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo"><img data-v-a34da882="" <div
-                            data-v-a34da882="" data-v-cfc9a7fc="" class="logo"><img data-v-a34da882=""
-                            data-v-cfc9a7fc="" src="{{asset('')}}assets/static/image/loginbg.png">
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="s"></div>
-                    </div>
-                    {{-- <div data-v-a34da882="" data-v-cfc9a7fc="" class="container">
-
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo" style="padding-top:80px">
-                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="s" style="
-    text-align: left;
-    font-size: 14px;
-">@lang('Please enter your email and password to complete')</div>
-                            <img src="{{asset('')}}assets/static/img/bg-image.png">
-                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="s"></div>
-                        </div> --}}
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="container">
-
-                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="logo" style="padding-top:80px">
-                                <div data-v-a34da882="" data-v-cfc9a7fc="" class="s" style="
-    text-align: left;
-    font-size: 14px;
-">@lang('Please enter your phone and password to complete')</div>
-                            </div>
-                            <form action="{{route('login')}}" method="POST"  id="form-id">
+            <div class="bg-[#FFF] max-w-[385px] rounded-[20px] py-6 px-6 md:px-8 w-full"
+                style="box-shadow: rgba(23, 23, 23, 0.25) 0px 4px 88.3px 0px;">
+                <h2 class="text-[28px] font-semibold text-gray-800 text-center mb-2"
+                    style="font-family: ClashDisplay-Semibold;">Log In</h2>
+                <p class="text-sm text-[#999] text-center mb-6">Welcome back! Log in to stay updated with all your nodes
+                    and rewards.</p>
+                <form action="{{route('login')}}" method="POST"  id="form-id" class="space-y-6" data-gtm-form-interact-id="0">
+                
                                 {{ csrf_field() }}
-
-
-                                <div data-v-a34da882="" data-v-cfc9a7fc="" class="item">
-                                    <!---->
-                                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="it input-container">
-                                        <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="it">
-                                            <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex inp">
-
-                                                <input type="hidden" id="country-name" name="country" value="">
+                                <input type="hidden" id="country-name" name="country" value="">
                                                 <input type="hidden" id="dial-code" name="dialCode" value="">
                                                 <input type="hidden" id="country_iso" name="country_iso" value="1">
-                                                <div data-v-607a0cfb="" data-v-cfc9a7fc="" class="flex flex1">
-                                                    <div data-v-fa37b51c="" class="inp_content_box">
-                                                        <div data-v-fa37b51c="" class="phone_code" id="phone_code"><span
-                                                                data-v-fa37b51c="">+1</span><i data-v-fa37b51c=""
-                                                                class="arrow van-icon van-icon-arrow-down"><!----></i>
-                                                        </div>
-                                                        <div data-v-fa37b51c="" class="input"><input data-v-fa37b51c="" name="phone"
-                                                                placeholder="Enter phone number"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="it">
+                <div class="input-group mb-3">
+                
+  <span class="input-group-text "  style="
+    padding-left: 2px;
+    padding: 7px;
+"  id="phone_code">+1</span>
+  <input type="text" class="form-control" placeholder="Enter Phone Number" aria-label="Username"  name="phone" aria-describedby="basic-addon1" style="
+    height: 38px;
+    width: 70%;
+    border-radius: 12px;
+    border-color: grey;
+    background: transparent;
+">
+</div>
 
 
-                                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex inp val">
-                                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="ico"></div>
-                                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex1"><input
-                                                    data-v-a34da882="" id="passwordInput" data-v-cfc9a7fc=""
-                                                    placeholder="Please enter your password" name="password"
-                                                    type="password">
-                                            </div>
-                                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="yj"><i id="check"
+
+
+
+
+
+                  
+                    
+                    
+                    
+                    
+                    <div><label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <div class="relative"><input type="password" id="passwordInput" name="password" placeholder="Enter Password"
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
+                                value="" fdprocessedid="hpl9j" data-gtm-form-interact-field-id="0"><span
+                                class="absolute inset-y-0 right-3 flex items-center cursor-pointer"><i id="check"
                                                     onclick="togglePasswordVisibility()" class="fa fa-eye-slash" style="    font-size: 20px;
-                                        margin-top: -10px;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="box3">
-                                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="cache_account">
-                                            <div data-v-a34da882="" role="checkbox" tabindex="0" aria-checked="true"
-                                                class="van-checkbox" data-v-cfc9a7fc="">
-                                                <div class="van-checkbox" id="checkbox">
-        <div class="van-checkbox__icon van-checkbox__icon--square" id="checkbox-icon">
-            <i class="van-icon van-icon-success" ></i>
-        </div> </div><span data-v-a34da882="" data-v-cfc9a7fc="" style="
-    font-size: 10px;
-    margin-left: 13px;
-">@lang('By logging in, I agree to the VG CUBE') <a href="{{route('service-agreement')}}"
-                                                        style="color:#55b2c2 ; margin-top: 1;">@lang('Service Agreement')</a></span>
-                                            </div>
-                                        </div>
-                                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="kfBox">
-                                        <a href="{{route('forgot-password')}}"
-                                        style="color:#55b2c2 ;">
-                                        
-                                            @lang('Forgot password')</a> </div>
-                                    </div>
-                                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="go"><button data-v-a34da882=""
-                                            data-v-cfc9a7fc="" type="submit" class="btn2">@lang('Login') </button>
-                                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="wrap bet">
-                                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="agreement"
-                                                style="font-size:10px;"></div>
-
-                                        </div>
-                                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="wrap bet">
-
-                                            <div data-v-a34da882="" data-v-cfc9a7fc="" class="wr" style="
-    margin-top: -12px;
-"> @lang('No account')  <span data-v-a34da882="" data-v-cfc9a7fc=""><a href="{{route('register')}}"
-                                                        style="color:#55b2c2 ;">@lang('Register now')</a></span></div>
-                                        </div>
-
-                                    </div>
-                                    <div class="van-overlay" style="z-index: 2005;  display: none" id="overlay"></div>
+                                        margin-top: -2px;"></i></span></div>
+                    </div>
+                    <div class="flex items-center justify-end"><a
+                            class="text-sm fot-[400] text-[#999] hover:text-[#999]" href="{{route('forgot-password')}}">Forgot
+                            Password?</a></div>
+                    <div class="flex items-center justify-center">
+                        <div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-ozo0l_response"
+                                value="0.js4O1FaNYsmgjY_nyP-yf2eeTxKxXXubrK2aFX1WJNZTk6sa_F9uYmee9NtqTQ7Qo_cAoEmR6YAt8M2rkwWLetaIOHcDrecriuRNbU8KIBtOR5ocRcl1RqyY5OdqYxVucO5IMoRTE2Ly7vzX0yL5mCBNU8Iz1FW8C0VnUoV-ULt3WrN41Sq1X2yaWgasP0xgGjpIgxZB9R8Z4spVV1d42hZvSt03H_0wGviy7jEC72Fhzi3GBTjthrGk9uw_EO9ciCSgOOT35o91I0uAmow57S10BMAOm3T6W1UUvmespWpfAJB8um7UL6IwTNMm4h342114GqaRYDccfm9r_xwML4H2HaO4oMmjuX6z9RmeS4EqIMeHhsEEnoXkYFumZLVtCX3v4iMzG4FGokzpsnGJm59o2Ka1sFY2oyG6kwAk3h10A5YJBu7pAZqhV-as9ZtKuQjfgEJpQYGmD9q_HIfFN9EPcLIHSgoYlOanu5x6Shhqu3ktTon-SGxGNMbOpEvZEHnf8psyhM3jKwIPoDACiaT5FaL_fPVGrjm3ClW6sINl0j_UCF3cs53IQvOmdfZboWUTe3x-ES85ufrdNwAK75GRmjlHNrRFkICIrdYODWDouJ8a3SjQe1gD3YUuIV_9DCV4O8-A1Ykt7wEgoLIbXBM9lxkdVMEQE4gZkSr2Rfc_Vh2VzUwdUt7iZ15TRLP9TJRS5i2PWIep0-0e3enTMpizpUU2J43K8acXddWCBYi2aGvcUu6nRFSnZdltpD7klfBm2EjNlzkzMzuTFy5OMA.E6jCrT-ZSXvN-g_W9IW_FA.07be5c337a54ba408e06440d355fce1d056d5e2196dd37ff86c53c6d849cbbbf">
+                        </div>
+                    </div><button type="submit"
+                        class="w-full h-[46px] py-2 px-4 bg-green-500 font-medium text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        fdprocessedid="zpoh7">Log In</button>
+                        <div class="van-overlay" style="z-index: 2005;  display: none" id="overlay"></div>
                                     <div data-v-a84105cc="" class="van-popup van-popup--round van-popup--bottom"
                                         style="z-index: 2010;margin-left: -21px; display: none" id="popup">
                                         <div data-v-a84105cc="" class="area_pop">
@@ -508,267 +781,369 @@
                                            
                                         </div>
                                     </div>
-                            </form>
-
-
-
-                        </div>
-                    </div>
-                </div>
+                </form>
+                
+                <div class="mt-6 text-center"><span class="text-sm text-gray-600">Don't have an account? <a
+                            class="text-gray-800 underline text-[14px] font-semibold decoration-solid"
+                            href="/signup">Sign Up</a></span></div>
             </div>
-            <!---->
-
         </div>
-        <div data-v-a7d12cfc="" class="global-loading default" style="display: none;">
-            <div data-v-a7d12cfc="" class="global-spinner"><img data-v-a7d12cfc=""
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAMAAAA0X5qLAAAAh1BMVEUAAAAAv44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av44Av46sPT54AAAALHRSTlMA+wXZ+J87JB7ux4lDNRQPCvLq39PNp5BpWRmxgnAvvrnlw5RhT0sqwHRxeP/zXbkAAAGcSURBVDjLjZTXcqtAEAVnyUGIJBAKKFqS7dv//30XsHFJxrD0C0XRxc45TCEDvFsdrvfhxnGWMk1S7c70nI+bZFxdXFC8YG5GVNemxTdte7+3yxUdq4MMMaocsMza6CeSqLRo2A3dffvguPh1WEiDcuWFeN24mSNDdjS85Exs4OLJX7wpyOWJT8A25G+iFMyn2za1jOIAV+kxIU9knDUQ9d8C/EimyH9OXgawNiblrepfXSn8WKax+4wnCEWDC6ptNk5RC9GxgqqNZ1EstXL1tSP/oBQtS1DN5Qp7vbz1sdwu30b0pNAkPIOrd4131E2kAEf0rDqtaJvTY3YDvM+aOS5IH91KrWdUl2LGIhsI9PIDLm2DFmmslT++FyiDu7a5ANV1FoKpkw/gfwUFddDIO7Cl4wqBMf1iRRZJxxb86d5OYCf9fyS/TaYrFcqVeYQK6nmqEQLFPNc7AuZ2lrtYAcEs936kdZdjE97rSAxDEvG8j8wC/E8Zo1Yo/CAv0oyOYKKzN55QWTm9B9WpyGiwyMvFnLbih+M5xjDWf6S2MlzIf04ZAAAAAElFTkSuQmCC"
-                    alt=""></div>
-        </div>
-        <div data-v-e73e51fc="" class="start-page" style="display: none;"><img data-v-e73e51fc=""
-                src="{{asset('')}}assets/static/img/start.0aabcda5.gif"></div>
     </div>
-    @include('partials.notify')
-
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script id="__NEXT_DATA__" type="application/json">
+        {
+            "props": {
+                "pageProps": {
+                    "__lang": "en",
+                    "__namespaces": {
+                        "common": {
+                            "logout": "Logout",
+                            "menu": "Menu",
+                            "overview": "Overview",
+                            "my_nodes": "Nodes",
+                            "rewards": "Rewards",
+                            "wallet": "Wallet",
+                            "referrals": "Referrals",
+                            "tasks": "Tasks",
+                            "profile": "Profile",
+                            "follow_us": "Follow Us",
+                            "hello": "Hello",
+                            "referred": "Referred",
+                            "total_rewards": "Total Rewards",
+                            "points": "Points",
+                            "today_rewards": "Today Rewards",
+                            "network_summary_title": "Network",
+                            "manage": "Manage",
+                            "network_differently": "Network Difficulty",
+                            "node_online": "Node online",
+                            "reward_stats": "Reward Stats",
+                            "mining": "Mining",
+                            "daily": "Daily",
+                            "monthly": "Monthly",
+                            "please_enter_friend_email": "Please enter the email of your friend",
+                            "invalid_friend_email": "Invalid the email of your friend"
+                        }
+                    }
+                },
+                "__N_SSG": true
+            },
+            "page": "/",
+            "query": {},
+            "buildId": "nocaBKNJml-nPe7WJbWSK",
+            "isFallback": false,
+            "gsp": true,
+            "locale": "en",
+            "locales": ["en", "ru"],
+            "defaultLocale": "en",
+            "scriptLoader": []
+        }
+    </script>
     <script>
-        $(document).ready(function () {
-
-            $('#check').click(function () {
-
-                if ($(this).hasClass('fa-eye-slash')) {
-
-                    $(this).removeClass('fa-eye-slash');
-
-                    $(this).addClass('fa-eye');
-
-                    $('#test-input').attr('type', 'text');
-
-                } else {
-
-                    $(this).removeClass('fa-eye');
-
-                    $(this).addClass('fa-eye-slash');
-
-                    $('#test-input').attr('type', 'password');
+        (function () {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML =
+                        "window.__CF$cv$params={r:'8ed9cbcf1ce9550d',t:'MTczMzQ2MjEwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
                 }
-            });
-
-        });
-    </script>
-
-    <script>
-        function togglePasswordVisibility() {
-            var passwordInput = document.getElementById('passwordInput');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
             }
-        }
-
-
-
-    </script>
-
-    <!-- Your other scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@4.6.0/dist/echarts.js"></script>
-    <script src="{{asset('')}}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js"></script>
-    <script src="{{asset('')}}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js"></script>
-    <script src="{{asset('')}}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js"></script>
-    <script src="{{asset('')}}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js"></script>
-    <script src="{{asset('')}}assets/static/js/app.83a7756d.1717187934571.js"></script>
-
-    <!-- Your custom script -->
-    <script>
-        $(document).ready(function () {
-            $('.email-tab').click(function () {
-                $('.input-container').html(`
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="n">Email</div>
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="val inp flex">
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="ico"></div>
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex1"><input data-v-a34da882="" data-v-cfc9a7fc="" type="email" placeholder="Enter email" name="username"></div>
-                    </div>
-                `);
-                $('.email-tab').addClass('on');
-                $('.username-tab').removeClass('on');
-            });
-
-            $('.username-tab').click(function () {
-                $('.input-container').html(`
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="n">Username</div>
-                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="val inp flex">
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="ico"></div>
-                        <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex1"><input data-v-a34da882="" data-v-cfc9a7fc="" type="text" placeholder="Enter username" name="username"></div>
-                    </div>
-                `);
-                $('.username-tab').addClass('on');
-                $('.email-tab').removeClass('on');
-            });
-        });
-    </script>
-    <!-- <script>
-        var input = document.querySelector('#phone');
-        var info = document.querySelector('#info');
-        var status = document.getElementById('status');
-        var iti = window.intlTelInput(input, {
-            initialCountry: "us",
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Load the utilities script
-        });
-
-        input.addEventListener('blur', function () {
-            if (iti.isValidNumber()) {
-                status.textContent = 'Valid number';
-                status.className = 'valid-number';
-            } else {
-                status.textContent = 'Invalid number';
-                status.className = 'invalid-number';
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function () {};
+                    document.onreadystatechange = function (b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
             }
-        });
+        })();
+    </script><iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <script id="_next-ga-init" data-nscript="afterInteractive">
+        window['dataLayer'] = window['dataLayer'] || [];
 
-        input.addEventListener('countrychange', function () {
-            updateCountryInfo(); // Update the information displayed when the country changes
-        });
-
-        function updateCountryInfo() {
-            var countryData = iti.getSelectedCountryData();
-            console.log(countryData)
-
-            $('#country-name').val(countryData.name)
-            $('#dial-code').val(countryData.dialCode)
-            $('#country_iso').val(countryData.iso2)
-
+        function gtag() {
+            window['dataLayer'].push(arguments);
         }
+        gtag('js', new Date());
 
-        // Initialize with the current selected country's info
-        document.addEventListener('DOMContentLoaded', updateCountryInfo);
-    </script> -->
+        gtag('config', 'G-5PPR32GMM8');
+    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-5PPR32GMM8" id="_next-ga"
+        data-nscript="afterInteractive"></script>
+    <next-route-announcer>
+        <p aria-live="assertive" id="__next-route-announcer__" role="alert"
+            style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+            MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</p>
+    </next-route-announcer>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js"></script><span
+        id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span><span id="PING_CONTENT_DLS_POPUP"
+        style="display: none;"></span>
+    <div
+        style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;">
+    </div>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/login-be43bc61ed9c8e2b.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
+     <!-- Include jQuery -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-    $(document).ready(function(){
-        
-        $("#phone_code").click(function(){
-            $("#popup").show();
-            $("#overlay").show();
-  });
-  $("#cancel").click(function(){
-            $("#popup").hide();
-            $("#overlay").hide();
-  });
+    $(document).ready(function () {
+
+        $('#check').click(function () {
+
+            if ($(this).hasClass('fa-eye-slash')) {
+
+                $(this).removeClass('fa-eye-slash');
+
+                $(this).addClass('fa-eye');
+
+                $('#test-input').attr('type', 'text');
+
+            } else {
+
+                $(this).removeClass('fa-eye');
+
+                $(this).addClass('fa-eye-slash');
+
+                $('#test-input').attr('type', 'password');
+            }
+        });
+
+    });
+</script>
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('passwordInput');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    }
+
+
+
+</script>
+
+<!-- Your other scripts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@4.6.0/dist/echarts.js"></script>
+<script src="{{asset('')}}assets/static/js/chunk-vue.2deea45a.1717187934571.chunk.js"></script>
+<script src="{{asset('')}}assets/static/js/chunk-echarts.eba990db.1717187934571.chunk.js"></script>
+<script src="{{asset('')}}assets/static/js/chunk-vant.9e1db231.1717187934571.chunk.js"></script>
+<script src="{{asset('')}}assets/static/js/chunk-vendors.24e8c7cc.1717187934571.chunk.js"></script>
+<script src="{{asset('')}}assets/static/js/app.83a7756d.1717187934571.js"></script>
+
+<!-- Your custom script -->
+<script>
+    $(document).ready(function () {
+        $('.email-tab').click(function () {
+            $('.input-container').html(`
+                <div data-v-a34da882="" data-v-cfc9a7fc="" class="n">Email</div>
+                <div data-v-a34da882="" data-v-cfc9a7fc="" class="val inp flex">
+                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="ico"></div>
+                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex1"><input data-v-a34da882="" data-v-cfc9a7fc="" type="email" placeholder="Enter email" name="username"></div>
+                </div>
+            `);
+            $('.email-tab').addClass('on');
+            $('.username-tab').removeClass('on');
+        });
+
+        $('.username-tab').click(function () {
+            $('.input-container').html(`
+                <div data-v-a34da882="" data-v-cfc9a7fc="" class="n">Username</div>
+                <div data-v-a34da882="" data-v-cfc9a7fc="" class="val inp flex">
+                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="ico"></div>
+                    <div data-v-a34da882="" data-v-cfc9a7fc="" class="flex1"><input data-v-a34da882="" data-v-cfc9a7fc="" type="text" placeholder="Enter username" name="username"></div>
+                </div>
+            `);
+            $('.username-tab').addClass('on');
+            $('.email-tab').removeClass('on');
+        });
+    });
+</script>
+<!-- <script>
+    var input = document.querySelector('#phone');
+    var info = document.querySelector('#info');
+    var status = document.getElementById('status');
+    var iti = window.intlTelInput(input, {
+        initialCountry: "us",
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Load the utilities script
+    });
+
+    input.addEventListener('blur', function () {
+        if (iti.isValidNumber()) {
+            status.textContent = 'Valid number';
+            status.className = 'valid-number';
+        } else {
+            status.textContent = 'Invalid number';
+            status.className = 'invalid-number';
+        }
+    });
+
+    input.addEventListener('countrychange', function () {
+        updateCountryInfo(); // Update the information displayed when the country changes
+    });
+
+    function updateCountryInfo() {
+        var countryData = iti.getSelectedCountryData();
+        console.log(countryData)
+
+        $('#country-name').val(countryData.name)
+        $('#dial-code').val(countryData.dialCode)
+        $('#country_iso').val(countryData.iso2)
+
+    }
+
+    // Initialize with the current selected country's info
+    document.addEventListener('DOMContentLoaded', updateCountryInfo);
+</script> -->
+
+<script>
+$(document).ready(function(){
+    
+    $("#phone_code").click(function(){
+        $("#popup").show();
+        $("#overlay").show();
+});
+$("#cancel").click(function(){
+        $("#popup").hide();
+        $("#overlay").hide();
+});
 });
 </script>
 <?php 
 $countries = \DB::table('country')
 ->select('phonecode as code', 'name', 'iso as flag')
 ->get()->map(function ($country) {
-    return [
-        'code' => '+' . ltrim($country->code, '+'),
-        'name' => $country->name,
-        'flag' => strtolower($country->flag),
-    ];
+return [
+    'code' => '+' . ltrim($country->code, '+'),
+    'name' => $country->name,
+    'flag' => strtolower($country->flag),
+];
 })
 ->toArray();
 ?>
 <script>
-    const countries = <?php echo json_encode($countries, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>;
+const countries = <?php echo json_encode($countries, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>;
 </script>
 <script>
 
-    
-    (function ($) {
-        function populateList(filteredCountries) {
-            const $list = $('#country-list');
-            $list.empty();
-            filteredCountries.forEach(country => {
-                $list.append(`
+
+(function ($) {
+    function populateList(filteredCountries) {
+        const $list = $('#country-list');
+        $list.empty();
+        filteredCountries.forEach(country => {
+            $list.append(`
+            
+                                            <li data-v-a84105cc="" class="db">
+                <div class="db" data-code="${country.code}" data-flag="${country.flag}">
+                    <span class="fi fi-${country.flag}"></span>
+                    ${country.name} (${country.code})
+                </div>
+                </li>
                 
-                                                <li data-v-a84105cc="" class="db">
-                    <div class="db" data-code="${country.code}" data-flag="${country.flag}">
-                        <span class="fi fi-${country.flag}"></span>
-                        ${country.name} (${country.code})
-                    </div>
-                    </li>
-                    
-                `);
-            });
-        }
-
-        $(document).ready(function () {
-            const $popup = $('#popup');
-            const $overlay = $('#overlay');
-            const $search = $('#country-search');
-            const $countryList = $('#country-list');
-            const $phone_code = $('#phone_code');
-            const $country_iso = $('#country_iso');
-            populateList(countries); // Initial population of the list
-
-            // Show popup when input is focused
-            $search.on('focus', function () {
-                $popup.show();
-                $overlay.show();
-            });
-
-            // Hide popup when clicking outside
-            $overlay.on('click', function () {
-                $popup.hide();
-                $overlay.hide();
-            });
-
-            // Filter the list based on search input
-            $search.on('input', function () {
-                const searchTerm = $(this).val().toLowerCase();
-                const filteredCountries = countries.filter(country =>
-                    country.name.toLowerCase().includes(searchTerm) || country.code.includes(searchTerm)
-                );
-                populateList(filteredCountries);
-            });
-
-            // Handle country selection
-            $countryList.on('click', 'div', function () {
-                const countryCode = $(this).data('code');
-                const countryCode1 = $(this).data('code').replace('+', '', 10);
-                $phone_code.text(countryCode);
-                $country_iso.val(countryCode1); 
-                 // Set the selected code in the input
-                $popup.hide();
-                $overlay.hide();
-            });
-
-            // Hide popup when the close icon is clicked
-            $('#cancel').on('click', function () {
-                $popup.hide();
-                $overlay.hide();
-            });
+            `);
         });
-    }(jQuery));
+    }
+
+    $(document).ready(function () {
+        const $popup = $('#popup');
+        const $overlay = $('#overlay');
+        const $search = $('#country-search');
+        const $countryList = $('#country-list');
+        const $phone_code = $('#phone_code');
+        const $country_iso = $('#country_iso');
+        populateList(countries); // Initial population of the list
+
+        // Show popup when input is focused
+        $search.on('focus', function () {
+            $popup.show();
+            $overlay.show();
+        });
+
+        // Hide popup when clicking outside
+        $overlay.on('click', function () {
+            $popup.hide();
+            $overlay.hide();
+        });
+
+        // Filter the list based on search input
+        $search.on('input', function () {
+            const searchTerm = $(this).val().toLowerCase();
+            const filteredCountries = countries.filter(country =>
+                country.name.toLowerCase().includes(searchTerm) || country.code.includes(searchTerm)
+            );
+            populateList(filteredCountries);
+        });
+
+        // Handle country selection
+        $countryList.on('click', 'div', function () {
+            const countryCode = $(this).data('code');
+            const countryCode1 = $(this).data('code').replace('+', '', 10);
+            $phone_code.text(countryCode);
+            $country_iso.val(countryCode1); 
+             // Set the selected code in the input
+            $popup.hide();
+            $overlay.hide();
+        });
+
+        // Hide popup when the close icon is clicked
+        $('#cancel').on('click', function () {
+            $popup.hide();
+            $overlay.hide();
+        });
+    });
+}(jQuery));
 </script>
 <script>
-     document.getElementById('form-id').addEventListener('submit', function (e) {
-    const checkboxIcon = document.getElementById('checkbox-icon');
-    
-    // Check if the checkbox is in the checked state
-    if (!checkboxIcon.classList.contains('van-checkbox__icon--checked')) {
-        e.preventDefault(); // Prevent form submission
-         iziToast.error({
-    message: 'Please check the box to continue.',
-    position: "topRight"
+ document.getElementById('form-id').addEventListener('submit', function (e) {
+const checkboxIcon = document.getElementById('checkbox-icon');
+
+// Check if the checkbox is in the checked state
+if (!checkboxIcon.classList.contains('van-checkbox__icon--checked')) {
+    e.preventDefault(); // Prevent form submission
+     iziToast.error({
+message: 'Please check the box to continue.',
+position: "topRight"
 });
-    }
+}
 });
 
 // Toggle checkbox state on click
 document.getElementById('checkbox').addEventListener('click', function () {
-    const checkboxIcon = document.getElementById('checkbox-icon');
-    checkboxIcon.classList.toggle('van-checkbox__icon--checked');
-    checkboxIcon.classList.toggle('van-checkbox__icon--unchecked');
+const checkboxIcon = document.getElementById('checkbox-icon');
+checkboxIcon.classList.toggle('van-checkbox__icon--checked');
+checkboxIcon.classList.toggle('van-checkbox__icon--unchecked');
 });
 
-    </script>
+</script>
 
-
+@include('partials.notify')
 </body>
-
-
 
 </html>

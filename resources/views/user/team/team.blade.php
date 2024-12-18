@@ -10,11 +10,11 @@
                                                     src="./assets/icons/stats_reward.svg" style="color: transparent;"></div>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium mb-1">Total Rewards</h3>
+                                            <h3 class="font-medium mb-1">Total Members</h3>
                                             <div class="flex items-baseline">
                                                 <p class="text-[32px] font-semibold mr-2"
-                                                    style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
-                                                <p class="text-secondary">Points</p>
+                                                    style="font-family: ClashDisplay-Semibold;"><span>{{$totalTeam}}</span></p>
+                                                <p class="text-secondary">Members</p>
                                             </div>
                                         </div>
                                     </div>
@@ -23,16 +23,17 @@
                                             <div class="bg-blue-100 rounded-full p-2"><img alt="Today's Rewards Icon"
                                                     loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
                                                     src="./assets/icons/icon_total_rewards.svg" style="color: transparent;">
-                                            </div><button disabled=""
+                                            </div>
+                                            <!-- <button disabled=""
                                                 class="bg-[#171717] rounded-[30px] px-[20px] py-2 text-white"
-                                                style="opacity: 0.5;">Claim</button>
+                                                style="opacity: 0.5;">Claim</button> -->
                                         </div>
                                         <div>
-                                            <h3 class="font-medium mb-1">Claimable Rewards</h3>
+                                            <h3 class="font-medium mb-1">Total Valid</h3>
                                             <div class="flex items-baseline">
                                                 <p class="text-[32px] font-semibold mr-2"
-                                                    style="font-family: ClashDisplay-Semibold;"><span>0</span></p>
-                                                <p class="text-secondary">Points</p>
+                                                    style="font-family: ClashDisplay-Semibold;"><span>{{$ActivetotalTeam}}</span></p>
+                                                <p class="text-secondary">Members</p>
                                             </div>
                                         </div>
                                     </div>
@@ -58,11 +59,11 @@
                                 </div>
 
                                 <div class="flex justify-between mb-4 items-center">
-                                    <div class="relative"><button class="px-3 h-[34px] bg-white rounded-full shadow"
+                                    <!-- <div class="relative"><button class="px-3 h-[34px] bg-white rounded-full shadow"
                                             fdprocessedid="pwt0f"><img alt="Filter Icon" loading="lazy" width="16"
                                                 height="16" decoding="async" data-nimg="1"
                                                 src="./assets/icons/bars-filter.svg"
-                                                style="color: transparent;"></button></div>
+                                                style="color: transparent;"></button></div> -->
                                 </div>
                                 <div class="bg-white mb-3 p-4 rounded-[16px] font-semibold text-gray-600 text-center">
                                     <div class="hidden md:grid grid-cols-5 lg:grid-cols-5">
@@ -80,6 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="space-y-4">
+                                <a href="{{route('user.list')}}?selected_level=1" >
                                     <div
                                         class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                         <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
@@ -104,7 +106,7 @@
                                            
                                         </div>
                                         
-
+                                        
                                         <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
                                             <div class="flex items-center space-x-3">
                                                 <div
@@ -123,6 +125,8 @@
                                             </div> -->
                                         </div>
                                     </div>
+                                    </a>
+                                    <a href="{{route('user.list')}}?selected_level=2" >
                                     <div
                                         class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                         <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
@@ -167,50 +171,61 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
-                                        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
-                                            <div class="flex items-center space-x-3">
-                                                <div
-                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                    <i class="fas fa-arrow-right"></i></div>
-                                                <div>
-                                                    <p class="text-sm font-medium">@lang('Third generation data')</p>
-                                                    
-                                                </div>
-                                            </div>
-                                            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team3total}}/{{$gen_team3total}}</p>
-                                            <div class="flex justify-center"><span
-                                                    class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">{{number_format($gen_team3Recharge,1)}}</span></div>
-                                            <div class="flex justify-center">
-                                                <p class="text-sm w-fit text-center px-3">{{number_format($gen_team3Withdraw,2)}} </p>
-                                            </div>
-                                            <div class="flex justify-center">
-                                                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">0
-                                                {{number_format($gen_team3Earning,2)}}</p>
-                                            </div>
-                                           
-                                        </div>
-                                        
+</a></a>
+<a href="{{route('user.list')}}?selected_level=3" style="margin-top: 16px; margin-bottom: 16px;">
+    <div
+        class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer my-4">
+        <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-medium">@lang('Third generation data')</p>
+                </div>
+            </div>
+            <p class="hidden lg:block text-sm text-center font-medium">{{$active_gen_team3total}}/{{$gen_team3total}}</p>
+            <div class="flex justify-center">
+                <span class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">
+                    {{number_format($gen_team3Recharge,1)}}
+                </span>
+            </div>
+            <div class="flex justify-center">
+                <p class="text-sm w-fit text-center px-3">
+                    {{number_format($gen_team3Withdraw,2)}}
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <p class="text-sm w-fit text-center px-3 bg-[#F1F1F1] rounded-full">
+                    {{number_format($gen_team3Earning,2)}}
+                </p>
+            </div>
+        </div>
 
-                                        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
-                                            <div class="flex items-center space-x-3">
-                                                <div
-                                                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                                                    <i class="fas fa-arrow-right"></i></div>
-                                                <div>
-                                                    <p class="text-sm font-medium">@lang('Third generation data')</p>
-                                                   
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-end"><span
-                                                    class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]">{{$active_gen_team3total}}/{{$gen_team3total}}</span></div>
-                                            <div class="text-right hidden sm:block">
-                                                <p class="text-lg font-semibold"><span>0pt</span></p>
-                                                <p class="text-xs">Total: <span>0pt</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:hidden items-center">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-medium">@lang('Third generation data')</p>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <span class="flex px-[6px] py-1 rounded-full text-xs bg-[#C4FFC8]">
+                    {{$active_gen_team3total}}/{{$gen_team3total}}
+                </span>
+            </div>
+            <div class="text-right hidden sm:block">
+                <p class="text-lg font-semibold"><span>0pt</span></p>
+                <p class="text-xs">Total: <span>0pt</span></p>
+            </div>
+        </div>
+    </div>
+</a>
+ <a href="{{route('user.list')}}?selected_level=4" >
                                     <div
                                         class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                         <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
@@ -255,6 +270,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </a>
+                                    <a href="{{route('user.list')}}?selected_level=5" >
                                     <div
                                         class="bg-white p-3 rounded-[16px] shadow transition-transform hover:shadow-md cursor-pointer">
                                         <div class="hidden md:grid grid-cols-4 lg:grid-cols-5 items-center">
@@ -299,6 +316,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
