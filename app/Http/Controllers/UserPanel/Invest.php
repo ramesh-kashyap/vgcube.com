@@ -480,29 +480,39 @@ class Invest extends Controller
       }
 
 
-        $todaysIncome = Income::where('user_id',$user->id)->where('ttime',Date("Y-m-d"))->where('credit_type',0)->sum('comm');
-        $totalRoi = Income::where('user_id',$user->id)->where('remarks','Task Income')->sum('comm');
-
-         // Check for active investments
-                $invest_check = Investment::where('user_id', $user->id)
-                ->where('status', 'Active')
-                ->where('roiCandition', 0)
-                ->get();
-            
-            // Initialize investment-related variables
-            $active_investment = 0;
-            $total_amount = 0;
-            $total_profit = 0;
-            
-            // If there are active investments, calculate totals
-            if ($invest_check->isNotEmpty()) {
-            $active_investment = 1;
-            $total_amount = $invest_check->sum('amount'); // Sum of the 'amount' field
-            $total_profit = $invest_check->sum('plan');   // Sum of the 'plan' field
-            }
-                
-    
-        $notes = DB::table('plans')->get();
+      $todaysIncome = Income::where('user_id', $user->id)
+      ->where('ttime', date("Y-m-d"))
+      ->where('credit_type', 0)
+      ->sum('comm');
+  
+  $totalRoi = Income::where('user_id', $user->id)
+      ->where('remarks', 'Task Income')
+      ->sum('comm');
+  
+  // Check for active investments
+  $invest_check = Investment::where('user_id', $user->id)
+      ->where('status', 'Active')
+      ->where('roiCandition', 0)
+      ->get();
+  
+  // Initialize investment-related variables
+  $active_investment = 0;
+  $total_amount = 0;
+  $total_profit = 0;
+  
+  if ($invest_check->isNotEmpty()) {
+      $active_investment = 1;
+      $total_amount = $invest_check->sum(function ($investment) {
+          return is_numeric($investment->amount) ? $investment->amount : 0;
+      });
+  
+      $total_profit = $invest_check->sum(function ($investment) {
+          return is_numeric($investment->plan) ? $investment->plan : 0;
+      });
+  }
+  
+  $notes = DB::table('plans')->get();
+  
 
         
         $my_level_team=$this->my_level_team_count($user->id);

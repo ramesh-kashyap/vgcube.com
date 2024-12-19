@@ -312,11 +312,22 @@
                                 class="ml-4">Discord</span></a>
                         <div style="border-top: 1px solid rgb(241, 241, 241); margin: 20px 0px;"></div>
                         <div>
-                            <!-- <a class="flex items-center py-2 px-3 mb-4 rounded" href="/contact"><img
+                            <a class="flex items-center py-2 px-3 mb-4 rounded" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();" ><img
                                     alt="Contact Us Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/customer-service.svg"
-                                    style="color: transparent;"><span class="ml-4">Contact Us</span></a> -->
+                                    style="color: transparent;"><span class="ml-4">Log out</span></a>
                                 </div>
+
+
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            class="d-none">
+                            @csrf
+                        </form>
+
+
+
                     </footer>
                 </div>
                 <div class="flex-1 flex flex-col  text-black bg-[#F1F1F1] h-screen">
@@ -350,8 +361,13 @@
                                 <div class="hidden md:inline-block">
                                     <div class="relative inline-block text-[16px] font-bold"><button
                                             class="flex p-2 items-center bg-white border justify-center align-center h-[38px] w-[60px] rounded-[20px] hover:bg-gray-200 focus:outline-none"
-                                            fdprocessedid="j8dxs1">EN</button></div>
+                                            fdprocessedid="j8dxs1">EN</button
+                                            >
+                                        
+                                
+                                        </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
