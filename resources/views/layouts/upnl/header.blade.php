@@ -346,7 +346,11 @@
                                     <button
                                     fdprocessedid="vcru83">
                                     <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
+<<<<<<< HEAD
                                         style="background: rgb(51, 255, 87);"  id="togglePopup2">{{substr(Auth::user()->name, 0, 1)}}</div>
+=======
+                                        style="background: rgb(51, 255, 87);">{{substr(Auth::user()->name, 0, 1)}}</div>
+>>>>>>> 5749bdd031e6795f00c988b50b06161e9943a329
                                 </button>
                                 <div class="hidden md:inline-block">
                                     <div class="relative inline-block text-[16px] font-bold"><button

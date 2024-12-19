@@ -156,6 +156,8 @@ Route::get('/quality/records', [App\Http\Controllers\UserPanel\Invest::class, 'r
 Route::get('/wallet', [App\Http\Controllers\UserPanel\AddFund::class, 'index'])->name('user.wallet');
 Route::get('/fund_transfer', [App\Http\Controllers\UserPanel\AddFund::class, 'fund_transfer'])->name('user.fund_transfer');
 Route::post('/SubmitTransferFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitTransferFund'])->name('user.SubmitTransferFund');
+Route::get('/transfer_fund', [App\Http\Controllers\UserPanel\AddFund::class, 'transfer_fund'])->name('user.transfer_fund');
+Route::post('/SubmitTransferFunds', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitTransferFunds'])->name('user.SubmitTransferFunds');
 
 Route::get('/fundpass', [App\Http\Controllers\UserPanel\AddFund::class, 'fundpass'])->name('user.fundpass');
 Route::get('/recharge1', [App\Http\Controllers\UserPanel\AddFund::class, 'fundHistory'])->name('user.recharge1');

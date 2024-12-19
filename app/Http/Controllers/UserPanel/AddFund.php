@@ -120,6 +120,36 @@ public function transfer_fund(Request $request)
 {
 
 $user=Auth::user();
+
+
+$buyfunds = Fundtransfer::select('amount as comm','user_id_to','user_id_from',)->where('transfer_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
+  $item->remarks = 'Fundtransfer'; // Add your custom remark value here
+  return $item;
+});
+
+
+$currentPage = request()->get('page', 1);
+  
+// Define how many items you want per page
+$perPage = paginationLimit();;
+
+// Slice the collection to get the items for the current page
+$currentItems = $buyfunds->slice(($currentPage - 1) * $perPage, $perPage);
+
+// Create the paginator
+$paginatedRecords = new LengthAwarePaginator(
+    $currentItems,
+    $buyfunds ->count(),
+    $perPage,
+    $currentPage,
+    ['path' => request()->url(), 'query' => request()->query()]
+);
+
+// Display the pagination links
+$paginatedRecords = $paginatedRecords->onEachSide(1);
+
+$this->data['buyfunds'] = $paginatedRecords;
+
 $this->data['page'] = 'user.fund.transfer-fund';
 return $this->dashboard_layout();
 
@@ -130,10 +160,7 @@ public function fund(Request $request)
   $user=Auth::user();
 
   
-  $buyfunds = Fundtransfer::select('amount as comm','transfer_id','transfered_id','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
-    $item->remarks = 'Fundtransfer'; // Add your custom remark value here
-    return $item;
-});
+
   $buyfunds = BuyFund::select('amount as comm','created_at','status','txn_no','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
       $item->remarks = 'Deposits'; // Add your custom remark value here
       return $item;

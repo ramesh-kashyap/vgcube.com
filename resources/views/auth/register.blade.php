@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" href="/favicon.ico">
-    <title>MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</title>
+    <title>{{siteName()}}</title>
     <meta name="robots" content="index,follow">
     <meta name="description"
         content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
@@ -698,9 +698,10 @@
                     src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent;"><img alt="Logo"
                     loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="flex sm:hidden"
                     src="{{ asset('') }}upnl/assets/icons/logo_meshchain.svg" style="color: transparent;">
-                <div class="flex"><button type="submit"
+                <div class="flex"><a href="{{route('login')}}"><button type="submit"
                         class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        fdprocessedid="pb7o">Log In</button><button type="button"
+                        fdprocessedid="pb7o">Log In</button></a>
+                        <button type="button"
                         class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                         fdprocessedid="3lirdb">Sign Up</button></div>
             </div>

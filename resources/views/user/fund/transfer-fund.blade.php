@@ -67,6 +67,15 @@
                             <div class="bg-white rounded-[16px] p-6 lg:col-span-2 xl:col-span-1">
                                 <h3 class="font-semibold mb-3">History</h3>
                                 <div class="space-y-4 h-full">
+
+
+                                <?php if(is_array($buyfunds) || is_object($buyfunds)){ ?>
+                                    <?php
+                                        date_default_timezone_set('UTC');
+                                        $cnt = 0; ?>
+                                        @foreach ($buyfunds as $value)
+
+
                                     <div class="flex justify-between items-center text-sm mb-4">
                                         <div class="flex">
                                             <div
@@ -75,46 +84,25 @@
                                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
+                                                <p class="font-medium"> Transfer</p>
+                                                <p class="text-secondary font-light text-sm">{{ $value['user_id_from'] }} To {{ $value['user_id_to'] }}   </p>
                                             </div>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-green-500">+<span>0 MCC</span></p>
+                                            <p class="text-green-500">+<span>{{ $value['comm'] }}</span></p>
                                         </div>
                                     </div>
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 POINT</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm mb-4">
-                                        <div class="flex">
-                                            <div
-                                                class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
-                                                <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
-                                                    style="color: transparent;"></div>
-                                            <div class="ml-3">
-                                                <p class="font-medium">Connect Accounts</p>
-                                                <p class="text-secondary font-light text-sm">10 minutes ago</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-green-500">+<span>0 BNB</span></p>
-                                        </div>
-                                    </div>
+                                  
+                                    @endforeach
+                                    <?php }?>
+
+
+
+                                    <div class="pagination">
+
+{{ $buyfunds->withQueryString()->links() }}
+</div>
+
                                 </div>
                             </div>
                         </div>
@@ -122,31 +110,44 @@
                 </div>
             </div>
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
-                        width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Nodes</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-green-500">Wallet</span></a><button
-                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
-                        srcset="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
-                        src="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
-                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
+            height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Overview</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.Market')}}"><img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Nodes</span></a>
+            <!-- <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Rewards</span></a> -->
+            
+            
+            <a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Referrals</span></a>
+            
+            <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Wallet</span>
+        
+        </a>
+        
+        
+        
+        <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.profile-setting')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Profile</span>
+        
+        </a></div>
+</div>
+
         </div>
     </div>
     @include('partials.notify')
