@@ -74,7 +74,7 @@
                                                     class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
                                                     <img alt="Node Icon" loading="lazy" width="16" height="16"
                                                         decoding="async" data-nimg="1"
-                                                        src="{{ asset('') }}upnl/assets/icons/node-icon-telegram.svg"
+                                                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
                                                         style="color: transparent;"></div>
                                                 <div>
                                                     <p class="text-sm font-medium">Sahildewan2</p>
@@ -85,7 +85,7 @@
                                                     class="flex px-[6px] py-1 rounded-full text-xs  bg-[#C4FFC8]"><img
                                                         alt="Status Icon" loading="lazy" width="16" height="16"
                                                         decoding="async" data-nimg="1" class="mr-1"
-                                                        src="{{ asset('') }}upnl/assets/icons/check-circle.svg"
+                                                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
                                                         style="color: transparent;">Online</span></div>
                                             <div class="text-right hidden sm:block">
                                                 <p class="text-lg font-semibold"><span>0pt</span></p>

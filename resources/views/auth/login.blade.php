@@ -785,7 +785,7 @@
                 
                 <div class="mt-6 text-center"><span class="text-sm text-gray-600">Don't have an account? <a
                             class="text-gray-800 underline text-[14px] font-semibold decoration-solid"
-                            href="/signup">Sign Up</a></span></div>
+                            href="{{routes('register')}}">Sign Up</a></span></div>
             </div>
         </div>
     </div>

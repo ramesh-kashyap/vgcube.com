@@ -873,7 +873,7 @@
             
                 <div class="mt-6 text-center"><span class="text-sm text-gray-600">Don't have an account? <a
                             class="text-gray-800 underline text-[14px] font-semibold decoration-solid"
-                            href="/signup">Sign Up</a></span></div>
+                            href="{{route('login')}}">Sign In</a></span></div>
             </div>
         </div>
     </div>
@@ -1035,6 +1035,256 @@
 
 
 
+</script>
+
+
+
+
+
+@if(session()->has('messages'))
+<script>
+     $(document).ready(function() {
+          $("#registerModel").show();
+         $("#overlay").show();
+         
+         startTimer(); // Start the timer after sending the code
+        $('.code-btn').hide();
+        $('.resend-btn').show();
+                    
+     });
+</script>
+
+ 
+@endif
+      
+    <script>
+        $(document).ready(function() {
+    
+    $('.check').click(function(){
+         
+          if($(this).hasClass('fa-eye-slash')){
+             
+            $(this).removeClass('fa-eye-slash');
+            
+            $(this).addClass('fa-eye');
+            
+            $('#test-input').attr('type','text');
+              
+          }else{
+           
+            $(this).removeClass('fa-eye');
+            
+            $(this).addClass('fa-eye-slash');  
+            
+            $('#test-input').attr('type','password');
+          }
+      });
+      
+  });
+      </script>
+      
+      <script>
+  function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('passwordInput');
+      var passwordInput2 = document.getElementById('passwordInput2');
+      if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+      } else {
+          passwordInput.type = 'password';
+      }
+
+      if (passwordInput2.type === 'password') {
+        passwordInput2.type = 'text';
+      } else {
+          passwordInput2.type = 'password';
+      }
+  }
+  
+  
+  
+  </script>
+
+    <script>
+        $('.code-btn').click(function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            var emailId = $('#emailId').val();
+
+            if (emailId == "") {
+                iziToast.error({
+                    message: 'Enter Email ID!',
+                    position: "topRight"
+                });
+                return false;
+
+            }
+            startTimer(); // Start the timer after sending the code
+                    $('.code-btn').hide();
+                    $('.resend-btn').show();
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('sendCodeEmail') }}",
+                data: {
+                    emailId: emailId,
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function(response) {
+                    if (response) {
+                        iziToast.success({
+                            message: 'Email sent successfully',
+                            position: "topRight"
+                        });
+                    } else {
+                        iziToast.error({
+                            message: 'Error!',
+                            position: "topRight"
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', error);
+                    iziToast.error({
+                        message: 'Error: ' + xhr.responseText,
+                        position: "topRight"
+                    });
+                }
+            });
+        });
+
+function startTimer() {
+        var resendButton = $('.resend-btn');
+        countdown = 60; // 60 seconds
+        resendButton.prop('disabled', true); // Disable the resend button
+        resendButton.text('Wait ' + countdown + 's');
+
+        timer = setInterval(function() {
+            countdown--;
+            resendButton.text('Wait ' + countdown + 's');
+
+            if (countdown <= 0) {
+                clearInterval(timer);
+                resendButton.prop('disabled', false); // Enable the resend button after the timer ends
+                resendButton.text('Resend Code'); // Reset button text
+            }
+        }, 1000);
+    }
+
+    // Optional: Handle Resend Button Click
+    $('.resend-btn').click(function(e) {
+        $('.code-btn').trigger('click'); // Simulate a click on the original send button
+    });
+
+    </script>
+
+
+  <script>
+    $(document).ready(function(){
+        
+        $("#phone_code").click(function(){
+            $("#popup").show();
+            $("#overlay").show();
+      });
+  
+    // $("#registerModel").show();
+    // $("#overlay").show();
+  
+  
+  
+  $("#cancel").click(function(){
+            $("#popup").hide();
+            $("#overlay").hide();
+  }); 
+  
+  $("#cancel2").click(function(){
+            $("#registerModel").hide();
+            $("#overlay").hide();
+  });
+});
+</script>
+<?php 
+$countries = \DB::table('country')
+->select('phonecode as code', 'name', 'iso as flag')
+->get()->map(function ($country) {
+    return [
+        'code' => '+' . ltrim($country->code, '+'),
+        'name' => $country->name,
+        'flag' => strtolower($country->flag),
+    ];
+})
+->toArray();
+?>
+<script>
+    const countries = <?php echo json_encode($countries, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>;
+</script>
+<script>
+
+    
+    (function ($) {
+        function populateList(filteredCountries) {
+            const $list = $('#country-list');
+            $list.empty();
+            filteredCountries.forEach(country => {
+                $list.append(`
+                
+                                                <li data-v-a84105cc="" class="db">
+                    <div class="db" data-code="${country.code}" data-flag="${country.flag}">
+                        <span class="fi fi-${country.flag}"></span>
+                        ${country.name} (${country.code})
+                    </div>
+                    </li>
+                    
+                `);
+            });
+        }
+
+        $(document).ready(function () {
+            const $popup = $('#popup');
+            const $overlay = $('#overlay');
+            const $search = $('#country-search');
+            const $countryList = $('#country-list');
+            const $phone_code = $('#phone_code');
+            const $country_iso = $('#country_iso');
+            populateList(countries); // Initial population of the list
+
+            // Show popup when input is focused
+            $search.on('focus', function () {
+                $popup.show();
+                $overlay.show();
+            });
+
+            // Hide popup when clicking outside
+            $overlay.on('click', function () {
+                $popup.hide();
+                $overlay.hide();
+            });
+
+            // Filter the list based on search input
+            $search.on('input', function () {
+                const searchTerm = $(this).val().toLowerCase();
+                const filteredCountries = countries.filter(country =>
+                    country.name.toLowerCase().includes(searchTerm) || country.code.includes(searchTerm)
+                );
+                populateList(filteredCountries);
+            });
+
+            // Handle country selection
+            $countryList.on('click', 'div', function () {
+                const countryCode = $(this).data('code');
+                const countryCode1 = $(this).data('code').replace('+', '', 10);
+                $phone_code.text(countryCode);
+                $country_iso.val(countryCode1); 
+                 // Set the selected code in the input
+                $popup.hide();
+                $overlay.hide();
+            });
+
+            // Hide popup when the close icon is clicked
+            $('#cancel').on('click', function () {
+                $popup.hide();
+                $overlay.hide();
+            });
+        });
+    }(jQuery));
 </script>
 
 <!-- Your other scripts -->
