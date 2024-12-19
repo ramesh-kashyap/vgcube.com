@@ -700,9 +700,9 @@
                     src="{{ asset('') }}upnl/assets/icons/logo_meshchain.svg" style="color: transparent;">
                 <div class="flex"><button type="submit"
                         class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        fdprocessedid="pb7o">Log In</button><button type="button"
+                        fdprocessedid="pb7o">Log In</button><a href="{{route('register')}}"><button type="button"
                         class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        fdprocessedid="3lirdb">Sign Up</button></div>
+                        fdprocessedid="3lirdb">Sign Up</button></a></div>
             </div>
             <div class="bg-[#FFF] max-w-[385px] rounded-[20px] py-6 px-6 md:px-8 w-full"
                 style="box-shadow: rgba(23, 23, 23, 0.25) 0px 4px 88.3px 0px;">
@@ -785,7 +785,7 @@
                 
                 <div class="mt-6 text-center"><span class="text-sm text-gray-600">Don't have an account? <a
                             class="text-gray-800 underline text-[14px] font-semibold decoration-solid"
-                            href="/signup">Sign Up</a></span></div>
+                            href="{{route('register')}}">Sign Up</a></span></div>
             </div>
         </div>
     </div>

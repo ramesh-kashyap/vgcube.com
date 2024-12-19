@@ -26,7 +26,7 @@
                                                 href="{{route('user.rechargeFunds')}}">Deposit</a>
                                                 <a href="{{route('user.Withdraw')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
-                                                fdprocessedid="scd5lj">Withdraw</button></a><a href="{{route('user.fund_transfer')}}"><button
+                                                fdprocessedid="scd5lj">Withdraw</button></a><a href="{{route('user.transfer_fund')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center "  onmouseover="this.style.backgroundColor='#000000'; this.style.color='white';" 
                                                 onmouseout="this.style.backgroundColor='white'; this.style.color='black';"
                                                 fdprocessedid="scd5lj" >Tranfer</button></a></div>
@@ -174,7 +174,10 @@
 
 <?php }?>
                                     
-                                    
+<div class="pagination">
+
+ {{ $level_income->withQueryString()->links() }}
+</div>
                                     
                                 </div>
                             </div>

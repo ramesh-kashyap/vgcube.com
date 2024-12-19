@@ -19,22 +19,50 @@ use Log;
 use Redirect;
 use Hash;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class WithdrawRequest extends Controller
 {
     public function index()
     {
         $user=Auth::user();
-        $withdraws = Withdraw::select('amount as comm','created_at','status')->where('user_id',$user->id)->where('status','!=','Failed')->orderBy('id','DESC')->get()->map(function ($item) {
-          $item->remarks = 'Withdraw'; // Add your custom remark value here
-          return $item;
-      })->toArray();
-  
+        $withdraws = Withdraw::select('amount as comm', 'created_at', 'status')
+        ->where('user_id', $user->id)
+        ->where('status', '!=', 'Failed')
+        ->orderBy('id', 'DESC')
+        ->get()
+        ->map(function ($item) {
+            $item->remarks = 'Withdraw'; // Add your custom remark value here
+            return $item;
+        }); // Don't use toArray() here; keep it as a Collection
+    
+    $currentPage = request()->get('page', 1);
+    
+    // Define how many items you want per page
+    $perPage = paginationLimit();;
+    
+    // Slice the collection to get the items for the current page
+    $currentItems = $withdraws->slice(($currentPage - 1) * $perPage, $perPage);
+    
+    // Create the paginator
+    $paginatedRecords = new LengthAwarePaginator(
+        $currentItems,
+        $withdraws->count(),
+        $perPage,
+        $currentPage,
+        ['path' => request()->url(), 'query' => request()->query()]
+    );
+   
+    // Display the pagination links
+    $paginatedRecords = $paginatedRecords->onEachSide(1);
+         
         $bank = Bank::where('user_id',$user->id)->orderBy('id','desc')->get();
         $userDirect = User::where('sponsor',$user->id)->where('active_status','Active')->where('package','>=',30)->count();
         $this->data['balance'] = round($user->available_balance(),2);
         $this->data['userDirect'] = $userDirect;
         $this->data['bank'] = $bank;
-        $this->data['withdraws'] =  $withdraws;
+        
+        $this->data['withdraws'] =  $paginatedRecords;
         $this->data['page'] = 'user.withdraw.WithdrawRequest';
         return $this->dashboard_layout();
     }

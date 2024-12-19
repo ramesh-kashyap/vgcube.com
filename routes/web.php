@@ -209,7 +209,8 @@ Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest:
 Route::post('/WithdrawRequestPrinciple', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequestPrinciple'])->name('user.WithdrawRequestPrinciple');
 Route::get('/WithdrawHistory', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawHistory'])->name('user.Withdraw-History');
 // end withdraw
-
+Route::get('/transfer_fund', [App\Http\Controllers\UserPanel\AddFund::class, 'transfer_fund'])->name('user.transfer_fund');
+Route::post('/SubmitTransferFunds', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitTransferFunds'])->name('user.SubmitTransferFunds');
 //team
 Route::get('/referral-team', [App\Http\Controllers\UserPanel\Team::class, 'index'])->name('user.referral-team');
 Route::get('/level-team', [App\Http\Controllers\UserPanel\Team::class, 'LevelTeam'])->name('user.level-team');

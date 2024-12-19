@@ -145,7 +145,10 @@
 
 
                                     
-                                    
+<div class="pagination">
+
+{{ $withdraws->withQueryString()->links() }}
+</div>
                                 </div>
                             </div>
                         </div>

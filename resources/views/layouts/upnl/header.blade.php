@@ -1,3 +1,4 @@
+
 <html lang="en" style="">
 
 <head>
@@ -8,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" href="/favicon.ico">
-    <title>User Portal - Meshchain</title>
+    <title>{{siteName()}}</title>
     <meta name="robots" content="index,follow">
     <meta name="description"
         content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
@@ -133,13 +134,13 @@
         }
         .unlock {
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    top: 10px; / Adjust as needed /
+    right: 20px; / Adjust as needed /
     font-size: 16px;
     color: #555;
     display: flex;
     align-items: center;
-    gap: 5px; /* Space between icon and text */
+    gap: 5px; / Space between icon and text /
 }
         .unlock i {
             margin-right: 5px;
@@ -193,6 +194,33 @@
             src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
         }
+
+        .pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+
+.pagination li {
+    margin: 0 5px; 
+}
+
+.pagination {
+    max-width: 100%; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+/ Optionally add styles for ellipses (...) /
+.pagination .disabled {
+    pointer-events: none;
+}
+
+
+
+
+
     </style>
     <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js">
     <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js">
@@ -219,11 +247,18 @@
                                 class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
                                     loading="lazy" width="163" height="40" decoding="async" data-nimg="1"
                                     src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg"
-                                    style="color: transparent; width:150px;"></a><button
+                                    style="color: transparent; width:150px;"></a>
+                                    <!-- <button
                                 class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"
-                                fdprocessedid="cgvemq"><img alt="close" loading="lazy" width="40" height="40"
+                                fdprocessedid="cgvemq">
+                                <img alt="close" loading="lazy" width="40" height="40"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_left.svg"
-                                    style="color: transparent;"></button></div>
+                                    style="color: transparent;"></button> -->
+
+                                    
+                                </div>
+
+
                         <nav class="my-5 px-5 text-sm font-medium text-[#555]">
                             <div class="text-gray-400 text-xs mb-2">MENU</div><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md bg-green-500 text-white"
@@ -233,16 +268,17 @@
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100" href="{{route('user.Market')}}"><img
                                     alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
-                                    class="ml-4">Nodes</span></a><a
+                                    class="ml-4">Nodes</span></a>
+                                    <!-- <a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
                                 href="/rewards"><img alt="rewards Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg"
                                     style="color: transparent;"><span class="ml-4">Rewards</span></a>
-                                    
+                                     -->
                                     
                                     <a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
-                                href="/referrals">
+                                href="{{route('user.team')}}">
                                 
                                 <img alt="referrals Icon" loading="lazy" width="16" height="16"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
@@ -276,10 +312,12 @@
                                 src="{{ asset('') }}upnl/assets/icons/icon_discord.svg" style="color: transparent;"><span
                                 class="ml-4">Discord</span></a>
                         <div style="border-top: 1px solid rgb(241, 241, 241); margin: 20px 0px;"></div>
-                        <div><a class="flex items-center py-2 px-3 mb-4 rounded" href="/contact"><img
+                        <div>
+                            <!-- <a class="flex items-center py-2 px-3 mb-4 rounded" href="/contact"><img
                                     alt="Contact Us Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/customer-service.svg"
-                                    style="color: transparent;"><span class="ml-4">Contact Us</span></a></div>
+                                    style="color: transparent;"><span class="ml-4">Contact Us</span></a> -->
+                                </div>
                     </footer>
                 </div>
                 <div class="flex-1 flex flex-col  text-black bg-[#F1F1F1] h-screen">
@@ -289,7 +327,7 @@
                                 src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent; width:150px;"></a>
                         <div class="w-full flex flex-row justify-end md:justify-between">
                             <div class="flex items-center h-[38px] text-gray-800 font-medium"><a
-                                    class="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="/referrals">
+                                    class="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="{{route('user.team')}}">
                                     <div class="flex items-center rounded-full pl-3 text-sm"><img alt="User Avatar"
                                             loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
                                             class="mr-3" src="{{ asset('') }}upnl/assets/icons/icon_user_add.svg"
@@ -301,16 +339,56 @@
                                 </a></div>
                             <div class="relative flex items-center space-x-2 font-semibold"><span
                                     class="hidden lg:inline text-xl">Hello, {{Auth::user()->name}}!
-                                    </span><button
+                                    </span>
+                                    
+                                    
+                                    
+                                    <button
                                     fdprocessedid="vcru83">
-                                    <!-- <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
-                                        style="background: rgb(51, 255, 87);">S</div> -->
+                                    <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
+                                        style="background: rgb(51, 255, 87);"  id="togglePopup2">{{substr(Auth::user()->name, 0, 1)}}</div>
                                 </button>
                                 <div class="hidden md:inline-block">
                                     <div class="relative inline-block text-[16px] font-bold"><button
                                             class="flex p-2 items-center bg-white border justify-center align-center h-[38px] w-[60px] rounded-[20px] hover:bg-gray-200 focus:outline-none"
-                                            fdprocessedid="j8dxs1">EN</button></div>
+                                            fdprocessedid="j8dxs1" id="lanShow" >EN</button> <ul
+                                            class="absolute w-fit p-2 left-[-1px] mt-2 z-[999] bg-white rounded-[12px] shadow-md" id="popup3" style="display: none;">
+                                            <li
+                                                class="px-4 py-2 cursor-pointer rounded-[12px] hover:bg-gray-200 bg-[#00C076] font-semibold">
+                                                EN</li>
+                                            <li class="px-4 mt-2 py-2 rounded-[12px] cursor-pointer hover:bg-gray-200 ">
+                                                RU</li>
+                                        </ul>
+                                        </div>
                                 </div>
+                                 <div
+                                    class="absolute right-0 top-10 mt-2 w-[182px] bg-white text-sm font-medium rounded-lg shadow-lg p-3 z-10" style="display: none;"id="popup4">
+                                    <a href="/profile"><button
+                                            class="flex items-center w-full mb-2 h-[42px] text-gray-700 hover:bg-gray-200 p-4 rounded-lg"><img
+                                                alt="Profile" loading="lazy" width="20" height="20" decoding="async"
+                                                data-nimg="1" src="/assets/icons/icon-profile.svg"
+                                                style="color: transparent;"><span
+                                                class="ml-2">Profile</span></button></a><button
+                                        class="flex items-center h-[42px] w-full text-red-500 hover:bg-red-100 p-4 rounded-lg"><img
+                                            alt="Log Out" loading="lazy" width="20" height="20" decoding="async"
+                                            data-nimg="1" src="/assets/icons/sign-out-alt_red.svg"
+                                            style="color: transparent;"><a href="{{route('logout')}}"><span class="ml-2">Logout</span></a></button></div>
+  
+                              
                             </div>
                         </div>
                     </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Toggle the popup on button click
+            $("#lanShow").click(function () {
+                $("#popup3").toggle(); // Show/hide the popup
+            });
+            $("#togglePopup2").click(function () {
+                $("#popup4").toggle(); // Show/hide the popup
+            });
+           
+        });
+       
+    </script>

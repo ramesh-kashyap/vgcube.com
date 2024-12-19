@@ -18,7 +18,7 @@
                                     </h3>
 </br>
 
-                                    <form action="{{ route('user.SubmitTransferFund') }}" method="post"  >
+                                    <form action="{{ route('user.SubmitTransferFunds') }}" method="post"  >
                 {{ csrf_field() }}          
                 
                 

@@ -51,9 +51,10 @@
                                         </div><button
                                             class="flex rounded-[24px] justify-center items-center align-center border border-[#F1F1F1] text-[#373737] bg-[#F9F9F9] h-[36px] py-2 px-3"
                                             style="font-family: ClashDisplay-Semibold;">
-                                            <p class="mr-3">3CUODQTCSIG2</p><img alt="Filter Icon" loading="lazy" width="16"
+                                            <p class="mr-3" id="textToCopy">3CUODQTCSIG2</p><img alt="Filter Icon" loading="lazy" width="16"
                                                 height="16" decoding="async" data-nimg="1"
-                                                src="./assets/icons/copy_clipboard.svg" style="color: transparent;">
+                                                src="./assets/icons/copy_clipboard.svg" style="color: transparent;"  id="copyIcon"
+                                                onclick="copyToClipboard()">
                                         </button><button class="mt-1 text-[#00C076] font-medium">Copy referral link</button>
                                     </div>
                                 </div>
@@ -431,6 +432,29 @@
     <script src="./_next/static/chunks/pages/forgot_password-47e935679b1e2ca0.js"></script>
     <script src="./_next/static/chunks/pages/signup-802f7e1bb51b64f2.js"></script><span id="PING_CONTENT_APS_BALLOON"
         style="display: none;"></span>
+        <script>
+    function copyToClipboard() {
+        // Get the text from the element
+        const text = document.getElementById('textToCopy').textContent;
+
+        // Create a temporary input element to hold the text
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+
+        // Append the input to the body
+        document.body.appendChild(tempInput);
+
+        // Select the text and copy to clipboard
+        tempInput.select();
+        document.execCommand('copy');
+
+        // Remove the temporary input
+        document.body.removeChild(tempInput);
+
+        // Optional: Show a success message (like an alert or tooltip)
+        alert('Text copied to clipboard: ' + text);
+    }
+</script>
 </body>
 
 </html>
