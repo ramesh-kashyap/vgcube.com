@@ -7,7 +7,7 @@
                                         <div class="flex mb-[14px]">
                                             <div class="bg-green-100 rounded-full p-2"><img alt="Total Rewards Icon"
                                                     loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                                                    src="./assets/icons/stats_reward.svg" style="color: transparent;"></div>
+                                                    src="{{ asset('') }}upnl/assets/icons/stats_reward.svg" style="color: transparent;"></div>
                                         </div>
                                         <div>
                                             <h3 class="font-medium mb-1">Total Members</h3>
@@ -22,7 +22,7 @@
                                         <div class="flex items-center justify-between w-full mb-[14px]">
                                             <div class="bg-blue-100 rounded-full p-2"><img alt="Today's Rewards Icon"
                                                     loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                                                    src="./assets/icons/icon_total_rewards.svg" style="color: transparent;">
+                                                    src="{{ asset('') }}upnl/assets/icons/icon_total_rewards.svg" style="color: transparent;">
                                             </div>
                                             <!-- <button disabled=""
                                                 class="bg-[#171717] rounded-[30px] px-[20px] py-2 text-white"
@@ -43,7 +43,7 @@
                                                 <h3 class="text-[20px] font-medium text-primary">Referrals</h3><button
                                                     class="text-sm flex items-center h-[32px] px-4 py-1 rounded-[22px] bg-[#F1F1F1]"><img
                                                         alt="Filter Icon" loading="lazy" width="20" height="20"
-                                                        decoding="async" data-nimg="1" src="./assets/icons/users.svg"
+                                                        decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/users.svg"
                                                         style="color: transparent;">
                                                     <p class="pl-3 font-semibold text-[16px]">0</p>
                                                 </button>
@@ -51,9 +51,10 @@
                                         </div><button
                                             class="flex rounded-[24px] justify-center items-center align-center border border-[#F1F1F1] text-[#373737] bg-[#F9F9F9] h-[36px] py-2 px-3"
                                             style="font-family: ClashDisplay-Semibold;">
-                                            <p class="mr-3">3CUODQTCSIG2</p><img alt="Filter Icon" loading="lazy" width="16"
+                                            <p class="mr-3" id="textToCopy">{{ asset('') }}register?ref={{ Auth::user()->username }}</p><img alt="Filter Icon" loading="lazy" width="16" id="copyIcon"
+                                                onclick="copyToClipboard()"
                                                 height="16" decoding="async" data-nimg="1"
-                                                src="./assets/icons/copy_clipboard.svg" style="color: transparent;">
+                                                src="{{ asset('') }}upnl/assets/icons/copy_clipboard.svg" style="color: transparent;">
                                         </button><button class="mt-1 text-[#00C076] font-medium">Copy referral link</button>
                                     </div>
                                 </div>
@@ -62,7 +63,7 @@
                                     <!-- <div class="relative"><button class="px-3 h-[34px] bg-white rounded-full shadow"
                                             fdprocessedid="pwt0f"><img alt="Filter Icon" loading="lazy" width="16"
                                                 height="16" decoding="async" data-nimg="1"
-                                                src="./assets/icons/bars-filter.svg"
+                                                src="{{ asset('') }}upnl/assets/icons/bars-filter.svg"
                                                 style="color: transparent;"></button></div> -->
                                 </div>
                                 <div class="bg-white mb-3 p-4 rounded-[16px] font-semibold text-gray-600 text-center">
@@ -324,31 +325,44 @@
                 </div>
             </div>
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
-                        width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-overview.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-                        src="./assets/icons/icon-nodes.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-green-500">Nodes</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-rewards.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-referrals.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="./assets/icons/icon-wallet.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Wallet</span></a><button
-                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
-                        srcset="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
-                        src="./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
-                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
+            height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Overview</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.Market')}}"><img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Nodes</span></a>
+            <!-- <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Rewards</span></a> -->
+            
+            
+            <a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Referrals</span></a>
+            
+            <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Wallet</span>
+        
+        </a>
+        
+        
+        
+        <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.profile-setting')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Profile</span>
+        
+        </a></div>
+</div>
+
         </div>
     </div>
     <script id="__NEXT_DATA__" type="application/json">
@@ -399,6 +413,31 @@
             "scriptLoader": []
         }
     </script>
+
+
+    <script>
+    function copyToClipboard() {
+        // Get the text from the element
+        const text = document.getElementById('textToCopy').textContent;
+
+        // Create a temporary input element to hold the text
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+
+        // Append the input to the body
+        document.body.appendChild(tempInput);
+
+        // Select the text and copy to clipboard
+        tempInput.select();
+        document.execCommand('copy');
+
+        // Remove the temporary input
+        document.body.removeChild(tempInput);
+
+        // Optional: Show a success message (like an alert or tooltip)
+        alert('Text copied to clipboard: ' + text);
+    }
+</script>
     <script id="_next-ga-init" data-nscript="afterInteractive">
         window['dataLayer'] = window['dataLayer'] || [];
 

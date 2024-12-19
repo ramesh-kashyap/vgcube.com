@@ -25,7 +25,7 @@
                                     </div>
                                 </div> -->
                                 <div class="bg-white rounded-[16px] mt-6 p-6 lg:p-8 flex-1">
-                               <center>     <h3 class="font-semibold mb-3">@lang('Create Transaction Password')</h3></center>
+                               <center>     <h3 class="font-semibold mb-3">@lang('  Change Transaction Password')</h3></center>
                                    
                         <form method="post" action="{{ route('user.change-trxpasswword') }}">
                             
@@ -89,9 +89,16 @@
                                       </div> -->
                                      
                                       <div class="text-right">
-                                        <button type="submit" style="background-color: rgb(34 197 94);"class="px-6 py-2 bg-blue-500 text-white rounded-[12px] hover:bg-blue-600" styel>
+                                        <button type="submit" style="background-color: rgb(34 197 94);" 
+                                        class="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300" styel>
                                         Confirm
                                         </button>
+</br>
+</br>
+<a href="{{ route('user.profile-setting') }}" 
+   class="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">
+   Cancel
+</a>
                                         
                                       </div>
                                     </form>
@@ -104,31 +111,44 @@
                 </div>
             </div>
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
-                        width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Nodes</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-green-500">Wallet</span></a><button
-                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
-                        srcset="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
-                        src="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
-                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
+            height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Overview</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.Market')}}"><img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Nodes</span></a>
+            <!-- <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Rewards</span></a> -->
+            
+            
+            <a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Referrals</span></a>
+            
+            <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Wallet</span>
+        
+        </a>
+        
+        
+        
+        <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.profile-setting')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Profile</span>
+        
+        </a></div>
+</div>
+
         </div>
     </div>
     <script id="__NEXT_DATA__" type="application/json">

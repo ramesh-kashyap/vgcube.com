@@ -56,9 +56,13 @@ class User extends Authenticatable
 
     public function FundBalance()
     {
-    $balance = Auth::user()->buy_fundAmt->sum('amount')-(Auth::user()->buy_packageAmt());
+    $balance = Auth::user()->buy_fundAmt->sum('amount')-(Auth::user()->buy_packageAmt())-Auth::user()->fundTransfer->sum('amount');
     return $balance;
     } 
+    public function fundTransfer()
+    {
+        return $this->hasMany('App\Models\Fundtransfer','transfer_id','id');
+    }
 
     public function buy_fundAmt(){
         return $this->hasMany('App\Models\BuyFund','user_id','id')->where('status','Approved');

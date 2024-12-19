@@ -12,21 +12,21 @@
                         <div class="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 gap-6">
                             <div class="lg:col-span-3 xl:col-span-2 flex flex-col">
                                 <div class="bg-white rounded-[16px] p-6 lg:p-8">
-                                    <h2 class="text-[24px] font-semibold text-primary mb-8">Wallet</h2>
+                                    <h2 class="text-[24px] font-semibold text-primary mb-8">My  Balance</h2>
                                     <div class="flex flex-col ">
                                         <div>
                                             <p class="text-primary font-medium mb-2">Total Assets</p>
-                                            <p class="text-[30px] font-bold"><span>0 BNB</span></p>
+                                            <p class="text-[30px] font-bold"><span>{{ number_format(Auth::user()->available_balance(), 2) }} USDT</span></p>
                                             <p class="text-secondary" style="
                                             padding-bottom: 10px;
-                                        "><span>$0</span></p>
+                                        "></p>
                                         </div>
                                         <div class="flex flex-row gap-2 items-end"><a
                                                 class="bg-black text-white h-[46px] px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
                                                 href="{{route('user.rechargeFunds')}}">Deposit</a>
                                                 <a href="{{route('user.Withdraw')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center"
-                                                fdprocessedid="scd5lj">Withdraw</button></a><a href="{{route('user.fund_transfer')}}"><button
+                                                fdprocessedid="scd5lj">Withdraw</button></a><a href="{{route('user.transfer_fund')}}"><button
                                                 class="border border-black h-[46px] text-black px-6 py-2 rounded-[30px] flex flex-1 items-center justify-center "  onmouseover="this.style.backgroundColor='#000000'; this.style.color='white';" 
                                                 onmouseout="this.style.backgroundColor='white'; this.style.color='black';"
                                                 fdprocessedid="scd5lj" >Tranfer</button></a></div>
@@ -140,7 +140,7 @@
                                             <div
                                                 class="flex items-center justify-center rounded-[50%] bg-[#F9F9F9] w-[44px] h-[44px]">
                                                 <img alt="IN Icon" loading="lazy" width="28" height="28"
-                                                    decoding="async" data-nimg="1" src="./assets/icons/icon_down.svg"
+                                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_down.svg"
                                                     style="color: transparent;"></div>
                                             <div class="ml-3">
                                                 <p class="font-medium"> @if($value['remarks'] == "Buy Package")
@@ -173,7 +173,12 @@
                                     @endforeach
 
 <?php }?>
-                                    
+       
+<div class="pagination">
+
+ {{ $level_income->withQueryString()->links() }}
+</div>
+         
                                     
                                     
                                 </div>
@@ -183,31 +188,44 @@
                 </div>
             </div>
             <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy"
-                        width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Overview</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/nodes"><img alt="my_nodes Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Nodes</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Rewards</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/referrals"><img alt="referrals Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class=""
-                        src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-gray-400">Referrals</span></a><a
-                    class="flex w-1/5 p-[12px] flex-col items-center" href="/wallet"><img alt="wallet Icon"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-                        src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
-                        class="text-xs mt-1 text-green-500">Wallet</span></a><button
-                    class="flex w-1/5 p-[12px] flex-col items-center" fdprocessedid="j7gn0v"><img alt="More Options"
-                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
-                        srcset="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=32&amp;q=75 1x, ./_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75 2x"
-                        src="{{ asset('') }}upnl/_next/image?url=%2Fassets%2Ficons%2Fmore.png&amp;w=48&amp;q=75"
-                        style="color: transparent;"><span class="text-xs mt-1 text-gray-400">More</span></button></div>
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
+            height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Overview</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.Market')}}"><img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Nodes</span></a>
+            <!-- <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class=""
+            src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-gray-400">Rewards</span></a> -->
+            
+            
+            <a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Referrals</span></a>
+            
+            <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Wallet</span>
+        
+        </a>
+        
+        
+        
+        <a
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.profile-setting')}}"><img alt="wallet Icon" loading="lazy"
+            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
+            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
+            class="text-xs mt-1 text-green-500">Profile</span>
+        
+        </a></div>
+</div>
+
         </div>
     </div>
     <script id="__NEXT_DATA__" type="application/json">

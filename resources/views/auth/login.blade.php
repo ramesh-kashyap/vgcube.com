@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" href="/favicon.ico">
-    <title>MeshChain - Decentralized Compute Network for AI Training, Inference, and Gaming Rendering</title>
+    <title>{{siteName()}}</title>
     <meta name="robots" content="index,follow">
     <meta name="description"
         content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">

@@ -7,15 +7,21 @@ use Illuminate\Http\Request;
 use App\Models\BuyFund;
 use App\Models\Income;
 use App\Models\Withdraw;
+use App\Models\Fundtransfer;
+use App\Models\User;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+
+
 use App\Models\Investment;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Hexters\CoinPayment\CoinPayment;
 use App\Models\CoinpaymentTransaction;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Log;
 
+use Hash;
 use Redirect;
 class AddFund extends Controller
 {
@@ -49,6 +55,24 @@ class AddFund extends Controller
     ->merge($buyfunds)
     ->merge($withdraws)
     ->sortByDesc('created_at');
+
+    $currentPage = request()->get('page', 1);
+
+// Define how many items you want per page
+$perPage = paginationLimit();
+
+// Slice the collection to get the items for the current page
+$currentItems = $combinedRecords->slice(($currentPage - 1) * $perPage, $perPage);
+
+// Create the paginator
+$paginatedRecords = new LengthAwarePaginator(
+    $currentItems,
+    $combinedRecords->count(),
+    $perPage,
+    $currentPage,
+    ['path' => request()->url(), 'query' => request()->query()]
+);
+$paginatedRecords =$paginatedRecords->onEachSide(1);
     // echo "<pre>";
     // print_r($combinedRecords);
     // $combinedRecords = $combinedRecords->paginate($limit)
@@ -72,10 +96,10 @@ class AddFund extends Controller
     }
       
 
-
+    $this->data['level_income'] = $paginatedRecords;
   $this->data['percentage'] = $percentage;
   $this->data['todaysRoi'] = $todaysRoi;
-  $this->data['level_income'] = $combinedRecords;
+  // $this->data['level_income'] = $combinedRecords;
   $this->data['page'] = 'user.fund.wallet';
   return $this->dashboard_layout();
 
@@ -91,17 +115,78 @@ return $this->dashboard_layout();
 
 }
 
+
+public function transfer_fund(Request $request)
+{
+
+$user=Auth::user();
+
+
+$buyfunds = Fundtransfer::select('amount as comm','user_id_to','user_id_from',)->where('transfer_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
+  $item->remarks = 'Fundtransfer'; // Add your custom remark value here
+  return $item;
+});
+
+
+$currentPage = request()->get('page', 1);
+  
+// Define how many items you want per page
+$perPage = paginationLimit();;
+
+// Slice the collection to get the items for the current page
+$currentItems = $buyfunds->slice(($currentPage - 1) * $perPage, $perPage);
+
+// Create the paginator
+$paginatedRecords = new LengthAwarePaginator(
+    $currentItems,
+    $buyfunds ->count(),
+    $perPage,
+    $currentPage,
+    ['path' => request()->url(), 'query' => request()->query()]
+);
+
+// Display the pagination links
+$paginatedRecords = $paginatedRecords->onEachSide(1);
+
+$this->data['buyfunds'] = $paginatedRecords;
+
+$this->data['page'] = 'user.fund.transfer-fund';
+return $this->dashboard_layout();
+
+}
+
 public function fund(Request $request)
 {
   $user=Auth::user();
 
   
 
-    $buyfunds = BuyFund::select('amount as comm','created_at','status','txn_no','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
-        $item->remarks = 'Deposits'; // Add your custom remark value here
-        return $item;
-    })->toArray();
-    $this->data['level_income'] = $buyfunds;
+  $buyfunds = BuyFund::select('amount as comm','created_at','status','txn_no','type')->where('user_id',$user->id)->orderBy('id','DESC')->get()->map(function ($item) {
+      $item->remarks = 'Deposits'; // Add your custom remark value here
+      return $item;
+  });
+
+  $currentPage = request()->get('page', 1);
+  
+  // Define how many items you want per page
+  $perPage = paginationLimit();;
+  
+  // Slice the collection to get the items for the current page
+  $currentItems = $buyfunds->slice(($currentPage - 1) * $perPage, $perPage);
+  
+  // Create the paginator
+  $paginatedRecords = new LengthAwarePaginator(
+      $currentItems,
+      $buyfunds ->count(),
+      $perPage,
+      $currentPage,
+      ['path' => request()->url(), 'query' => request()->query()]
+  );
+ 
+  // Display the pagination links
+  $paginatedRecords = $paginatedRecords->onEachSide(1);
+  
+  $this->data['buyfunds'] = $paginatedRecords;
 $this->data['page'] = 'user.fund.addFund';
 return $this->dashboard_layout();
 
@@ -241,6 +326,84 @@ return  redirect()->route('user.strategy')->withErrors('error', $e->getMessage()
 
 
 
+
+
+
+
+public function SubmitTransferFunds(Request $request)
+{
+
+try{
+        $validation =  Validator::make($request->all(), [
+            // 'code' => 'required',
+            'amount' => 'required|numeric|min:0',
+            'username' => 'required|exists:users,username',
+            'transaction_password' => 'required',
+             
+        ]);
+
+        if($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+
+            return redirect()->route('user.transfer_fund')->withErrors($validation->getMessageBag()->first())->withInput();
+        }
+         
+           $user=Auth::user();
+
+        //   $code = $request->code;
+        
+        //   if (PasswordReset::where('token', $code)->where('email',$user->email)->count() != 1) {
+        //          $notify[] = ['error', 'Invalid token'];
+        //          return redirect()->back()->withNotify($notify);
+        //      }
+
+
+            $available_balance=0;
+            $user_detail=User::where('username',$request->username)->orderBy('id','desc')->limit(1)->first();
+            $available_balance=Auth::user()->FundBalance();
+         
+          $password= $request->transaction_password;
+         if (Hash::check($password, $user->tpassword))
+           {
+         if ($available_balance>=$request->amount) 
+         {
+             $data = [
+                    'transfer_id' =>$user->id,
+                    'transfered_id' => $user_detail->id,
+                    'user_id_from' => $user->username,
+                    'user_id_to' => $user_detail->username,
+                    'amount' => $request->amount,
+                    'transfer_date' => Date("Y-m-d"),         
+                ];
+               $payment =  Fundtransfer::insert($data);
+          
+           $notify[] = ['success','Fund Transfer successfully to  ID '.$user_detail->username];
+              return redirect()->back()->withNotify($notify);
+
+          }   
+          else
+          {
+             return Redirect::back()->withErrors(array('Insufficient Balance in Wallet'));
+          }
+           }
+        else
+        {
+        return Redirect::back()->withErrors(array('Invalid Transaction Password'));
+        }     
+
+       
+              
+
+      }
+       catch(\Exception $e){
+        Log::info('error here');
+        Log::info($e->getMessage());
+        print_r($e->getMessage());
+        die("hi");
+        return  redirect()->route('user.transfer_fund')->withErrors('error', $e->getMessage())->withInput();
+    }
+
+  }
 public function SubmitBuyFund(Request $request)
 {
 
