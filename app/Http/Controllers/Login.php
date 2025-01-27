@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Redirect;
+
 use App\Models\PasswordReset;
 use App\Models\User;
 use App\Models\UserLogin;
 use Helper;
-use DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+
 class Login extends Controller
 {
 
@@ -37,45 +39,41 @@ class Login extends Controller
             return $fieldType;
         }
 
-    public function login(Request $request)
-    {
-      
-            $validation =  Validator::make($request->all(), [
-                'phone' => 'required|unique:users',
+        public function login(Request $request)
+        {
+            // Validate the input
+            $validation = Validator::make($request->all(), [
+                'username' => 'required|string',
                 'password' => 'required|string',
-
             ]);
         
-            
-            $post_array  = $request->all();
-            $credentials = $request->only('phone', 'password');
-            $exists = User::where('dialCode', $post_array['country_iso']) ->where('phone', $post_array['phone'])
-            ->exists();
-            // dd($request->all());
-           if (Auth::attempt($credentials)) {
+            // If validation fails, return with errors
+            if ($validation->fails()) {
+                return redirect()->back()->withErrors($validation)->withInput();
+            }
+        
+            // Extract the credentials
+            $credentials = $request->only('username', 'password');
+        
+            // Attempt to authenticate the user
+            if (Auth::attempt($credentials)) {
                 $user = Auth::user();
-
-                if($user->active_status=="Block")
-                {
-                Auth::logout();
-               return Redirect::back()->withErrors(array('You are Blocked by admin'));
-                }
-                if( $exists && $exists!=''){
-                return redirect()->route('user.dashboard'); }
-                else{
+        
+                // Check if the user is blocked
+                if ($user->active_status === "Block") {
                     Auth::logout();
-                    return Redirect::back()->withErrors(array('Invalid Country Code !'));
-        
+                    return redirect()->back()->withErrors(['error' => 'You are Blocked by admin']);
                 }
-            }
-            else
-            {
-                // echo "credentials are invalid"; die;
-                return Redirect::back()->withErrors(array('Invalid Username & Password !'));
-            }
-       
         
+                // If authenticated and the user exists, redirect to the dashboard
+                return redirect()->route('user.dashboard');
+            }
+        
+            // If authentication fails, return with an error message
+            return redirect()->back()->withErrors(['error' => 'Invalid Username or Password'])->withInput();
         }
+        
+
 
 
 

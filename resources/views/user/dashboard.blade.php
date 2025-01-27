@@ -1,360 +1,511 @@
-<div class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] bg-[#F1F1F1]">
-    <div class="w-full mt-10 flex flex-col justify-center text-primary">
-        <div></div>
-        <div class="max-w-[1920px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-[16px] flex flex-col items-left">
-                <div class="flex items-center justify-left mb-4">
-                    <div class="bg-blue-100 rounded-full p-2"><img alt="Total Rewards Icon" loading="lazy" width="32"
-                            height="32" decoding="async" data-nimg="1"
-                            src="{{ asset('') }}upnl/assets/icons/icon_total_rewards.svg"
-                            style="color: transparent;">
+<html lang="en" style="">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <title>{{siteName()}}</title>
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
+    <meta property="og:description"
+        content="Explore MeshChain, a decentralized compute network offering scalable solutions for AI training, inference, and gaming rendering. Unlock cost-efficient power and secure blockchain-based performance.">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="Meshchain">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title" content="User Portal - Meshchain">
+    <meta name="next-head-count" content="15">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="{{ asset('') }}upnl/_next/static/css/c9d1efbde5d75517.css">
+
+    <script defer="" nomodule="" src="{{ asset('') }}upnl/_next/static/chunks/polyfills-42372ed130431b0a.js"></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/webpack-44d210f48ce8d2be.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/framework-8b7ae4d017121d95.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/main-0a946498e7d0ffea.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/_app-62dd2c8cc7122f96.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/454-fba73d6f40db324c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/962-67fd7c164fc63638.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/730-b6071344bc542f9c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/106-bc4204a49eec54a7.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/878-7babfedf6e5bb43c.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/600-43bf72feb6de8eef.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/953-27df0f11cb6d622f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/337-c68deaa555ceac7f.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/chunks/pages/index-ee3997ecd6058818.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_buildManifest.js" defer=""></script>
+    <script src="{{ asset('') }}upnl/_next/static/nocaBKNJml-nPe7WJbWSK/_ssgManifest.js" defer=""></script>
+    <style data-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap">
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8V1g.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrFJM.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6V1g.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        .card {
+            background: linear-gradient(to right, #fff);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            color: #2c3e50;
+            text-align: left;
+        }
+
+        .card-content h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #4b0082;
+        }
+
+        .card-content p {
+            margin: 2px 0;
+            font-size: 16px;
+        }
+
+        .card-content .price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-content .yield {
+            color: #4b0082;
+        }
+
+        .card-content .details {
+            font-size: 12px;
+            font-family: bold;
+        }
+
+        .card-icon {
+            text-align: center;
+        }
+
+        .card-icon img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .unlock {
+            position: absolute;
+            top: 10px;
+            /* Adjust as needed */
+            right: 20px;
+            /* Adjust as needed */
+            font-size: 16px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* Space between icon and text */
+        }
+
+        .unlock i {
+            margin-right: 5px;
+        }
+
+        .unlock {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+
+        .card-content h1 {
+            font-size: 18px;
+            margin: 0;
+            color: #4b0082;
+        }
+
+        .card-content .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-content p {
+            margin: 2px 0;
+            font-size: 14px;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination {
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        / Optionally add styles for ellipses (...) / .pagination .disabled {
+            pointer-events: none;
+        }
+        .loader {
+  width: 50px;
+  height: 50px;
+  perspective: 800px;
+}
+
+.cuboid {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 1.5s infinite linear;
+}
+
+.cuboid div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #f1c40f;
+  border: 2px solid #333;
+}
+
+/* Cuboid faces */
+.cuboid .front { transform: translateZ(25px); }
+.cuboid .back { transform: rotateY(180deg) translateZ(25px); }
+.cuboid .top { transform: rotateX(90deg) translateZ(25px); }
+.cuboid .bottom { transform: rotateX(-90deg) translateZ(25px); }
+.cuboid .left { transform: rotateY(-90deg) translateZ(25px); }
+.cuboid .right { transform: rotateY(90deg) translateZ(25px); }
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+    </style>
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/180-23154d61c0670ef4.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/nodes-dbc2ec71a71e759c.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/rewards-68123406f92ce1f1.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/referrals-c3a72b71d4f8ff2f.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet-65f0dabf677342f6.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/profile-6284106fb2e47cd9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/contact-74f7108b54563e66.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/568-b59724e58497c3b9.js">
+    <link as="script" rel="prefetch" href="{{ asset('') }}upnl/_next/static/chunks/pages/wallet/deposit-1ee2cf425e02648e.js">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="__next">
+        <div class="Toastify"></div>
+        <div class="w-full h-screen  flex justify-center">
+            <div class="w-full max-w-[1920px] flex bg-white shadow-lg">
+                <div style="background:rgb(37 35 30);"
+                    class="hidden max-h-screen md:flex flex-col text-black transition-all duration-300 justify-between w-[264px]">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-gray-200"><a
+                                class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
+                                    loading="lazy" width="163" height="20" decoding="async" data-nimg="1"
+                                    src="{{ asset('') }}upnl/assets/icons/	
+image_2025_01_24T08_48_53_087Z.png"
+                                    style="color: transparent; width:60px;"></a>
+                            <!-- <button
+                                class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"
+                                fdprocessedid="cgvemq">
+                                <img alt="close" loading="lazy" width="40" height="40"
+                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_left.svg"
+                                    style="color: transparent;"></button> -->
+
+
+                        </div>
+
+
+                        <nav class="my-5 px-5 text-sm font-medium text-[#555]">
+                            <div class="text-gray-400 text-xs mb-2">MENU</div><a
+                                class="flex items-center py-2 px-3 mb-2 rounded-md  text-white" style="background: #f1c40f;"
+                                href="#"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
+                                    data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-overview_active.svg"
+                                    style="color: transparent;"><span class="ml-4">Nodes</span></a><a
+                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100 text-white" href="{{route('user.Market')}}"><img
+                                    alt="my_nodes Icon" loading="lazy" width="16" height="16" decoding="async"
+                                    data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" style="color: transparent;"><span
+                                    class="ml-4">Earn</span></a>
+                            <!-- <a
+                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100"
+                                href="/rewards"><img alt="rewards Icon" loading="lazy" width="16" height="16"
+                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-rewards.svg"
+                                    style="color: transparent;"><span class="ml-4">Rewards</span></a>
+                                     -->
+
+                            <a
+                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100 text-white"
+                                href="{{route('user.team')}}">
+
+                                <img alt="referrals Icon" loading="lazy" width="16" height="16"
+                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
+                                    style="color: transparent;">
+
+                                <span class="ml-4">Referrals</span></a>
+
+
+                           
+                            <a
+                                class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100 text-white"
+                                href="{{route('user.profile-setting')}}"><img alt="profile Icon" class="text-white" loading="lazy" width="16" height="16"
+                                    decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-profile.svg"
+                                    style="color: transparent;"><span class="ml-4">Profile</span></a>
+                        </nav>
                     </div>
+                    <footer class="my-5 px-5 text-sm font-medium text-[#555] hidden md:block">
+                        <div class="text-gray-400 text-xs mb-2">FOLLOW US</div><a
+                            class="flex items-center py-2 px-3 mb-4 rounded" href="#"><img
+                                alt="X.com Icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
+                                src="{{ asset('') }}upnl/assets/icons/icon_twitter.svg" style="color: transparent;"><span
+                                class="ml-4">X.com</span></a><a class="flex items-center py-2 px-3 mb-4 rounded"
+                            href="#"><img alt="Telegram Icon" loading="lazy" width="16"
+                                height="16" decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_telegram_2.svg"
+                                style="color: transparent;"><span class="ml-4">Telegram</span></a><a
+                            class="flex items-center py-2 px-3 mb-4 rounded" href="#"><img
+                                alt="Discord Icon" loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
+                                src="{{ asset('') }}upnl/assets/icons/icon_discord.svg" style="color: transparent;"><span
+                                class="ml-4">Discord</span></a>
+                        <div style="border-top: 1px solid rgb(241, 241, 241); margin: 20px 0px;"></div>
+                        <div>
+                            <a class="flex items-center py-2 px-3 mb-4 rounded" href="#" ><img
+                                    alt="Contact Us Icon" loading="lazy" width="16" height="16" decoding="async"
+                                    data-nimg="1" src="{{ asset('') }}upnl/assets/icons/customer-service.svg"
+                                    style="color: transparent;"><span class="ml-4">Log out</span></a>
+                        </div>
+
+
+
+                    </footer>
                 </div>
-                <div class="text-left">
-                    <h3 class="font-medium mb-1">My Balance</h3>
-                    <div class="flex flex-row md:flex-col xl:flex-row items-baseline">
-                        <p class="text-[40px] md:text-[36px] lg:text-[40px] mr-2 font-semibold"
-                            style="font-family: ClashDisplay-Semibold;"><span style="
-    font-size: 25px;
-"> {{ number_format(Auth::user()->available_balance(), 2) }} USDT</span></p>
-                        <p class="text-secondary"></p>
+                <div style="background:rgb(37 35 30);" class="flex-1 flex flex-col  text-black bg-[#F1F1F1] h-screen">
+                    <div class="flex items-center justify-between py-2 mt-5 px-4 md:px-10 lg:px-10 xl:px-20"><a
+                            class="md:hidden" href="/"><img alt="Logo" loading="lazy" width="163" height="20"
+                                decoding="async" data-nimg="1" class="max-w-[156px]"
+                                src="{{ asset('') }}upnl/assets/icons/
+image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
+                        <div class="w-full flex flex-row justify-end md:justify-between">
+                            <div class="flex items-center h-[38px] text-gray-800 font-medium"><a
+                                    class="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="{{route('user.team')}}">
+                                    <div class="flex items-center rounded-full pl-3 text-sm"><img alt="User Avatar"
+                                            loading="lazy" width="16" height="16" decoding="async" data-nimg="1"
+                                            class="mr-3" src="{{ asset('') }}upnl/assets/icons/icon_user_add.svg"
+                                            style="color: transparent;"><span> 
+                                        </span></div>
+
+                                    <div class="flex mx-2 items-center justify-center font-bold"></div>
+
+                                </a></div>
+                            <div class="relative flex items-center space-x-2 font-semibold"><span
+                                    class="hidden lg:inline text-xl">
+                                </span>
+
+
+
+                                <button
+                                    fdprocessedid="vcru83">
+                                    <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
+                                        style="background: #f1c40f;"></div>
+                                </button>
+                                <div class="hidden md:inline-block">
+                                    <div class="relative inline-block text-[16px] font-bold"><button
+                                            class="flex p-2 items-center bg-white border justify-center align-center h-[38px] w-[60px] rounded-[20px] hover:bg-gray-200 focus:outline-none"
+                                            fdprocessedid="j8dxs1">EN</button>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-[16px] max-h-[226px] h-full flex flex-col items-left">
-                <div class="flex items-center justify-left mb-4">
-                    <div class="bg-green-100 rounded-full p-2"><img alt="Today's Rewards Icon" loading="lazy" width="32"
-                            height="32" decoding="async" data-nimg="1"
-                            src="{{ asset('') }}upnl/assets/icons/icon_todays_rewards.svg"
-                            style="color: transparent;">
-                    </div>
-                </div>
-                <div class="text-left">
-                    <h3 class="font-medium mb-1"> Total invested </h3>
-                    <div class="flex flex-row md:flex-col xl:flex-row items-baseline">
-                        <p class="text-[40px] md:text-[36px] lg:text-[40px] font-semibold mr-2"
-                            style="font-family: ClashDisplay-Semibold;">
-                            <span style="
-    font-size: 25px;
-">{{ number_format(Auth::user()->investment->sum('amount'), 2) }}</span></p>
-                        <p class="text-secondary"></p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="bg-white p-6 max-h-[226px] h-full col-span-full lg:col-span-1 rounded-[16px] flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-[20px] font-medium text-black"> Total withdrawn</h3><a href="{{route('user.Market')}}"><button
-                                class="text-sm flex items-center px-3 py-1 rounded-[22px] bg-[#F1F1F1]"
-                                fdprocessedid="bjee6h">Manage <span class="ml-1">→</span></button></a>
-                    </div>
-                </div>
-                <p class="text-[40px] md:text-[36px] lg:text-[40px] font-semibold mr-2"
-                    style="font-family: ClashDisplay-Semibold;">
-                    <span style="
-    font-size: 25px;
-">{{ number_format(Auth::user()->withdraw(), 2) }}USDT</span></p>
-            </div>
-        </div>
+
+<div  class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px] " style="background: #47473D;">
+<div class="w-full" style="background: #272723; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; max-width: 1000px; width: 100%; box-sizing: border-box;">
+   
+    <!-- Countdown Section -->
+  <!-- Circular Progress Section -->
+<div style="width: 150px; height: 150px; margin: 0 auto; border: 5px solid #f1c40f; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+  <span style="font-size: 24px; font-weight: bold; color: #333;">3.7227 pt</span>
+  <button style="background-color: #f1c40f; color: #ffffff; border: none; border-radius: 20px; padding: 5px 15px; font-size: 14px; cursor: pointer; margin-top: 10px;">Claim</button>
+  <div style="content: ''; width: 90%; height: 90%; background: rgba(0, 208, 138, 0.2); border-radius: 50%; position: absolute; z-index: -1;"></div>
+</div>
+
+    <div style="margin-top: 10px; font-size: 14px; color: #666;">1h 35m</div>
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
+      <button style="background-color: #000000; color: #ffffff; border: none; border-radius: 20px; padding: 10px 20px; font-size: 14px; cursor: pointer;">Reward</button>
+      <button style="background-color: #f0f0f0; color: #666666; border: none; border-radius: 20px; padding: 10px 20px; font-size: 14px; cursor: pointer;">Status</button>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-        <div class="bg-white p-5 rounded-[16px] mt-6 col-span-1 lg:col-span-8">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-md font-semibold text-black">Reward Stats</h3>
-                <div class="flex bg-gray-200 rounded-[16px] h-[30px]"><button
-                        class="flex-1 min-w-[87px] px-4 py-1 text-sm font-medium rounded-full text-center bg-black text-white">Daily</button><button
-                        class="flex-1 px-4 py-1 text-sm font-medium rounded-full text-center ">Monthly</button></div>
-            </div>
-            <div class="w-full h-72">
-                <div class="recharts-responsive-container" style="width: 100%; height: 100%; min-width: 0px;">
-                    <div class="recharts-wrapper"
-                        style="position: relative; cursor: default; width: 100%; height: 100%; max-height: 288px; max-width: 629px;">
-                        <svg class="recharts-surface" width="629" height="288" viewBox="0 0 629 288"
-                            style="width: 100%; height: 100%;">
-                            <title></title>
-                            <desc></desc>
-                            <defs>
-                                <clipPath id="recharts1-clip">
-                                    <rect x="0" y="15" height="223" width="629"></rect>
-                                </clipPath>
-                            </defs>
-                            <g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis">
-                                <g class="recharts-cartesian-axis-ticks">
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(22.464285714285715,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">04</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(67.39285714285714,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">05</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(112.32142857142858,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">06</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(157.25,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">07</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(202.17857142857144,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">08</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(247.1071428571429,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">09</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(292.0357142857143,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">10</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(336.9642857142857,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">11</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(381.89285714285717,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">12</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(426.8214285714286,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">13</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(471.75000000000006,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">14</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(516.6785714285714,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">15</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(561.6071428571428,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">16</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                        <g transform="translate(606.5357142857142,246)"><text x="0" y="0" dy="18"
-                                                text-anchor="middle" transform="rotate(0)"
-                                                class="text-[9px] text-center 2xl:text-[11px] z-[999]" fill="#666">
-                                                <tspan x="0" dy="10">17</tspan>
-                                                <tspan x="0" dy="15">Dec</tspan>
-                                            </text></g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g class="recharts-layer recharts-bar">
-                                <g class="recharts-layer recharts-bar-rectangles">
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                </g>
-                                <g class="recharts-layer"></g>
-                            </g>
-                            <g class="recharts-layer recharts-bar">
-                                <g class="recharts-layer recharts-bar-rectangles">
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                </g>
-                                <g class="recharts-layer"></g>
-                            </g>
-                            <g class="recharts-layer recharts-bar">
-                                <g class="recharts-layer recharts-bar-rectangles">
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle"></g>
-                                    <g class="recharts-layer recharts-bar-rectangle">
-                                        <path x="594.0714285714286" y="37.3" width="24" height="200.7" radius="5,5,5,5"
-                                            fill="#00C853" stroke-width="1" stroke="#ffffff" class="recharts-rectangle"
-                                            d="M594.0714285714286,42.3A 5,5,0,0,1,599.0714285714286,37.3L 613.0714285714286,37.3A 5,5,0,0,1,
-        618.0714285714286,42.3L 618.0714285714286,233A 5,5,0,0,1,
-        613.0714285714286,238L 599.0714285714286,238A 5,5,0,0,1,
-        594.0714285714286,233Z"></path>
-                                    </g>
-                                </g>
-                                <g class="recharts-layer"></g>
-                                <g class="recharts-layer recharts-label-list"><text x="606.0714285714286"
-                                        y="31.299999999999997" text-anchor="middle" fill="#666" font-size="11"
-                                        font-weight="bold" class="z-[999]">25.2</text></g>
-                            </g>
-                        </svg>
-                        <div tabindex="-1"
-                            class="recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-bottom"
-                            style="visibility: hidden; pointer-events: none; position: absolute; top: 0px; left: 0px; transform: translate(77.3929px, 118px);">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex space-x-4 mt-6">
-                <div class="flex items-center"><span
-                        class="w-[22px] h-[22px] bg-green-500 rounded-full mr-2"></span><span
-                        class="text-gray-600">Mining</span></div>
-                <div class="flex items-center"><span
-                        class="w-[22px] h-[22px] bg-blue-500 rounded-full mr-2"></span><span
-                        class="text-gray-600">Referrals</span></div>
-                <div class="flex items-center"><span
-                        class="w-[22px] h-[22px] bg-[#FFCC00] rounded-full mr-2"></span><span
-                        class="text-gray-600">Tasks</span></div>
-            </div>
-        </div>
-
-
-
-        <div class="col-span-1 lg:col-span-4 bg-white rounded-[16px] mt-6 p-5" style="height:55px">
-            <h2 class="text-[20px] font-medium text-primary text-center mb-3">Become Resource
-                Provider</h2>
-            <div class="space-y-4"><a target="_blank"
-                    class="relative min-h-[70px] h-full text-left w-full py-4 text-white font-semibold bg-[#003724] rounded-[16px] flex items-center justify-center space-x-2 overflow-hidden"
-                    href="https://t.me/meshchain_bot">
-                    <div class="absolute top-[-50px] inset-0 flex items-center justify-center">
-                        <div class="w-[140%] h-[150%] rounded-full opacity-30"
-                            style="background: radial-gradient(circle, rgba(197, 255, 234, 0.6) 20%, rgba(0, 255, 163, 0.1) 80%, transparent 100%);">
-                        </div>
-                    </div>
-                    <div class="w-full"><span class="text-[16px] ml-4">Set Up Telegram Node</span>
-                    </div><img alt="Set Up Telegram Node" loading="lazy" width="98" height="98" decoding="async"
-                        data-nimg="1" src="{{ asset('') }}upnl/assets/images/telegram-svgrepo-com.svg"
-                        style="color: transparent; position: absolute; bottom: 0px; right: 10px; margin-bottom: -5px; opacity: 0.2;">
-                </a><a target="_blank"
-                    class="relative min-h-[70px] h-full text-left w-full py-4 text-white font-semibold bg-[#003724] rounded-[16px] flex items-center justify-center space-x-2 overflow-hidden"
-                    href="https://chromewebstore.google.com/detail/meshnode/lobckpihghfknleknppdjnnncpcfpcgh">
-                    <div class="absolute top-[-50px] inset-0 flex items-center justify-center">
-                        <div class="w-[140%] h-[150%] rounded-full opacity-30"
-                            style="background: radial-gradient(circle, rgba(197, 255, 234, 0.6) 20%, rgba(0, 255, 163, 0.1) 80%, transparent 100%);">
-                        </div>
-                    </div>
-                    <div class="w-full"><span class="text-[16px] ml-4">Install Browser
-                            Extension</span></div><img alt="Install Browser Extension" loading="lazy" width="98"
-                        height="98" decoding="async" data-nimg="1"
-                        src="{{ asset('') }}upnl/assets/images/server-square-svgrepo-com.svg"
-                        style="color: transparent; position: absolute; bottom: 0px; right: 10px; margin-bottom: -5px; opacity: 0.2;">
-                </a><a target="_blank"
-                    class="relative min-h-[70px] h-full text-left w-full py-4 text-white font-semibold bg-[#003724] rounded-[16px] flex items-center justify-center space-x-2 overflow-hidden"
-                    href="https://docs.meshchain.ai/getting-started/resource-provider-guide/install-software-node">
-                    <div class="absolute top-[-50px] inset-0 flex items-center justify-center">
-                        <div class="w-[140%] h-[150%] rounded-full opacity-30"
-                            style="background: radial-gradient(circle, rgba(197, 255, 234, 0.6) 20%, rgba(0, 255, 163, 0.1) 80%, transparent 100%);">
-                        </div>
-                    </div>
-                    <div class="w-full"><span class="text-[16px] ml-4">Install Desktop Node</span>
-                    </div><img alt="Install Desktop Node" loading="lazy" width="98" height="98" decoding="async"
-                        data-nimg="1"
-                        src="{{ asset('') }}upnl/assets/images/extension-puzzle-sharp-svgrepo-com.svg"
-                        style="color: transparent; position: absolute; bottom: 0px; right: 10px; margin-bottom: -5px; opacity: 0.2;">
-                </a><a target="_blank"
-                    class="relative min-h-[70px] h-full text-left w-full py-4 text-white font-semibold bg-[#003724] rounded-[16px] flex items-center justify-center space-x-2 overflow-hidden"
-                    href="https://docs.meshchain.ai/getting-started/resource-provider-guide/install-dedicated-node">
-                    <div class="absolute top-[-50px] inset-0 flex items-center justify-center">
-                        <div class="w-[140%] h-[150%] rounded-full opacity-30"
-                            style="background: radial-gradient(circle, rgba(197, 255, 234, 0.6) 20%, rgba(0, 255, 163, 0.1) 80%, transparent 100%);">
-                        </div>
-                    </div>
-                    <div class="w-full"><span class="text-[16px] ml-4">Purchase Hardware Node</span>
-                    </div><img alt="Purchase Hardware Node" loading="lazy" width="98" height="98" decoding="async"
-                        data-nimg="1"
-                        src="{{ asset('') }}upnl/assets/images/archive-down-minimlistic-svgrepo-com.svg"
-                        style="color: transparent; position: absolute; bottom: 0px; right: 10px; margin-bottom: -5px; opacity: 0.2;">
-                </a></div>
-          
-        </div>
+    <!-- Today Mining and Total Rewards Section -->
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 45%; background: #f0f0f0; border-radius: 10px; padding: 10px; margin: 5px;">
+        <span style="font-size: 18px; font-weight: bold; color: #f1c40f; display: block;">0 pt</span>
+        <p style="margin: 5px 0 0; font-size: 12px; color: #333;">Today Mining</p>
+      </div>
+      <div style="flex: 1; min-width: 45%; background: #f0f0f0; border-radius: 10px; padding: 10px; margin: 5px;">
+        <span style="font-size: 18px; font-weight: bold; color: #f1c40f; display: block;">0 pt</span>
+        <p style="margin: 5px 0 0; font-size: 12px; color: #333;">Total Rewards</p>
+      </div>
     </div>
+<!--<a  target="_blank" href="https://t.me/MeshchainAi">-->
+    
+<!--   <div class=" flex justify-end items-center w-full  rounded-[16px] bg-cover bg-center" style="background: #f1c40f;">-->
+     
+<!--      <div class="left-[-35px] md:left-0 absolute min-w-[220px] md:min-w-[280px] w-[50%] h-full flex items-center justify-center">-->
+<!--         <div class="relative z-10 w-full h-[100px] md:h-[204px]" style="pointer-events: none;">-->
+<!--             <div class="coin-container">-->
+<!--<div class="loader">-->
+<!--  <div class="cuboid">-->
+<!--    <div class="front"></div>-->
+<!--    <div class="back"></div>-->
+<!--    <div class="top"></div>-->
+<!--    <div class="bottom"></div>-->
+<!--    <div class="left"></div>-->
+<!--    <div class="right"></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--                </div>-->
+<!--         </div>-->
+<!--      </div>-->
+  
+<!--      <img alt="Rectangle Listing 2" loading="lazy" width="677" height="62" decoding="async" data-nimg="1" class="hidden md:block left-[-60px] md:left-0 z-[1] absolute min-h-[62px] w-[600px] top-[26px] md:top-[51px] rounded-[12px]" srcset="/_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_2.png&amp;w=750&amp;q=75 1x, /_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_2.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_2.png&amp;w=1920&amp;q=75" style="color: transparent; overflow: hidden;"><img alt="Rectangle Listing 1" loading="lazy" width="677" height="58" decoding="async" data-nimg="1" class="hidden md:block left-[-60px] md:left-0 z-[1] absolute min-h-[58px] w-[600px] top-[30px] md:top-[55px] rounded-[12px]" srcset="/_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_1.png&amp;w=750&amp;q=75 1x, /_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_1.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=%2Fassets%2Fimages%2Frectangle_listing_1.png&amp;w=1920&amp;q=75" style="color: transparent;"><img alt="Rectangle Mobile 2" loading="lazy" width="677" height="37" decoding="async" data-nimg="1" class="block md:hidden left-0 z-[1] absolute max-h-[37px] w-[600px] top-[29px] rounded-[12px]" srcset="/_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_2.png&amp;w=750&amp;q=75 1x, /_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_2.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_2.png&amp;w=1920&amp;q=75" style="color: transparent;"><img alt="Rectangle Mobile 1" loading="lazy" width="677" height="33" decoding="async" data-nimg="1" class="block md:hidden left-0 z-[1] absolute max-h-[33px] w-[600px] top-[33px] rounded-[12px]" srcset="/_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_1.png&amp;w=750&amp;q=75 1x, /_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_1.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=%2Fassets%2Fimages%2Frectangle_mobile_1.png&amp;w=1920&amp;q=75" style="color: transparent;">-->
+<!--      <div class="z-10 w-3/5 min-w-3/5 md:min-w-[360px] flex flex-col justify-center items-center" style="background-image: url(&quot;/assets/images/grid_bg.png&quot;); background-size: contain; background-repeat: no-repeat;">-->
+<!--         <h3 class="text-[16px] leading-[19.2px] md:text-[37px] md:leading-[44.4px] font-bold uppercase" style="background-clip: text; color: #f1c40f; font-family: Poppins; background-image: linear-gradient(80.44deg, rgb(73, 255, 190) -45.45%, rgb(28, 255, 173) 110.33%);">MCC listing soon</h3>-->
+<!--         <p class="mt-[-1px] mb-1 text-[8px] leading-[9.6px] md:text-[14px] md:leading-[16.8px] text-white font-light" style="font-family: Poppins;">15:00 UTC, January 23, 2025</p>-->
+<!--         <div class="flex justify-between md:px-2 py-1 rounded-[8px] bg-[#003724E3]">-->
+<!--            <div class="flex flex-col md:flex-row items-center justify-center">-->
+<!--               <p class="text-center clash-display-semibold text-[12px] leading-[12px] md:text-[21px] text-[#f1c40f ] md:leading-[25.2px] min-w-[30px] md:min-w-9">1</p>-->
+<!--               <p class="text-center text-white clash-display-regular text-[6px] leading-[7.2px] md:text-[12px] md:leading-[14.4px] min-w-[30px] md:min-w-9">DAY</p>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col md:flex-row items-center justify-center">-->
+<!--               <p class="text-center clash-display-semibold text-[12px] leading-[12px] md:text-[21px] text-[#f1c40f ] md:leading-[25.2px] min-w-[30px] md:min-w-9">2</p>-->
+<!--               <p class="text-center text-white clash-display-regular text-[6px] leading-[7.2px] md:text-[12px] md:leading-[14.4px] min-w-[30px] md:min-w-9">HRS</p>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col md:flex-row items-center justify-center">-->
+<!--               <p class="text-center clash-display-semibold text-[12px] leading-[12px] md:text-[21px] text-[#f1c40f ] md:leading-[25.2px] min-w-[30px] md:min-w-9">35</p>-->
+<!--               <p class="text-center text-white clash-display-regular text-[6px] leading-[7.2px] md:text-[12px] md:leading-[14.4px] min-w-[30px] md:min-w-9">MIN</p>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col md:flex-row items-center justify-center">-->
+<!--               <p class="text-center clash-display-semibold text-[12px] leading-[12px] md:text-[21px] text-[#f1c40f ] md:leading-[25.2px] min-w-[30px] md:min-w-9">6</p>-->
+<!--               <p class="text-center text-white clash-display-regular text-[6px] leading-[7.2px] md:text-[12px] md:leading-[14.4px] min-w-[30px] md:min-w-9">SEC</p>-->
+<!--            </div>-->
+<!--         </div>-->
+         
+<!--      </div>-->
+      
+<!--   </div>-->
+   
+<!--</a>  -->
+</div>
+
+    
 </div>
 </div>
 </div>
-<div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg"><a
+<div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg" style="background: #f1c40f;"><a
         class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
             height="20" decoding="async" data-nimg="1" class=""
-            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" style="color: transparent;"><span
-            class="text-xs mt-1 text-gray-400">Overview</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
+            src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" ><span
+            class="text-xs mt-1 text-white">Nodes</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"
         href="{{route('user.Market')}}"><img alt="my_nodes Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
-            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg"
-            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Nodes</span></a>
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-nodes.svg" 
+            style="color: transparent;"><span class="text-xs mt-1 text-white">Earn</span></a>
+        
             <!-- <a
         class="flex w-1/5 p-[12px] flex-col items-center" href="/rewards"><img alt="rewards Icon" loading="lazy"
             width="20" height="20" decoding="async" data-nimg="1" class=""
@@ -365,29 +516,125 @@
             <a class="flex w-1/5 p-[12px] flex-col items-center"
         href="{{route('user.team')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
             class="" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
-            style="color: transparent;"><span class="text-xs mt-1 text-gray-400">Referrals</span></a>
+            style="color: transparent;"><span class="text-xs mt-1 text-white">Referrals</span></a>
             
-            <a
+            <!-- <a
         class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.wallet')}}"><img alt="wallet Icon" loading="lazy"
             width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
             src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
             class="text-xs mt-1 text-green-500">Wallet</span>
         
-        </a>
+        </a> --> 
         
         
-        
-        <a
-        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.profile-setting')}}"><img alt="wallet Icon" loading="lazy"
-            width="20" height="20" decoding="async" data-nimg="1" class="green-filter"
-            src="{{ asset('') }}upnl/assets/icons/icon-wallet.svg" style="color: transparent;"><span
-            class="text-xs mt-1 text-green-500">Profile</span>
-        
-        </a></div>
+            <a class="flex w-1/5 p-[12px] flex-col items-center"
+        href="{{route('user.profile-setting')}}"><img alt="referrals Icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+            class="" src="{{ asset('') }}upnl/assets/icons/icon-profile.svg"
+            style="color: transparent;"><span class="text-xs mt-1 text-white">Profile</span></a>
+      </div>
 </div>
 
         </div>
     </div>
+    <style>.container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgb(0, 255, 163) 0%, rgb(0, 55, 36) 114.32%);
+      position: relative;
+    }
+
+    /* Left Section (Coins) */
+    .coins-container {
+      position: absolute;
+      left: -50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100%;
+    }
+
+    .coin {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      background: gold;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+
+    .coin:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .coin:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    /* Bouncing Animation */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Right Section */
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      background: url('/assets/images/grid_bg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(80.44deg, rgb(73, 255, 190) -45.45%, rgb(28, 255, 173) 110.33%);
+    }
+
+    .timer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(0, 55, 36, 0.89);
+      margin-top: 10px;
+    }
+
+    .timer-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 10px;
+    }
+
+    .timer-value {
+      font-size: 21px;
+      font-weight: bold;
+      color: #00ffa3;
+    }
+
+    .timer-label {
+      font-size: 12px;
+      font-weight: normal;
+      color: #fff;
+    }</style>
 <script id="__NEXT_DATA__" type="application/json">
     {
         "props": {
