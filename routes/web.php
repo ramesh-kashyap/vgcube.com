@@ -25,7 +25,7 @@ Route::get('/clear1', function() {
 });
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('user.dashboard');
 });
 
 
@@ -85,11 +85,13 @@ Route::get('/home', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])-
 Route::get('/slang', [App\Http\Controllers\UserPanel\Profile::class, 'lang'])->name('user.lang');
 
 
+Route::post('/telegram/webhook', [App\Http\Controllers\TelegramController::class, 'handleWebhook']);
 
-Route::prefix('user')->group(function ()
-{
-Route::middleware('auth')->group(function ()
-{
+
+// Route::prefix('user')->group(function ()
+// {
+// Route::middleware('auth')->group(function ()
+// {
 Route::get('/dashboard', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])->name('user.dashboard');
 Route::get('/about', [App\Http\Controllers\UserPanel\Dashboard::class, 'about'])->name('user.about');
 Route::get('/helpcenter', [App\Http\Controllers\UserPanel\Dashboard::class, 'helpcenter'])->name('user.helpcenter');
@@ -251,8 +253,8 @@ Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMe
 
 //end tickets
 
-});
-});
+// });
+// });
 
 
 // admin
