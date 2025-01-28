@@ -27,9 +27,14 @@ Route::get('/clear1', function() {
 Route::get('/', function () {
     return view('user.dashboard');
 });
+Route::get('/telegram/miniapp', function () {
+    return view('user.dashboard'); 
+});
+
+// Auth::routes();
 
 
-Auth::routes();
+
 
 Route::get('/directIncome', [App\Http\Controllers\Cron::class, 'directIncome'])->name('directIncome');
 Route::get('/calculateRoi', [App\Http\Controllers\Cron::class, 'calculateRoi'])->name('calculateRoi');
@@ -46,10 +51,10 @@ Route::get('/update_vip', [App\Http\Controllers\Cron::class, 'update_vip'])->nam
 
 Route::post('/sendforgot', [App\Http\Controllers\Login::class, 'sendforgot'])->name('send_forgot');
 
-Route::post('login', [App\Http\Controllers\Login::class, 'login'])->name('login');
-Route::post('loginAction', [App\Http\Controllers\Login::class, 'login'])->name('loginAction');
+// Route::post('login', [App\Http\Controllers\Login::class, 'login'])->name('login');
+// Route::post('loginAction', [App\Http\Controllers\Login::class, 'login'])->name('loginAction');
 
-Route::any('logout', [App\Http\Controllers\Login::class, 'logout'])->name('logout');
+// Route::any('logout', [App\Http\Controllers\Login::class, 'logout'])->name('logout');
 Route::get('forgot-password', [App\Http\Controllers\Login::class, 'forgot_password'])->name('forgot-password');
 Route::any('forgot_submit', [App\Http\Controllers\Login::class, 'forgot_password_submit'])->name('forgot_submit');
 Route::any('submitResetPassword', [App\Http\Controllers\Login::class, 'submitResetPassword'])->name('submitResetPassword');
@@ -84,14 +89,9 @@ Route::get('/home', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])-
 
 Route::get('/slang', [App\Http\Controllers\UserPanel\Profile::class, 'lang'])->name('user.lang');
 
-
 Route::post('/telegram/webhook', [App\Http\Controllers\TelegramController::class, 'handleWebhook']);
 
 
-// Route::prefix('user')->group(function ()
-// {
-// Route::middleware('auth')->group(function ()
-// {
 Route::get('/dashboard', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])->name('user.dashboard');
 Route::get('/about', [App\Http\Controllers\UserPanel\Dashboard::class, 'about'])->name('user.about');
 Route::get('/helpcenter', [App\Http\Controllers\UserPanel\Dashboard::class, 'helpcenter'])->name('user.helpcenter');
@@ -118,7 +118,8 @@ Route::get('/profile', [App\Http\Controllers\UserPanel\Profile::class, 'index'])
 
 Route::get('/setting', [App\Http\Controllers\UserPanel\Profile::class, 'setting'])->name('user.setting');
 Route::get('/showinfo', [App\Http\Controllers\UserPanel\Profile::class, 'showinfo'])->name('user.showinfo');
-Route::post('/info', [App\Http\Controllers\UserPanel\Profile::class, 'infochange'])->name('user.infochange');
+Route::post('/info', [App\Http\Controllers\UserPanel\Profile::class
+, 'infochange'])->name('user.infochange');
 
 Route::get('/codeVerify', [App\Http\Controllers\UserPanel\Profile::class, 'codeVerify'])->name('user.codeVerify');
 Route::get('/codeVerifyPassword', [App\Http\Controllers\UserPanel\Profile::class, 'codeVerifyPassword'])->name('user.codeVerifyPassword');
@@ -253,8 +254,6 @@ Route::get('/ViewMessage',[App\Http\Controllers\UserPanel\Tickets::class,'ViewMe
 
 //end tickets
 
-// });
-// });
 
 
 // admin
@@ -287,8 +286,8 @@ Route::group(['middleware' => ['admin']], function ()
 
  Route::get('/active-user', [App\Http\Controllers\Admin\ActiveuserController::class, 'active_user'])->name('admin.active-user');
  Route::post('activate-admin', [App\Http\Controllers\Admin\ActiveuserController::class, 'activate_admin_post'])->name('admin.activate-admin');
-Route::get('user-activation', [App\Http\Controllers\Admin\UserController::class, 'user_activation'])->name('admin.user-activation');
-Route::get('add-bonus', [App\Http\Controllers\Admin\UserController::class, 'add_bonus'])->name('admin.add-bonus');
+ Route::get('user-activation', [App\Http\Controllers\Admin\UserController::class, 'user_activation'])->name('admin.user-activation');
+ Route::get('add-bonus', [App\Http\Controllers\Admin\UserController::class, 'add_bonus'])->name('admin.add-bonus');
  Route::any('activate_admin_post', [App\Http\Controllers\Admin\UserController::class, 'activate_admin_post'])->name('admin.activate_admin_post');
  Route::post('add_bonus_post', [App\Http\Controllers\Admin\UserController::class, 'add_bonus_post'])->name('admin.add_bonus_post');
  // usercontroller
