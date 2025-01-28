@@ -354,9 +354,6 @@ image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
                             <div class="relative flex items-center space-x-2 font-semibold"><span
                                     class="hidden lg:inline text-xl">
                                 </span>
-
-
-
                                 <button
                                     fdprocessedid="vcru83">
                                     <div class="flex items-center justify-center w-[40px] h-[38px] rounded-full mx-auto text-[24px] font-semibold"
