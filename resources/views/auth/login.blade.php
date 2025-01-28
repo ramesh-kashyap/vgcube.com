@@ -603,14 +603,14 @@
             <div class="absolute top-6 flex justify-between w-full px-6">
                <img alt="MeshNode Logo" loading="lazy"
                   width="163" height="40" decoding="async" data-nimg="1" class="hidden sm:flex"
-                  src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png" style="color: transparent;width:100px;"><img alt="Logo"
+                  src="{{ asset('') }}upnl/assets/icons/logo_meshchain_full_text.svg" style="color: transparent;"><img alt="Logo"
                   loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="flex sm:hidden"
-                  src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png" style="width:60px; color: transparent;">
-               <!--<div class="flex"><button type="submit"-->
-               <!--   class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2  "-->
-               <!--   fdprocessedid="pb7o">Log In</button><button type="button"-->
-               <!--   class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2  "-->
-               <!--   fdprocessedid="3lirdb">Sign Up</button></div>-->
+                  src="{{ asset('') }}upnl/assets/icons/logo_meshchain.svg" style="color: transparent;">
+               <div class="flex"><button type="submit"
+                  class="w-[80px] md:w-[100px] mr-2 md:mr-4 py-2 px-2 md:px-4 bg-green-500 text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  fdprocessedid="pb7o">Log In</button><button type="button"
+                  class="w-[100px] py-2 px-2 md:px-4 bg-[#171717] text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  fdprocessedid="3lirdb">Sign Up</button></div>
             </div>
             <div class="bg-[#FFF] max-w-[385px] rounded-[20px] py-6 px-6 md:px-8 w-full"
                style="box-shadow: rgba(23, 23, 23, 0.25) 0px 4px 88.3px 0px;">
@@ -635,7 +635,7 @@
                   <div>
                      <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                      <div class="relative"><input type="password" id="passwordInput" name="password" placeholder="Enter Password"
-                        class="mt-1 block w-full px-4 py-2 rounded-[12px] shadow-sm focus:outline-none focus:ring  "
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-[12px] shadow-sm focus:outline-none focus:ring focus:ring-green-500"
                         value="" fdprocessedid="hpl9j" data-gtm-form-interact-field-id="0"><span
                         class="absolute inset-y-0 right-3 flex items-center cursor-pointer"><i id="check"
                         onclick="togglePasswordVisibility()" class="fa fa-eye-slash" style="    font-size: 20px;
@@ -651,7 +651,7 @@
                      </div>
                   </div>
                   <button type="submit"
-                    style="background:#f1c40f;" class="w-full h-[46px] py-2 px-4  font-medium text-white rounded-[30px] shadow-md  focus:outline-none focus:ring-2  "
+                     class="w-full h-[46px] py-2 px-4 bg-green-500 font-medium text-white rounded-[30px] shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                      fdprocessedid="zpoh7">Log In</button>
                   <div class="van-overlay" style="z-index: 2005;  display: none" id="overlay"></div>
                   <div data-v-a84105cc="" class="van-popup van-popup--round van-popup--bottom"

@@ -30,3 +30,14 @@ class TelegramController extends Controller
         return response('OK', 200);
     }
 }
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TelegramController extends Controller
+{
+    //
+}
