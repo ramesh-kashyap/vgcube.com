@@ -297,8 +297,7 @@
                         <div class="flex items-center justify-between border-b border-gray-200"><a
                                 class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
                                     loading="lazy" width="163" height="20" decoding="async" data-nimg="1"
-                                    src="{{ asset('') }}upnl/assets/icons/	
-image_2025_01_24T08_48_53_087Z.png"
+                                    src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png"
                                     style="color: transparent; width:60px;"></a>
                             <!-- <button
                                 class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"

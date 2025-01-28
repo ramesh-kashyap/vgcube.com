@@ -431,83 +431,33 @@ image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
                                     </div>
                                     
                                     
-                                    <a href="{{route('user.ChangeMail')}}" class="absolute right-10 top-10" fdprocessedid="3cbwdh"
-   id="profileShow"><img alt="Edit Icon" loading="lazy" width="28" height="28"
-   decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-referrals.svg"
-   style="color: transparent;"></a>
+                                   
+<div class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-10 xl:px-20 pt-5 pb-[88px] md:pb-[20px]" style="background: #272723;">
+   <div class="w-full mt-10 flex justify-center text-primary">
+      <div class="w-full max-w-[600px] rounded-lg"> <!-- Change the max-width to 600px -->
+         <div class="max-w-[1920px] w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-5 h-full rounded-[16px] flex flex-col justify-between">
+                <button class="flex rounded-[24px] justify-center items-center align-center border border-[#F1F1F1] text-[#373737] bg-[#F9F9F9] h-[36px] py-2 px-3" style="font-family: ClashDisplay-Semibold;">
+                  <p class="mr-3" id="textToCopy">connect</p>
+               </button>
+              
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 
 
                                             
-                                    <div class="mx-auto w-full text-primary text-[28px] font-semibold "
-                                        style="font-family: ClashDisplay-Semibold;"></div>
-                                    <div class="mx-auto w-full text-secondary text-sm mb-[60px]">
-                                    </div>
-                                        <div class="flex flex-wrap md:flex-nowrap mx-auto w-full justify-center">
-
-   
-        
-</div>
+                                   
+                                        
                                 </div>
 
                             </div>
                             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
                                 style="display: none;" id="popup">
 
-<!--                                <form method="post" action="{{ route('user.edit-password') }}">-->
-<!--                                {{ csrf_field() }}-->
-<!--                                <div class="bg-white rounded-[20px] w-[400px] px-8 pt-10 pb-6 text-center relative">-->
-<!--                                    <h2 class="text-lg font-semibold">Change Password</h2>-->
-<!--                                    <div class="mb-4 mt-8 text-left">-->
-<!--                                        <label class="block text-gray-600 mb-1">Email-->
-<!--                                            </label>-->
-<!--                                            <input data-v-9d2ee7be=""-->
-<!--                                        data-v-cfc9a7fc="" type="" placeholder="Please enter the new password"-->
-<!--                                        value="" id="emailId" name="emailId" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]">-->
-<!--                                        </div>-->
-<!--                                    <div class="mb-4 mt-8 text-left">-->
-<!--                                        <label class="block text-gray-600 mb-1">Verification Code-->
-<!--                                            </label>-->
-<!--                                            <div class="input-container" style="position: relative; width: 100%;">-->
-<!--  <input -->
-<!--    data-v-9d2ee7be="" -->
-<!--    data-v-cfc9a7fc="" -->
-<!--    type="text"  -->
-<!--    name="code"-->
-<!--    placeholder="Enter verification code" -->
-<!--    maxlength="" -->
-<!--    class="w-full px-3 py-2 border border-gray-300 rounded-[12px] pr-20 "-->
-<!--    style="width: 100%;"-->
-<!--  >-->
-<!--  <span -->
-<!--    class="code-btn" -->
-<!--    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;">-->
-<!--    @lang('Get Code')-->
-<!--  </span>-->
-<!--</div>-->
 
-<!--                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">New -->
-<!--                                            Password</label><input data-v-9d2ee7be=""-->
-<!--                                        data-v-cfc9a7fc="" type="password"-->
-<!--                                        placeholder="Please enter the new password" name="password"  class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>-->
-
-<!--                                    <div class="mb-4 mt-4 text-left"><label class="block text-gray-600 mb-1">Confirm -->
-<!--                                            Password</label><input data-v-9d2ee7be=""-->
-<!--                                        data-v-cfc9a7fc="" type="password"-->
-<!--                                        placeholder="Enter the password again to confirm"-->
-<!--                                        name="password_confirmation" class="w-full px-3 py-2 border border-gray-300 rounded-[12px]"></div>-->
-
-
-<!--                                    <div class="mt-10"><button-->
-<!--                                            class="w-full h-[46px] mb-2 px-4 py-2 rounded-[30px] bg-black text-white">Confirm</button>-->
-<!--                                            <a href="{{ route('user.profile-setting') }}" -->
-<!--   class="w-full h-[46px] px-4 py-2 rounded-[30px] bg-gray-300 inline-block text-center">-->
-<!--   Cancel-->
-<!--</a>-->
-<!--                                    </div>-->
-
-
-<!--                                </div>-->
-<!--    </form>-->
                             </div>
                             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
                                 id="popup2" style="display: none;">
