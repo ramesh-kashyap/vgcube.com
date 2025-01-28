@@ -297,8 +297,7 @@
                         <div class="flex items-center justify-between border-b border-gray-200"><a
                                 class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
                                     loading="lazy" width="163" height="20" decoding="async" data-nimg="1"
-                                    src="{{ asset('') }}upnl/assets/icons/	
-image_2025_01_24T08_48_53_087Z.png"
+                                    src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png"
                                     style="color: transparent; width:60px;"></a>
                             <!-- <button
                                 class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"
@@ -306,7 +305,10 @@ image_2025_01_24T08_48_53_087Z.png"
                                 <img alt="close" loading="lazy" width="40" height="40"
                                     decoding="async" data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon_left.svg"
                                     style="color: transparent;"></button> -->
+
+
                         </div>
+
 
                         <nav class="my-5 px-5 text-sm font-medium text-[#555]">
                             <div class="text-gray-400 text-xs mb-2">MENU</div><a
@@ -495,7 +497,7 @@ image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
 </div>
 </div>
 <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg" style="background: #f1c40f;"><a
-        class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy" width="20"
+        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
             height="20" decoding="async" data-nimg="1" class=""
             src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" ><span
             class="text-xs mt-1 text-white">Nodes</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"

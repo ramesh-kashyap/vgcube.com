@@ -258,8 +258,7 @@
                         <div class="flex items-center justify-between border-b border-gray-200"><a
                                 class="flex items-center py-5 pl-[22px] h-[80px]" href="/"><img alt="Logo"
                                     loading="lazy" width="163" height="20" decoding="async" data-nimg="1"
-                                    src="{{ asset('') }}upnl/assets/icons/	
-image_2025_01_24T08_48_53_087Z.png"
+                                    src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png"
                                     style="color: transparent; width:60px;"></a>
                             <!-- <button
                                 class="text-black bg-gray-200 w-6 h-8 text-[20px] rounded-l-lg"
@@ -337,8 +336,7 @@ image_2025_01_24T08_48_53_087Z.png"
                     <div class="flex items-center justify-between py-2 mt-5 px-4 md:px-10 lg:px-10 xl:px-20"><a
                             class="md:hidden" href="/"><img alt="Logo" loading="lazy" width="163" height="20"
                                 decoding="async" data-nimg="1" class="max-w-[156px]"
-                                src="{{ asset('') }}upnl/assets/icons/
-image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
+                                src="{{ asset('') }}upnl/assets/icons/image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
                         <div class="w-full flex flex-row justify-end md:justify-between">
                             <div class="flex items-center h-[38px] text-gray-800 font-medium"><a
                                     class="hidden md:flex h-[38px] bg-white p-1 rounded-full mr-3" href="{{route('user.team')}}">
