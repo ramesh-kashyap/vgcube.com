@@ -313,7 +313,7 @@
                         <nav class="my-5 px-5 text-sm font-medium text-[#555]">
                             <div class="text-gray-400 text-xs mb-2">MENU</div><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md  text-white" style="background: #f1c40f;"
-                                href="#"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
+                                href="/"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-overview_active.svg"
                                     style="color: transparent;"><span class="ml-4">Nodes</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100 text-white" href="{{route('user.Market')}}"><img
@@ -497,7 +497,7 @@ image_2025_01_24T08_48_53_087Z.png" style="color: transparent; width:60px;"></a>
 </div>
 </div>
 <div class="fixed bottom-0 w-full bg-white flex md:hidden justify-around shadow-lg" style="background: #f1c40f;"><a
-        class="flex w-1/5 p-[12px] flex-col items-center" href="{{route('user.dashboard')}}"><img alt="overview Icon" loading="lazy" width="20"
+        class="flex w-1/5 p-[12px] flex-col items-center" href="/"><img alt="overview Icon" loading="lazy" width="20"
             height="20" decoding="async" data-nimg="1" class=""
             src="{{ asset('') }}upnl/assets/icons/icon-overview.svg" ><span
             class="text-xs mt-1 text-white">Nodes</span></a><a class="flex w-1/5 p-[12px] flex-col items-center"

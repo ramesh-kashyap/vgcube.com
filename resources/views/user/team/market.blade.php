@@ -274,7 +274,7 @@
                         <nav class="my-5 px-5 text-sm font-medium text-[#555]">
                             <div class="text-gray-400 text-xs mb-2">MENU</div><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md  text-white" style="background: #f1c40f;"
-                                href="#"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
+                                href="/"><img alt="overview Icon" loading="lazy" width="16" height="16" decoding="async"
                                     data-nimg="1" src="{{ asset('') }}upnl/assets/icons/icon-overview_active.svg"
                                     style="color: transparent;"><span class="ml-4">Nodes</span></a><a
                                 class="flex items-center py-2 px-3 mb-2 rounded-md hover:bg-gray-100 text-white" href="{{route('user.Market')}}"><img
